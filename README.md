@@ -17,7 +17,7 @@
 ### Association
 - has_one :residence
 - has_one :card
-- has_many :items
+- has_many :items, dependent: :destroy
 
 ## cardテーブル
 |Column|Type|Options|
@@ -72,7 +72,8 @@
 
 ### Association
 - belongs_to :user
-- has_many :comments
+- has_many :comments, dependent: :destroy
+- has_many :item_images, dependent: :destroy
 - belongs_to :category
 - belongs_to :bland
 
