@@ -1,0 +1,136 @@
+.banner{
+  background-image: url("download_bg_pc.jpg");
+  background-position: center;
+  background-size: cover;
+
+  .banner-pc{
+    overflow: hidden;
+    position: relative;
+    width: 750px;
+    height: 260px;
+    margin: 0 auto;
+    color: #fff;
+    .banner-left{
+      position: absolute;
+      top: 50%;
+      color: #fff;
+      transform: translate(0, -50%);
+      -webkit-transform: translate(0, -50%);
+        &__font{
+          font-size: 24px;
+          margin: 0;
+          text-shadow: 0 0 5px rgba(0,0,0,0.4);
+          line-height: 24px;
+        }
+        &__font2{
+          margin: 10px 0 0;
+          font-size: 35px;
+          text-shadow: 0 0 5px rgba(0,0,0,0.4);
+          line-height: 35px;
+        }
+      
+        .banner-main{
+          margin: 20px 0 0;
+          height: 68px;
+          .banner-image{
+            float: left;
+            @include clearfix;
+            &__mercari{
+              width: 68px;
+              height: 68px;
+          }
+         }
+          .image-box2{
+          @include clearfix;
+          margin: 14px 0 14px 24px;
+          float: left;
+          line-height: 68px;
+        }
+     }
+  }
+      .banner-right{
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 300px;
+      height: 100%;
+        &__image{
+        width: 100%;
+      }
+    }
+  }
+}
+
+.footer{
+  padding: 20px 20px 10px 20px;
+  background: #212121;
+  color: #fff;
+  display: block;
+  &__top{
+    max-width: 1020px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+      &__cell{
+        padding: 0 20px 0 0;
+        width: 20%;
+        &__merukari{
+          color: #fff;
+          font-size: 16px;
+          font-weight: 100;
+        }
+        &__box-long{
+          float: left;
+          list-style: none;
+          padding: 0 10px 0 0;
+          vertical-align: top;
+          width: 50%;
+        }
+        &__box-long2{
+          list-style: none;
+        }
+        &__box{
+          list-style: none;
+          &__font{
+            margin: 16px 0 0;
+            &__rurl{
+              font-size: 12px;
+              line-height: 1.5em;
+              opacity: 0.7;
+          }
+          &__icon{
+            font-size: 40px;
+          }
+        }
+        .footer-icon{
+          display: inline-block;
+          width: 40px;
+        }
+      }
+       }
+      .footer-help{
+        width: 23%;
+        padding: 0 40px 0 0;
+        vertical-align: top;
+      }
+      .footer-long{
+        padding: 0 40px 0 0;
+        width: 42%;
+      }
+      .country{
+        width: auto;
+      }
+   }
+  &__bottom{
+    margin: 30px auto 20px;
+    width: 100%;
+    max-width: 1020px;
+    &__text{
+      width: 745px;
+      display: inline-block;
+      text-align: center;
+      font-size: 12px;
+    }
+  }
+}
