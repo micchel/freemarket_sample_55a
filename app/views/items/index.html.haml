@@ -1,0 +1,76 @@
+.container
+  = render "shared/main-header"
+  .main-top
+    .carousel-top
+    .main-pick
+      %h2.main-head
+        ピックアップカテゴリー
+      .main-box
+        %h3.main-box__font
+          =link_to "", class: 'main-box__font__name' do
+            新着アイテム
+        .items-box
+          =link_to "", class: 'items-box__link' do
+            .items-photo
+              =image_tag "spo1711060026-p2.jpg", class:'items-photo__size'
+            .items-body
+              %h3.items-body__font
+                日本代表
+              .items-price
+                .items-price__num
+                  ¥1500
+                  .items-good
+                    = fa_icon "heart-o", class:"items-good__heart"
+                    14
+        .items-box
+          =link_to "", class: 'items-box__link' do
+            .items-photo
+              =image_tag "spo1711060026-p2.jpg", class:'items-photo__size'
+            .items-body
+              %h3.items-body__font
+                日本代表
+              .items-price
+                .items-price__num
+                  ¥1500
+                  .items-good
+                    = fa_icon "heart-o", class:"items-good__heart"
+                    14
+        .items-box
+          =link_to "", class: 'items-box__link' do
+            .items-photo
+              =image_tag "spo1711060026-p2.jpg", class:'items-photo__size'
+            .items-body
+              %h3.items-body__font
+                日本代表
+              .items-price
+                .items-price__num
+                  ¥1500
+                  .items-good
+                    = fa_icon "heart-o", class:"items-good__heart"
+                    14
+        .items-box
+          =link_to "", class: 'items-box__link' do
+            .items-photo
+              =image_tag "spo1711060026-p2.jpg", class:'items-photo__size'
+            .items-body
+              %h3.items-body__font
+                日本代表
+              .items-price
+                .items-price__num
+                  ¥1500
+                  .items-good
+                    = fa_icon "heart-o", class:"items-good__heart"
+                    14
+
+        .main-show
+          =link_to "", class:'main-show__link' do
+            全ての商品を見る
+        
+  = render "shared/main-footer"
+  =link_to "", class:'footer-btm' do
+    .footer-btm__font
+      出品
+    =fa_icon 'camera', class:'footer-btm__camera'
+    
+
+
