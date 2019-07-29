@@ -1,0 +1,148 @@
+.sell-body
+  .sell-page-container
+    .sell-header
+      %h1.sell-header__box
+        = link_to "", class:"sell-header__box__link" do
+          = image_tag "logo.svg", class:"sell-header__box__link__image", alt:"mercari", width:"120", height:"33"
+    .sell-main
+      .item-container
+        .sell-container
+          .sell-inner
+            %h2.sell-inner__description
+              商品の情報を入力
+            .sell-form
+              .sell-form__upload-box
+                %h3.sell-form__upload-box__head
+                  出品画像
+                  %span.sell-form__upload-box__head__require
+                    必須
+                %p.sell-form__upload-box__explain
+                  最大10枚までアップロードできます
+                .sell-form__upload-box__dropbox
+                  .sell-form__upload-box__dropbox__container
+                    .sell-form__upload-box__dropbox__container__list
+                      %ul.sell-form__upload-box__dropbox__container__list__items
+                  .sell-form__upload-box__dropbox__frame
+                    %pre.sell-form__upload-box__dropbox__frame__explain
+                      ドラッグアンドドロップ
+                      またはクリックしてファイルをアップロード
+              .sell-form__content
+                .sell-form__content__group--first
+                  .sell-form__content__group__name
+                    商品名
+                    %span.sell-form__content__group__name__require
+                      必須
+                  .sell-form__content__group__input
+                    商品名（必須 40文字まで）
+                .sell-form__content__group
+                  .sell-form__content__group__name
+                    商品の説明
+                    %span.sell-form__content__group__name__require
+                      必須
+                  .sell-form__content__group__text
+                    商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。
+              .sell-form__content--non-first
+                %h3.sell-form__content__head
+                  商品の詳細
+                .sell-form__content__box
+                  .sell-form__content__box__group--first
+                    .sell-form__content__box__group__name
+                      カテゴリー
+                      %span.sell-form__content__box__group__name__require
+                        必須
+                    .sell-form__content__box__group__select
+                      = fa_icon 'chevron-down', class:"arrow-bottom"
+                      .sell-form__content__box__group__select__wrap
+                        .sell-form__content__box__group__select__wrap__line ---
+                  .sell-form__content__box__group
+                    .sell-form__content__box__group__name
+                      サイズ
+                      %span.sell-form__content__box__group__name__require
+                        必須
+                    .sell-form__content__box__group__select
+                      = fa_icon 'chevron-down', class:"arrow-bottom"
+                      .sell-form__content__box__group__select__wrap
+                        .sell-form__content__box__group__select__wrap__line ---
+                  .sell-form__content__box__group
+                    .sell-form__content__box__group__name
+                      ブランド
+                      %span.sell-form__content__box__group__name__require--arbitrary
+                        任意
+                    .sell-form__content__box__group__select
+                      .sell-form__content__box__group__select__wrap--brand
+                        例）シャネル
+                  .sell-form__content__box__group
+                    .sell-form__content__box__group__name
+                      商品の状態
+                      %span.sell-form__content__box__group__name__require
+                        必須
+                    .sell-form__content__box__group__select
+                      = fa_icon 'chevron-down', class:"arrow-bottom"
+                      .sell-form__content__box__group__select__wrap
+                        .sell-form__content__box__group__select__wrap__line ---
+              .sell-form__content--non-first
+                %h3.sell-form__content__head
+                  配送について
+                = link_to "", class:"sell-form__content__question" do
+                  ?
+                .sell-form__content__box
+                  .sell-form__content__box__group--first
+                    .sell-form__content__box__group__name
+                      配送料の負担
+                      %span.sell-form__content__box__group__name__require
+                        必須
+                    .sell-form__content__box__group__select
+                      = fa_icon 'chevron-down', class:"arrow-bottom"
+                      .sell-form__content__box__group__select__wrap
+                        .sell-form__content__box__group__select__wrap__line ---
+                  .sell-form__content__box__group
+                    .sell-form__content__box__group__name
+                      発送元の地域
+                      %span.sell-form__content__box__group__name__require
+                        必須
+                    .sell-form__content__box__group__select
+                      = fa_icon 'chevron-down', class:"arrow-bottom"
+                      .sell-form__content__box__group__select__wrap
+                        .sell-form__content__box__group__select__wrap__line ---
+                  .sell-form__content__box__group
+                    .sell-form__content__box__group__name
+                      発送までの日数
+                      %span.sell-form__content__box__group__name__require
+                        必須
+                    .sell-form__content__box__group__select
+                      = fa_icon 'chevron-down', class:"arrow-bottom"
+                      .sell-form__content__box__group__select__wrap
+                        .sell-form__content__box__group__select__wrap__line ---
+              .sell-form__content--non-first
+                %h3.sell-form__content__head
+                  販売価格(300~9,999,999)
+                = link_to "", class:"sell-form__content__question" do
+                  ?
+                .sell-form__content__box
+                  %ul.sell-form__content__box__price
+                    %li.sell-form__content__box__price__group
+                      .sell-form__content__box__price__group__clearfix
+                        .sell-form__content__box__price__group__clearfix__name
+                          価格
+                          %span.sell-form__content__box__price__group__clearfix__name__require
+                            必須
+                        .sell-form__content__box__price__group__clearfix__input-box
+                          .sell-form__content__box__price__group__clearfix__input-box__yen
+                            ¥
+                          .sell-form__content__box__price__group__clearfix__input-box__frame
+                            例）300
+                    %li.sell-form__content__box__price__clearfix
+                      .sell-form__content__box__price__clearfix__name
+                        販売手数料（10%）
+                      .sell-form__content__box__price__clearfix__fee -
+                    %li.sell-form__content__box__price__bold
+                      .sell-form__content__box__price__bold__name
+                        販売利益
+                      .sell-form__content__box__price__bold__benefit -
+              .sell-form__content--non-first
+                .sell-form__content__container
+                .sell-form__content__button
+                  変更する
+                = link_to "",class:"sell-form__content__back-button" do
+                  もどる
+    = render "shared/sub-footer"
