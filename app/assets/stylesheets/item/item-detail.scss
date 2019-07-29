@@ -1,0 +1,437 @@
+.basic-container {
+  .bread-crumbs {
+    position: relative;
+    border-top: 1px solid #eee;
+    box-shadow: 0 3px 3px 0;
+    background-color: #fff;
+    &__list {
+      overflow: visible;
+      width: 1020px;
+      margin: 0 auto;
+      padding: 16px 0;
+      white-space: normal;
+      list-style: none;
+      &__point {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: inline-block;
+        font-size: 14px;
+        line-height: 1.2;
+        &--last {
+          font-weight: 600;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          display: inline-block;
+          font-size: 14px;
+          line-height: 1.2;
+        }
+        &__link {
+          text-decoration: none;
+        }
+        &__arrow-right {
+          margin: 0 8px;
+          font-size: 9px;
+          color: #888;
+        }
+      }
+    }
+  }
+  .item-container {
+    padding: 24px 40px 40px;
+    background: #fff;
+    margin: 40px auto 0;
+    width: 700px;
+    .item-name {
+      font-size: 24px;
+      text-align: center;
+      word-wrap: break-word;
+      line-height: 1.4;
+    }
+    .item-main {
+      margin: 16px 0 0;
+      @include clearfix();
+      &__photo {
+        float: left;
+        min-width: 300px;
+        max-width: 300px;
+        min-height: 375px;
+        position: relative;
+        margin: 0 auto;
+        background-color: #fafafa;
+        &__big {
+          position: relative;
+          overflow: hidden;
+        }
+        &__small {
+          display: flex;
+          flex-wrap: wrap;
+          &__inner {
+            opacity: 0.4;
+            &--active {
+              opacity: 1;
+            }
+          }
+        }
+      }
+      &__detail {
+        float: right;
+        max-width: 300px;
+        height: 420px;
+        margin: 0 auto;
+        border: 1px solid #f5f5f5;
+        border-spacing: 0;
+        &__table {
+          &__point {
+            &__head {
+              width: 39%;
+              text-align: left;
+              font-weight: 400;
+              background: #fafafa;
+              padding: 8px;
+              border-collapse: collapse;
+              border: 1px solid #f5f5f5;
+            }
+            &__body {
+              width: 61%;
+              background: #fff;
+              padding: 8px;
+              border-collapse: collapse;
+              border: 1px solid #f5f5f5;
+              &__link {
+                margin: 0;
+                display: block;
+                color: #0099e8;
+                line-height: 14px;
+              }
+              &__rate {
+                height: 25px;
+                position: relative;
+                display: flex;
+                &__count {
+                  margin: 0;
+                  margin: 8px 0 0 16px;
+                  &--first {
+                    margin: 8px 0 0 0;
+                    display: inline-block;
+                  }
+                  &__laugh {
+                    display: inline-block;
+                    color: #ef5185;
+                  }
+                  &__meh {
+                    display: inline-block;
+                    color: #fba933;
+                  }
+                  &__frown {
+                    display: inline-block;
+                    color: #6ab5d8;
+
+                  }
+                  &__figure {
+                    display: inline-block;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .item-price {
+      margin: 24px 0 0;
+      text-align: center;
+      &__figure {
+        margin: 0 16px 0 0;
+        font-size: 50px;
+        font-weight: 600;
+        line-height: 50px;
+      }
+      &__tax {
+        font-size: 10px;
+      }
+      &__shipping {
+        display: inline-block;
+        font-size: 16px;
+      }
+    }
+    .item-buy-button {
+      height: 60px;
+      line-height: 60px;
+      display: block;
+      margin: 16px 0 0;
+      background: #ea352d;
+      color: #fff;
+      text-align: center;
+      font-weight: 600;
+      font-size: 24px;
+    }
+    .item-description {
+      padding: 32px 0 0;
+      line-height: 1.5;
+      font-size: 18px;
+      &__inner {
+        white-space: pre-wrap;
+      }
+    }
+    .item-button {
+      margin: 16px 0 0;
+      @include clearfix();
+      &__left {
+        float: left;
+        &__like {
+          display: inline-block;
+          padding: 8px 16px;
+          border-radius: 40px;
+          background-color: #f5f5f5;
+          border: 1px solid #f5f5f5;
+          &__heart {
+            font-size: 14px;
+            vertical-align: middle;
+          }
+          &__chara {
+            font-size: 14px;
+            display: inline-block;
+            margin: 1px 0 0 8px;
+          }
+          &__figure {
+            font-size: 14px;
+            display: inline-block;
+            margin: 1px 0 0 8px;
+          }
+        }
+        &__report {
+          display: inline-block;
+          margin: 0 0 0 16px;
+          color: #333;
+          background: #f5f5f5;
+          padding: 8px 16px;
+          border-radius: 40px;
+          &__flag {
+            font-size: 14px;
+            vertical-align: middle;
+          }
+          &__chara {
+            font-size: 14px;
+            display: inline-block;
+            margin: 1px 0 0 8px;
+            vertical-align: middle;
+          }
+        }
+      }
+      &__right {
+        margin: 8px 0 0;
+        float: right;
+        &__link {
+          display: inline-block;
+          color: #0099e8;
+          &__lock {
+            font-size: 14px;
+            vertical-align: middle;
+          }
+          &__chara {
+            font-size: 14px;
+            display: inline-block;
+            margin: 1px 0 0 8px;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+  .item-comment {
+    width: 700px;
+    margin: 8px auto;
+    &__content {
+      padding: 24px;
+      background-color: #fff;
+      &__attention {
+        padding: 8px;
+        font-size: 14px;
+        background: #fff6de;
+        white-space: normal;
+        line-height: 14px;
+      }
+      &__input {
+        margin: 8px 0 0;
+        display: block;
+        width: 100%;
+        min-height: 104px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background: #fff;
+        font-size: 16px;
+        line-height: 1.5;
+      }
+      &__button {
+        width: 100%;
+        margin: 8px 0 0;
+        text-align: center;
+        background: #aaa;
+        border: 1px solid #aaa;
+        color: #fff;
+        display: block;
+        line-height: 48px;
+        cursor: pointer;
+        &__chara {
+          font-size: 14px;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+  .item-link {
+    margin: 24px auto 0;
+    width: 700px;
+    list-style: none;
+    @include clearfix();
+    &__prev {
+      width: 45%;
+      position: relative;
+      word-wrap: break-word;
+      float: left;
+      padding: 0 0 0 14px;
+      &__link {
+        color: #0099e8;
+      }
+    }
+    &__next {
+      width: 45%;
+      position: relative;
+      word-wrap: break-word;
+      float: right;
+      padding: 0 14px 0 0;
+      text-align: right;
+      &__link {
+        color: #0099e8;
+      }
+    }
+  }
+  .sns-box {
+    margin: 24px auto;
+    padding: 32px 0 24px;
+    width: 700px;
+    background-color: #fff;
+    &__text {
+      text-align: center;
+      height: 14px;
+    }
+    &__list {
+      margin: 16px 0 0;
+      text-align: center;
+      list-style: none;
+      font-size: 0;
+      &__icon {
+        display: inline-block;
+        margin: 0 8px 6px 0;
+        vertical-align: middle;
+        &__link {
+          display: block;
+          &__fb {
+            display: block;
+            font-size: 26px;
+            color: #fff;
+            background-color: #385185;
+            width: 44px;
+            height: 44px;
+            border-radius: 4px;
+            line-height: 44px;
+          }
+          &__twitter {
+            display: block;
+            font-size: 24px;
+            color: #fff;
+            background-color: #5d9dc9;
+            width: 44px;
+            height: 44px;
+            border-radius: 4px;
+            line-height: 44px;
+          }
+          &__pinterest {
+            display: block;
+            font-size: 18px;
+            color: #fff;
+            background-color: #aa262a;
+            width: 44px;
+            height: 44px;
+            border-radius: 4px;
+            line-height: 44px;
+          }
+        }
+      }
+    }
+  }
+  .items-user {
+    width: 700px;
+    margin: 0 auto;
+    &__list {
+      &__head {
+        font-size: 22px;
+        margin: 24px 0 8px;
+        line-height: 1.4;
+        &__link {
+          color: #0099e8;
+        }
+      }
+      &__content {
+        width: auto;
+        margin: 0 auto;
+        @include clearfix();
+        &__box {
+          width: 220px;
+          margin: 0 10px 20px 0;
+          position: relative;
+          float: left;
+          &__link {
+            display: block;
+            color: #333;
+            &__photo {
+              width: 220px;
+              height: 220px;
+              &__image {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 1;
+                width: 100%;
+                vertical-align: middle;
+              }
+            }
+            &__body {
+              padding: 16px;
+              height: 110px;
+              &__name {
+                overflow: hidden;
+                position: relative;
+                font-weight: 400;
+                height: 3em;
+                line-height: 1.5;
+                word-break: break-word;
+                white-space: normal;
+                font-size: 16px;
+                color: #333;
+              }
+              &__num {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin: 8px 0 0;
+                &__price {
+                  font-size: 17px;
+                  font-weight: 600;
+                }
+                &__like {
+                  font-weight: 400;
+                  &__heart {
+                    color: #ccc;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
