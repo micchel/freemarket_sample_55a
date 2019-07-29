@@ -1,0 +1,87 @@
+= render "shared/main-header"
+.default-mypage
+  %nav.header-next
+    %ul.header-next__next
+      %li.header-next__next__list
+        = link_to '',class:"header-next__next__list__link" do
+          %span
+          メルカリ
+          = fa_icon "angle-right", class: "angle-icon-header"
+      %li.header-next__next__list
+        = link_to '',class:"header-next__next__list__link__action" do
+          %span
+          マイページ
+  %main.mypage.clearfix
+    = render 'side-bar'
+    .right-side
+      %section.mypage-user
+        = link_to '',class: "mypage-user__link" do
+          %figure.mypage-user__link__image
+            = image_tag "member_photo.png", width: "60", height: "60"
+          %h2.mypage-user__link__image__name
+            = 'MIZUNO'
+          .mypage-number
+            .mypage-number__evaluation 評価
+            %span.mypage-number__number2 1
+            .mypage-number__listings 出品数
+            %span.mypage-number__number3 3
+
+
+      %section.mypage-tab
+        .mypage-tab__list
+          %ul.mypage-tab__list__ul
+            = link_to do
+              %li.mypage-tab__list__news
+                %h3.mypage-tab__list__news__bold お知らせ
+            = link_to do
+              %li.mypage-tab__list__todos
+                %h3.mypage-tab__list__todos__bold2 やることリスト
+
+          .tab-content
+            %ul.tab-news.tab-tab
+              %li.tab-news.tab-tab__list
+                = link_to "", class: "content-link" do
+                  %figure
+                    = image_tag "mercari_profile.png", class: "mercari1"
+                  .item-content
+                    .item-content__text
+                      ありませーーん！！！！！！！！
+                    %time
+                      = fa_icon "clock-o", class: "clock-icon"
+                      %span
+                      １日前
+                    = fa_icon "angle-right", class: "angle-icon"
+
+              %li.tab-news.tab-tab__list
+                = link_to "", class: "content-link" do
+                  %figure
+                    = image_tag "mercari_profile.png", class: "mercari1"
+                  .item-content
+                    .item-content__text
+                      ありませーーん！！！！！！！！
+                    %time
+                      = fa_icon "clock-o", class: "clock-icon"
+                      %span
+                      １日前
+                    .right-icon
+                      = fa_icon "angle-right", class: "angle-icon"
+              %li.mypage-more-info
+                = link_to "", class: "mypage-more-info__text" do
+                  一覧を見る
+
+          %section.mypage-transaction
+            %h2.mypage-transaction__bay
+              購入した商品
+            .mypage-tab__list
+              %ul.mypage-tab__list__ul
+                = link_to do
+                  %li.mypage-tab__list__news
+                    %h3.mypage-tab__list__news__bold 取引中
+                = link_to do
+                  %li.mypage-tab__list__todos
+                    %h3.mypage-tab__list__todos__bold2 過去の取引
+              .transaction-content
+                %ul.transaction-content__ul
+                  %li.transaction-content__ul__text
+                    取引中の商品はありません
+= render "shared/main-footer"
