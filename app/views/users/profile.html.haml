@@ -1,0 +1,34 @@
+= render "shared/main-header"
+.default-mypage
+  %nav.header-next
+    %ul.header-next__next
+      %li.header-next__next__list
+        = link_to '',class:"header-next__next__list__link" do
+          %span
+          メルカリ
+          = fa_icon "angle-right", class: "angle-icon-header"
+      %li.header-next__next__list
+        = link_to '',class:"header-next__next__list__link7" do
+          %span
+          マイページ
+          = fa_icon "angle-right", class: "angle-icon-header"
+      %li.header-next__next__list
+        = link_to '',class:"header-next__next__list__link__action" do
+          %span
+          プロフィール
+  %main.mypage.cleafix
+    = render 'side-bar'
+    .profile-content
+      %section.profile-content__box
+        %h2.profile-content__box__name
+          プロフィール
+        %form.profile-content__box__name__form{ method: "POST"}
+          .profile-icon
+            %figure.profile-icon__image
+              = image_tag "member_photo.png", width: "60", height: "60"
+            %input.profile-icon__text{ value: "mizuno", placeholder: "例)AYA☆セール中", type: "text"}
+          .profile-content
+            %textarea.profile-content__text{ placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪", }
+            %button.profile-content__button
+              変更する
+= render "shared/main-footer"
