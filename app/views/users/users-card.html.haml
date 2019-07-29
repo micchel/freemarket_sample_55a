@@ -1,0 +1,41 @@
+= render 'shared/main-header'
+%nav.header-next
+  %ul.header-next__next
+    %li.header-next__next__list
+      = link_to '',class:"header-next__next__list__link" do
+        %span
+        メルカリ
+        = fa_icon "angle-right", class: "angle-icon-header"
+    %li.header-next__next__list
+      = link_to '',class:"header-next__next__list__link__action" do
+        %span
+        マイページ
+%main.card-main
+  = render 'side-bar'
+  .card
+    %section.card-chapter
+      %h2.card-chapter__font
+        支払い方法
+      .card-signle
+        .card-signle__box
+          %h3.card-signle__box__font
+            クレジットカード一覧
+        %ul.card-settings
+          %li.card-settings__box
+            %form.card-content
+              =link_to '', class: 'card-link' do
+                =fa_icon 'credit-card', class: 'card-link__icon'
+                クレジットカードを追加する
+              -# = image_tag 'visa.svg', class: "card-content__img"
+              -# .card-num
+              -#   ************6409
+              -# .card-num
+              -#   12 / 21
+              -# = link_to '', class: "card-delete" do
+              -#   削除する
+        .card-pay
+          = link_to '', class: "card-pay__link" do
+            %span.card-pay__link__font
+              支払い方法について
+              = fa_icon 'chevron-right', class: "card-icon"
+= render 'shared/main-footer'
