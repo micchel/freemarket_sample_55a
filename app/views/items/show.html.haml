@@ -1,0 +1,289 @@
+= render "shared/main-header"
+.basic-container
+  .pc-header
+  .bread-crumbs
+    %ul.bread-crumbs__list
+      %li.bread-crumbs__list__point
+        = link_to "", class:"bread-crumbs__list__point__link" do
+          %span メルカリ
+        = fa_icon "chevron-right", class:"bread-crumbs__list__point__arrow-right"
+      %li.bread-crumbs__list__point--last
+        %span
+          俺のヘルメット
+  %section.item-container
+    %h1.item-name
+      俺のヘルメット
+    .item-main
+      .item-main__photo
+        .item-main__photo__big
+          = image_tag "diving-helmet.png", class:"item-main__photo__big__image", size:"300x300"
+        .item-main__photo__small
+          .item-main__photo__small__inner--active
+            = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
+          .item-main__photo__small__inner
+            = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
+          .item-main__photo__small__inner
+            = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
+          .item-main__photo__small__inner
+            = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
+          .item-main__photo__small__inner
+            = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
+          .item-main__photo__small__inner
+            = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
+          .item-main__photo__small__inner
+            = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
+          .item-main__photo__small__inner
+            = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
+          .item-main__photo__small__inner
+            = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
+          .item-main__photo__small__inner
+            = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
+      -# .item-main__sold-out
+      -#   .item-main__sold-out__budge
+      -#     SOLD
+      %table.item-main__detail
+        %tbody.item-main__detail__table
+          %tr.item-main__detail__table__point
+            %th.item-main__detail__table__point__head
+              出品者
+            %td.item-main__detail__table__point__body
+              = link_to "", class:"item-main__detail__table__point__body__link" do
+                俺やで
+              .item-main__detail__table__point__body__rate
+                .item-main__detail__table__point__body__rate__count--first
+                  = fa_icon "smile-o", class:"item-main__detail__table__point__body__rate__count__laugh"
+                  %span.item-main__detail__table__point__body__rate__count__figure
+                    108
+                .item-main__detail__table__point__body__rate__count
+                  = fa_icon "meh-o", class:"item-main__detail__table__point__body__rate__count__meh"
+                  %span.item-main__detail__table__point__body__rate__count__figure
+                    88
+                .item-main__detail__table__point__body__rate__count
+                  = fa_icon "frown-o", class:"item-main__detail__table__point__body__rate__count__frown"
+                  %span.item-main__detail__table__point__body__rate__count__figure
+                    36
+          %tr.item-main__detail__table__point
+            %th.item-main__detail__table__point__head
+              カテゴリー
+            %td.item-main__detail__table__point__body
+              = link_to "", class:"item-main__detail__table__point__body__link" do
+                .item-main__detail__table__point__body__link__figure
+                  メンズ
+              = link_to "", class:"item-main__detail__table__point__body__link" do
+                .item-main__detail__table__point__body__link__box
+                  = fa_icon "chevron-right", class:"bread-crumbs__list__point__body__link__box__arrow"
+                  トップス
+              = link_to "", class:"item-main__detail__table__point__body__link" do
+                .item-main__detail__table__point__body__link__box
+                  = fa_icon "chevron-right", class:"bread-crumbs__list__point__body__link__box__arrow"
+                  ダイビングヘルメット
+          %tr.item-main__detail__table__point
+            %th.item-main__detail__table__point__head
+              ブランド
+            %td.item-main__detail__table__point__body
+              = link_to "", class:"item-main__detail__table__point__body__link" do
+                フンババ
+          %tr.item-main__detail__table__point
+            %th.item-main__detail__table__point__head
+              商品のサイズ
+            %td.item-main__detail__table__point__body
+              XXL
+          %tr.item-main__detail__table__point
+            %th.item-main__detail__table__point__head
+              商品の状態
+            %td.item-main__detail__table__point__body
+              目立った傷や汚れなし
+          %tr.item-main__detail__table__point
+            %th.item-main__detail__table__point__head
+              配送料の負担
+            %td.item-main__detail__table__point__body
+              送料込み(出品者負担)
+          %tr.item-main__detail__table__point
+            %th.item-main__detail__table__point__head
+              配送料の方法
+            %td.item-main__detail__table__point__body
+              未定
+          %tr.item-main__detail__table__point
+            %th.item-main__detail__table__point__head
+              配送元地域
+            %td.item-main__detail__table__point__body
+              = link_to "", class:"item-main__detail__table__point__body__link" do
+                東京都
+          %tr.item-main__detail__table__point
+            %th.item-main__detail__table__point__head
+              発送日の目安
+            %td.item-main__detail__table__point__body
+              1~2日で発送
+    .item-price
+      %span.item-price__figure
+        ¥ 80,000
+      %span.item-price__tax
+        (税込)
+      %span.item-price__shipping
+        送料込み
+    = link_to "", class:"item-buy-button" do
+      購入画面に進む
+    .item-description
+      %p.item-description__inner
+        フンババ
+        フンババ
+        フンババ
+        フンババ？
+        フンババ！
+        フンババ
+        フンババ
+        フンババ
+        フンババ？
+        フンババ！
+        フンババ
+        フンババ
+        フンババ
+        フンババ？
+        フンババ！
+        フンババ
+        フンババ
+        フンババ
+        フンババ？
+        フンババ！
+        フンババ
+        フンババ
+        フンババ
+        フンババ？
+        フンババ！
+    .item-button
+      .item-button__left
+        %button.item-button__left__like
+          = fa_icon "heart-o", class:"item-button__left__like__heart"
+          %span.item-button__left__like__chara
+            いいね！
+          %span.item-button__left__like__figure
+            108
+        = link_to "", class:"item-button__left__report" do
+          = fa_icon "flag", class:"item-button__left__report__flag"
+          %span.item-button__left__report__chara
+            不適切な商品の報告
+      .item-button__right
+        = link_to "", class:"item-button__right__link" do
+          = fa_icon "lock", class:"item-button__right__link__lock"
+          %span.item-button__right__link__chara
+            あんしん・あんぜんへの取り組み
+  .item-comment
+    .item-comment__content
+      %p.item-comment__content__attention
+        相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      .item-comment__content__input
+      %button.item-comment__content__button
+        %span.item-comment__content__button__chara
+          コメントする
+  %ul.item-link
+    %li.item-link__prev
+      = link_to "", class:"item-link__prev__link" do
+        = fa_icon "chevron-left", class:"item-link__prev__link__arrow"
+        %span.item-link__prev__link__chara 俺のフィン
+    %li.item-link__next
+      = link_to "", class:"item-link__next__link" do
+        %span.item-link__next__link__chara 俺のスーツ
+        = fa_icon "chevron-right", class:"item-link__next__link__arrow"
+  .sns-box
+    .sns-box__text
+    %ul.sns-box__list
+      %li.sns-box__list__icon
+        = link_to "", class:"sns-box__list__icon__link" do
+          = fa_icon "facebook-square", class:"sns-box__list__icon__link__fb"
+      %li.sns-box__list__icon
+        = link_to "", class:"sns-box__list__icon__link" do
+          = fa_icon "twitter", class:"sns-box__list__icon__link__twitter"
+      %li.sns-box__list__icon
+        = link_to "", class:"sns-box__list__icon__link" do
+          = fa_icon "pinterest", class:"sns-box__list__icon__link__pinterest"
+  .items-user
+    %section.items-user__list
+      %h2.items-user__list__head
+        = link_to "", class:"items-user__list__head__link" do
+          俺やでさんのその他の作品
+      .items-user__list__content
+        %section.items-user__list__content__box
+          = link_to "", class:"items-user__list__content__box__link" do
+            %figure.items-user__list__content__box__link__photo
+              = image_tag "diving-helmet.png", class:"items-user__list__content__box__link__photo__image", size:"200x200"
+            .items-user__list__content__box__link__body
+              %h3.items-user__list__content__box__link__body__name
+                フンババ
+              .items-user__list__content__box__link__body__num
+                .items-user__list__content__box__link__body__num__price
+                  ¥ 80,000
+                .items-user__list__content__box__link__body__num__like
+                  = fa_icon "heart-o", class:"items-user__list__content__box__link__body__num__like__heart"
+                  %span.items-user__list__content__box__link__body__num__like__count
+                    800
+        %section.items-user__list__content__box
+          = link_to "", class:"items-user__list__content__box__link" do
+            %figure.items-user__list__content__box__link__photo
+              = image_tag "diving-helmet.png", class:"items-user__list__content__box__link__photo__image", size:"200x200"
+            .items-user__list__content__box__link__body
+              %h3.items-user__list__content__box__link__body__name
+                フンババ
+              .items-user__list__content__box__link__body__num
+                .items-user__list__content__box__link__body__num__price
+                  ¥ 80,000
+                .items-user__list__content__box__link__body__num__like
+                  = fa_icon "heart-o", class:"items-user__list__content__box__link__body__num__like__heart"
+                  %span.items-user__list__content__box__link__body__num__like__count
+                    800
+        %section.items-user__list__content__box
+          = link_to "", class:"items-user__list__content__box__link" do
+            %figure.items-user__list__content__box__link__photo
+              = image_tag "diving-helmet.png", class:"items-user__list__content__box__link__photo__image", size:"200x200"
+            .items-user__list__content__box__link__body
+              %h3.items-user__list__content__box__link__body__name
+                フンババ
+              .items-user__list__content__box__link__body__num
+                .items-user__list__content__box__link__body__num__price
+                  ¥ 80,000
+                .items-user__list__content__box__link__body__num__like
+                  = fa_icon "heart-o", class:"items-user__list__content__box__link__body__num__like__heart"
+                  %span.items-user__list__content__box__link__body__num__like__count
+                    800
+        %section.items-user__list__content__box
+          = link_to "", class:"items-user__list__content__box__link" do
+            %figure.items-user__list__content__box__link__photo
+              = image_tag "diving-helmet.png", class:"items-user__list__content__box__link__photo__image", size:"200x200"
+            .items-user__list__content__box__link__body
+              %h3.items-user__list__content__box__link__body__name
+                フンババ
+              .items-user__list__content__box__link__body__num
+                .items-user__list__content__box__link__body__num__price
+                  ¥ 80,000
+                .items-user__list__content__box__link__body__num__like
+                  = fa_icon "heart-o", class:"items-user__list__content__box__link__body__num__like__heart"
+                  %span.items-user__list__content__box__link__body__num__like__count
+                    800
+        %section.items-user__list__content__box
+          = link_to "", class:"items-user__list__content__box__link" do
+            %figure.items-user__list__content__box__link__photo
+              = image_tag "diving-helmet.png", class:"items-user__list__content__box__link__photo__image", size:"200x200"
+            .items-user__list__content__box__link__body
+              %h3.items-user__list__content__box__link__body__name
+                フンババ
+              .items-user__list__content__box__link__body__num
+                .items-user__list__content__box__link__body__num__price
+                  ¥ 80,000
+                .items-user__list__content__box__link__body__num__like
+                  = fa_icon "heart-o", class:"items-user__list__content__box__link__body__num__like__heart"
+                  %span.items-user__list__content__box__link__body__num__like__count
+                    800
+        %section.items-user__list__content__box
+          = link_to "", class:"items-user__list__content__box__link" do
+            %figure.items-user__list__content__box__link__photo
+              = image_tag "diving-helmet.png", class:"items-user__list__content__box__link__photo__image" , size:"200x200"
+            .items-user__list__content__box__link__body
+              %h3.items-user__list__content__box__link__body__name
+                フンババ
+              .items-user__list__content__box__link__body__num
+                .items-user__list__content__box__link__body__num__price
+                  ¥ 80,000
+                .items-user__list__content__box__link__body__num__like
+                  = fa_icon "heart-o", class:"items-user__list__content__box__link__body__num__like__heart" 
+                  %span.items-user__list__content__box__link__body__num__like__count
+                    800
+= render "shared/main-footer"
