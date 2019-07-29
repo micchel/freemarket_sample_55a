@@ -1,0 +1,141 @@
+.header-next {
+  height: 48px;
+  width: 100%;
+  position: relative;
+  border-top: 1px solid #eee;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  background: #fff;
+  &__next {
+    overflow: visible;
+  width: 1020px;
+  margin: 0 auto;
+  padding: 16px 0;
+  white-space: normal;
+  &__list {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 1.2;
+    &__link {
+      color: #333;
+      text-decoration: none;
+      &__action {
+        color: #333;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .angle-icon-header {
+        margin: 0 8px;
+        font-size: 15px;
+        color: #888;
+        display: inline-block;
+        font-style: normal;
+        font-weight: 900;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        }
+      }
+    }
+  }
+}
+.card-main{
+  margin: 40px auto 0;
+  width: 100%;
+  max-width: 1020px;
+  padding: 0 0 40px;
+  @include clearfix();
+  .card{
+    float: right;
+    width: 700px;
+    .card-chapter{
+      margin: 0;
+      background: #fff;
+      &__font{
+        font-size: 24px;
+        padding: 8px 24px;
+        border-bottom: 1px solid #f5f5f5;
+        text-align: center;
+      }
+      .card-signle{
+        padding: 64px;
+        &__box{
+          max-width: 320px;
+          margin: 0 auto;
+          &__font{
+            font-size: 16px;
+          }
+        }
+        .card-settings{
+          list-style: none;
+          &__box{
+            padding: 24px 0;
+            border-bottom: 1px solid #eee;
+            .card-content{
+              position: relative;
+              max-width: 320px;
+              margin: 0 auto;
+              .card-link{
+                margin: 0;
+                background: #ea352d;
+                border: 1px solid #ea352d;
+                color: #fff;
+                width: 100%;
+                line-height: 48px;
+                font-size: 14px;
+                display: block;
+                text-align: center;
+              &:hover{
+                opacity: 0.6;
+                  }
+                &__icon{
+                  margin-right: 16px;
+                }
+              }
+              &__img{
+                width: 49px;
+                height: 15px;
+              }
+              .card-num{
+                margin: 8px 0 0;
+                font-size: 16px;
+              }
+              .card-delete{
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: 4px 6px;
+                background: #fff;
+                border-radius: 3px;
+                border: 1px solid #ea352d;
+                color: #ea352d;
+              }
+            }
+          }
+        }
+        .card-pay{
+          &__link{
+          display: block;
+          margin: 40px 0 0;
+          text-align: right;
+          color: #0099e8;
+          text-decoration: none;
+          &:hover{
+            text-decoration: underline;
+            text-decoration-color:  #0099e8;
+            opacity: 0.8;
+          }
+            &__font{
+              vertical-align: middle;
+              .card-icon{
+                margin: 0 0 0 8px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
