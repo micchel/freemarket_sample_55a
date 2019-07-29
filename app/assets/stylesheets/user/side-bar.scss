@@ -10,7 +10,7 @@
         &:first-child {
           border: 0;
         }
-        .mypage-menu__list__lists__item {
+        &__item {
           position: relative;
           display: block;
           min-height: 48px;
@@ -26,14 +26,14 @@
             color: #ccc;
             font-size: 30px;
             transition: all ease-out .2s;
-            }
-            .angle-icon:hover {
+          }
+          .angle-icon:hover {
               transform: translateX(10px);
               color: black;
-            }
           }
         }
       }
+    }
     &__text {
       margin: 40px 0 0;
       font-size: 16px;

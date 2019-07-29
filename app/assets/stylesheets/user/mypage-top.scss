@@ -70,7 +70,7 @@
           right: 0;
           transform: translate(0,-50%);
           color: #333;
-          .mypage-user__link__image {
+          &__image {
           overflow: hidden;
           width: 60px;
           height: 60px;
@@ -160,11 +160,9 @@
       }
       .tab-content {
         background: white;
-        .tab-tab{
+        .tab-tab {
           display: block;
-        }
-        .tab-news
-          .tab-news.tab-tab__list {
+          &__list {
             position: relative;
             height: 80px;
             //&:first-child {
@@ -203,7 +201,7 @@
                 top: 10%;
                 left: 50%;
                 display: block;
-                .item-content__text {
+                &__text {
                   overflow: hidden;
                   display: -webkit-box;
                   max-height: 4.4em;
@@ -223,17 +221,18 @@
                     vertical-align: middle;
                   }
                 }
-              .angle-icon {
-                position: absolute;
-                top: 50%;
-                right: 16px;
-                transform: translate(0, -50%);
-                font-weight: 400;
-                font-size: 25px;
-              }
-              .mercari1 {
-                opacity: 1;
-                transition: opacity .3s;
+                .angle-icon {
+                  position: absolute;
+                  top: 50%;
+                  right: 16px;
+                  transform: translate(0, -50%);
+                  font-weight: 400;
+                  font-size: 25px;
+                }
+                .mercari1 {
+                  opacity: 1;
+                  transition: opacity .3s;
+                }
               }
             }
           }
@@ -241,7 +240,7 @@
       }
       .mypage-more-info {
         padding: 16px;
-        .mypage-more-info__text {
+        &__text {
           display: block;
           height: 56px;
           margin: 0 auto;
