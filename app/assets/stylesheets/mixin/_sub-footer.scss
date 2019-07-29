@@ -1,0 +1,36 @@
+@mixin sub-footer() {
+  .box-main__footer {
+    height: 220px;
+    width: 456px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 40px 0;
+    &__top {
+      display: flex;
+      justify-content: center;
+      &__head-line {
+        display: block;
+        font-size: 12px;
+        margin: 0 0 0 10px;
+        color: #333;
+        &--first {
+          display: block;
+          font-size: 12px;
+          color: #333;
+        }
+      }
+    }
+    &__img {
+      height: 65px;
+      width: 80px;
+      margin: 40px auto 0;
+      display: block;
+    }
+    &__year {
+      margin: 8px 0 0;
+      &__copy-right {
+        font-size: 13px;
+      }
+    }
+  }
+}
