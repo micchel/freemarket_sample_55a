@@ -1,0 +1,47 @@
+.mypage-side {
+  float: left;
+  width: 280px;
+  margin: 0 40px 0 0;
+  .mypage-menu {
+    &__list {
+      &__lists {
+        border-top: 1px solid #eee;
+        list-style: none;
+        &:first-child {
+          border: 0;
+        }
+        &__item {
+          position: relative;
+          display: block;
+          min-height: 48px;
+          padding: 16px;
+          background: #fff;
+          color: #333;
+          text-decoration:none;
+          touch-action: manipulation;
+          .angle-icon {
+            position: absolute;
+            bottom: 10px;
+            right: 16px;
+            color: #ccc;
+            font-size: 30px;
+            transition: all ease-out .2s;
+          }
+          .angle-icon:hover {
+              transform: translateX(10px);
+              color: black;
+          }
+        }
+      }
+    }
+    &__text {
+      margin: 40px 0 0;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 0 0 10px 0;
+      &__list {
+        margin: 8px 0 0;
+      }
+    }
+  }
+}

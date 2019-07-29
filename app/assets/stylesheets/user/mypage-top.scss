@@ -1,0 +1,283 @@
+.default-mypage {
+  width: 100%;
+  background: #f5f5f5;
+  }
+  .header-next {
+    height: 48px;
+    width: 100%;
+    position: relative;
+    border-top: 1px solid #eee;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+    background: #fff;
+    &__next {
+      overflow: visible;
+      width: 1020px;
+      margin: 0 auto;
+      padding: 16px 0;
+      white-space: normal;
+      &__list {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: inline-block;
+        font-size: 14px;
+        line-height: 1.2;
+        &__link {
+          color: #333;
+          text-decoration: none;
+          &__action {
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+          }
+          .angle-icon-header {
+            margin: 0 8px;
+            font-size: 15px;
+            color: #888;
+            display: inline-block;
+            font-style: normal;
+            font-weight: 900;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+          }
+        }
+      }
+    }
+  }
+  .mypage {
+    margin: 40px auto 0;
+    display: block;
+    padding: 0 22px 40px;
+    min-width: 1068px;
+    width: 1020px;
+    min-height: 1292px;
+    .right-side {
+      float: right;
+      width: 700px;
+      .mypage-user {
+        height: 200px;
+        position: relative;
+        padding: 20px;
+        background: url("user-bg.jpg");
+        background-size: cover;
+        text-align: center;
+        &__link {
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          right: 0;
+          transform: translate(0,-50%);
+          color: #333;
+          &__image {
+          overflow: hidden;
+          width: 60px;
+          height: 60px;
+          margin: 0 auto;
+          border-radius: 50%;
+          vertical-align: middle;
+          }
+          &__name {
+            margin: 20px 0 0;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 14px;
+          }
+          .mypage-number {
+            margin: 20px 0 0;
+            font-size: 0;
+
+            &__evaluation {
+              display: inline-block;
+              font-size: 14px;
+            }
+            &__listings {
+              margin: 0 0 0 16px;
+              display: inline-block;
+              font-size: 14px;
+            }
+            &__number2 {
+              font-weight: 600;
+              margin: 0 0 0 8px;
+              font-size: 16px;
+            }
+            &__number3 {
+              font-weight: 600;
+              margin: 0 0 0 8px;
+              font-size: 16px;
+            }
+          }
+        }
+      }
+      .mypage-tab {
+        margin: 0;
+        background: #fff;
+        width: 700px;
+        height: 74px;
+        &__list {
+          border: 0;
+          font-size: 0;
+          list-style: none;
+          &__ul {
+            padding: 0;
+          }
+          &__news {
+            background: #fff;
+            width: 50%;
+            display: inline-block;
+            text-align: center;
+            vertical-align: top;
+            height: 74px;
+            font-size: 18px;
+            position: relative;
+            border-top: 1.5px solid red;
+            color: black;
+            &__bold {
+              position: absolute;
+              top: 25%;
+              left: 40%;
+            }
+          }
+          &__todos {
+            width: 50%;
+            display: inline-block;
+            text-align: center;
+            vertical-align: top;
+            height: 74px;
+            font-size: 18px;
+            position: relative;
+            background: #eee;
+            padding: 0 0 5px 0;
+            color: black;
+            &__bold2 {
+              position: absolute;
+              top: 30%;
+              left: 35%;
+            }
+          }
+        }
+      }
+      .tab-content {
+        background: white;
+        .tab-tab {
+          display: block;
+          &__list {
+            position: relative;
+            height: 80px;
+            //&:first-child {
+            border-bottom: 1px solid #eee;
+            //最初に現れる子要素を対象にしたcss
+            &:last-child {
+              border: 0;
+            }
+            //最後に現れる子要素を対象
+            .content-link {
+              display: block;
+              min-height: 80px;
+              padding: 16px;
+              color: #333;
+              text-decoration:none;
+              .mercari1 {
+                position: relative;
+                overflow: hidden;
+                float: left;
+                width: 48px;
+                height: 48px;
+                .mercari1 {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 1;
+                width: 100%;
+                }
+              }
+              .item-content {
+                margin: 0 40px 0 68px;
+                font-size: 15px;
+                height: 80px;
+                top: 10%;
+                left: 50%;
+                display: block;
+                &__text {
+                  overflow: hidden;
+                  display: -webkit-box;
+                  max-height: 4.4em;
+                  -webkit-line-clamp: 3;
+                  -webkit-box-orient: vertical;
+                  text-overflow: ellipsis;
+                  line-height: 1.5;
+                  position: relative;
+                  .clock-icon {
+                    display: inline-block;
+                    color: #888;
+                    position: relative;
+                    right: 12%;
+                  }
+                  .icon-time {
+                    margin: 0 8px 0 0;
+                    vertical-align: middle;
+                  }
+                }
+                .angle-icon {
+                  position: absolute;
+                  top: 50%;
+                  right: 16px;
+                  transform: translate(0, -50%);
+                  font-weight: 400;
+                  font-size: 25px;
+                }
+                .mercari1 {
+                  opacity: 1;
+                  transition: opacity .3s;
+                }
+              }
+            }
+          }
+        }
+      }
+      .mypage-more-info {
+        padding: 16px;
+        &__text {
+          display: block;
+          height: 56px;
+          margin: 0 auto;
+          background: #eee;
+          color: #333;
+          line-height: 56px;
+          text-align: center;
+          font-size: 15px;
+          text-decoration:none;
+        }
+      }
+      .mypage-transaction{
+        height: 382px;
+        margin: 40px 0 0;
+        background: white;
+        &__bay {
+          padding: 0 16px;
+          line-height: 72px;
+          font-size: 16px;
+        }
+        .transaction-content {
+          &__ul {
+          display: block;
+          padding: 0;
+            &__text {
+              padding: 160px 0 60px;
+              background: url("logo-gray.svg");
+              background-repeat: no-repeat;
+              background-position: center 40px;
+              background-size: 78px 85px;
+              text-align: center;
+              font-size: 16px;
+              color: #ccc;
+              list-style: none;
+            }
+          }
+        }
+      }
+    }
+  }
