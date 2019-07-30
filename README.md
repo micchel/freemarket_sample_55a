@@ -56,9 +56,9 @@
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|photo|reference|foreign_key:true, null: false|
+|item_image|reference|foreign_key:true, null: false|
 |category|reference|foreign_key:true, null: false|
-|bland|reference|foreign_key:true|
+|brand|reference|foreign_key:true|
 |name|string|null: false|
 |explain|text|null: false|
 |seller_id|bigint|null: false|
