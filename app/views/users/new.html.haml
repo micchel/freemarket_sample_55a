@@ -1,0 +1,112 @@
+.sign_body
+  .sign_box-header
+    = link_to "",class:'sign_box-header-icon' do
+      = image_tag 'logo',width:"185", height: "49"
+    .progress-bar-box
+      .progress-bar
+        .progress-bar__title
+          会員登録
+        .progress-bar__dot.dot-bar1
+          ●
+          .progress-bar__dot__bar.dot-bar1
+      .progress-bar
+        .progress-bar__title
+          電話番号認証
+        .progress-bar__dot.dot-bar2
+          ●
+          .progress-bar__dot__bar.dot-bar2
+      .progress-bar
+        .progress-bar__title
+          お届け先住所入力
+        .progress-bar__dot.dot-bar3
+          ●
+          .progress-bar__dot__bar.dot-bar3
+      .progress-bar
+        .progress-bar__title
+          支払い方法
+        .progress-bar__dot.dot-bar4
+          ●
+          .progress-bar__dot__bar.dot-bar4
+      .progress-bar
+        .progress-bar__title
+          完了
+        .progress-bar__dot.dot-bar5
+          ●
+
+  .sign_box-center
+    .sign_box-center__content
+      %h2.sign_box-center__content__title 会員情報入力
+      .sign_box-center__content__form
+        .sign_box-center__content__form__in 
+          .sign_box-center__content__form__in__put
+            %label.sign_box-center__content__form__label ニックネーム
+            %span.sign_box-center__content__form__required 必須
+            %input.sign_box-center__content__form__in__put__nick{:placeholder => "例）獣神サンダー・ライガー"}
+          .sign_box-center__content__form__in__put
+            %label.sign_box-center__content__form__label メールアドレス
+            %span.sign_box-center__content__form__required 必須
+            %input.sign_box-center__content__form__in__put__nick{:placeholder => "PC・携帯どちらでも可"}
+          .sign_box-center__content__form__in__put
+            %label.sign_box-center__content__form__label パスワード
+            %span.sign_box-center__content__form__required 必須
+            %input.sign_box-center__content__form__in__put__nick{:placeholder => "6文字以上"}
+          .sign_box-center__content__form__in__put
+            %label.sign_box-center__content__form__label パスワード（確認）
+            %span.sign_box-center__content__form__required 必須
+            %input.sign_box-center__content__form__in__put__nick{:placeholder => "6文字以上"}
+          .sign_box-center__content__form__in__put
+            %h3.Identification 本人確認
+            .sign_box-center__content__form__in__put__text  
+            安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+          .sign_box-center__content__form__in__put
+            %label.sign_box-center__content__form__label お名前（全角）
+            %span.sign_box-center__content__form__required 必須
+            .sign_box-center__content__form__in__put__first-name
+              %input.last-name{:placeholder => "例）中西"}
+              %input.last-name{:placeholder => "例）学"}
+          .sign_box-center__content__form__in__put
+            %label.sign_box-center__content__form__label お名前カナ（全角）
+            %span.sign_box-center__content__form__required 必須
+            .sign_box-center__content__form__in__put__first-name
+              %input.last-name{:placeholder => "例）ナカニシ"}
+              %input.last-name{:placeholder => "例）マナブ"}
+          .sign_box-center__content__form__in__put
+            %label.sign_box-center__content__form__label 生年月日
+            %span.sign_box-center__content__form__required 必須
+            .sign_box-center__content__form__in__put__birthday-select-wrap
+              .select-wrap
+                ーー
+                %i.select-wrap__a
+                  = fa_icon "angle-down"
+              %span.select-wrap-b 年
+              .select-wrap
+                ーー
+                %i.select-wrap__a
+                  = fa_icon "angle-down"
+              %span.select-wrap-b 月
+              .select-wrap
+                ーー
+                %i.select-wrap__a
+                  = fa_icon "angle-down"
+              %span.select-wrap-b 日
+            .selsct
+            ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+        .sign_box-center__content__form__robo
+          .sign_box-center__content__form__in__put
+            = image_tag 'スクリーンショット 2019-07-25 10.35.52.png'
+          .sign_box-center__content__form__in__put
+            「次へ進む」のボタンを押すことにより、
+            = link_to "",class:"sign_box-center__content__form__in__put__link" do
+              利用規約
+            %br に同意したものとみなします
+          .button
+            = link_to "/users/tel",class:"next" do
+              .button-next
+                次へ進む
+          .right
+            = link_to "",class:"right" do
+              .right-r
+                本人情報の登録について
+                %i.right-icon
+                  = fa_icon 'chevron-right'
+  = render "shared/sub-footer"

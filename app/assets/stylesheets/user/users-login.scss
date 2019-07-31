@@ -1,0 +1,121 @@
+.login-body{
+  padding: 0 0 220px;
+  .login-body-center{
+    display: block;
+    &__main{
+      max-width: none;
+      width: 456px;
+      margin: 0 auto;
+      background-color: #fff;
+      &__accunt{
+        padding: 40px 64px;
+        text-align: center;
+        &__text {
+          font-size: 14px;
+        }
+        &__link{
+          display: block;
+          margin: 8px 0 0;
+          border: 1px solid #0099e8;
+          background-color: #0099e8;
+          color: #fff;
+          line-height: 40px;
+          text-decoration: none;
+        }
+      }
+      &__f-g{
+        padding: 32px 64px;
+        border-top: 1px solid #eee;
+        .center-face-links{
+          margin: 0;
+          background: #385185;
+          color: #fff;
+          position: relative;
+          display: block;
+          width: 100%;
+          line-height: 48px;
+          font-size: 14px;
+          border: 1px solid transparent;
+          transition: all ease-out .3s;
+          cursor: pointer;
+          text-align: center;
+          min-height: 1.5em;
+          text-decoration: none;
+          .facebook-icon{
+            display: inline-block;
+            font-style: normal;
+            font-weight: 400;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            position: absolute;
+            top: 50%;
+            left: 16px;
+            transform: translate(0, -50%);
+            font-size: 26px;
+            color: #fff;
+            background: #385185;
+          }
+        }
+        .center-google-links{
+          margin: 16px 0 0;
+          background: #fff url(google.svg) no-repeat 3px top;
+          border: #979797 solid 1px;
+          color: #333;
+          position: relative;
+          display: block;
+          width: 100%;
+          line-height: 48px;
+          font-size: 14px;
+          transition: all ease-out .3s;
+          cursor: pointer;
+          text-align: center;
+          min-height: 1.5em;
+        }
+      }
+      &__form{
+        height: 406px;
+        padding: 24px 64px 32px;
+        .form-text{
+          height: 48px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background-color: #fff;
+          line-height: 1.5px;
+          font-size: 16px;
+          width: 100%;
+          &:nth-child(2){
+            margin: 24px 0 0;
+          }
+          &:nth-child(3){
+            margin: 24px 0 0;
+          }
+        }
+        .robo{
+          width: 328px;
+          height: 78px;
+          margin: 24px 0 0;
+        }
+      }
+    }
+  }
+}
+
+.log-in{
+  width: 328px;
+  height: 50px;
+  margin: 24px 0 0;
+  background-color: #ea352d;
+  color: #fff;
+}
+
+.pass-forget{
+  margin: 40px 0 0;
+  color: #0099e8;
+  &:hover{
+    opacity: 0.5 ;
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,28 @@
+.login-body
+  = render "shared/sub-header"
+  .login-body-center
+    .login-body-center__main
+      .login-body-center__main__accunt
+        %p.login-body-center__main__accunt__text アカウントをお持ちでない方はこちら
+        = link_to "",class:"login-body-center__main__accunt__link" do
+          新規会員登録
+      .login-body-center__main__f-g
+        = link_to 'https://ja-jp.facebook.com/',class:'center-face-links' do
+          = fa_icon "facebook-official", class: "facebook-icon"
+          Facebookでログイン
+        = link_to '',class:'center-google-links' do
+          Googleでログイン
+      .login-body-center__main__form
+        %input.form-text{placeholder: "メールアドレス"}
+        %input.form-text{placeholder: "パスワード"}
+        .robo
+          = image_tag 'スクリーンショット 2019-07-25 10.35.52'
+        %button.log-in
+          = link_to "",class:"log-in" do
+            .log-in-b
+              ログイン
+        .pass-forget
+          = link_to "",class:"pass-forget" do
+            .pass-forget-b
+              パスワードをお忘れの方
+  = render "shared/sub-footer"
