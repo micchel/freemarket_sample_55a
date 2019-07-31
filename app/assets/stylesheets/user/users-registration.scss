@@ -20,17 +20,9 @@
         opacity: 0.5 ;
       }
     }
-    .sign_box-header-bar{
-      // padding: 40px 0 0 44px;
-      display: inline-block;
-      font-weight: 600;
-      color: #ea352d;
-      list-style: none;
-    }
   }
   .sign_box-center{
     display: block;
-    // margin: 0 0 50px;
     &__content{
       width: 700px;
       margin: 0 auto;
@@ -165,15 +157,15 @@
           margin: 0 0 0 16px;
           font-size: 12px;
         }
-          .single-list-footer-link {
-            display: block;
-            color: #333;
-            text-decoration: none;
-            touch-action: manipulation;
-          }
+        .single-list-footer-link {
+          display: block;
+          color: #333;
+          text-decoration: none;
+          touch-action: manipulation;
+        }
       }
     }
-    .single-list__link {
+    &__link {
       display: block;
       color: #333;
       width: 80px;
@@ -182,7 +174,7 @@
       text-decoration: none;
       touch-action: manipulation;
       }
-    .single-list__text {
+    &__text {
       margin: 8px 0 0;
       &__year {
         font-size: 13px;
@@ -226,12 +218,12 @@
       left: 5px;
     }
   }
- }
- .progress-bar-box{
+}
+.progress-bar-box{
   height: 60px;
   box-sizing: border-box;
   display: inline-flex;
   vertical-align: top;
   padding: 40px 0 0 44px;
   font-size: large;
- }
+}
