@@ -1,0 +1,55 @@
+.single-page
+  = render "shared/sub-header"
+  %mail.buy-content
+    %section.buy-container
+      %h2.buy-container__text
+        購入内容の確認
+      %section.buy-container__info
+        .buy-container__info__inner
+          .buy-container__info__inner__text
+            = image_tag 'mercari-item.jpg', class: "buy-container__info__inner__text__image"
+          %p.buy-container__info__inner__name
+            入門React : コンポーネントベースのWebフロントエンド開発
+          %form.buy-item-content
+            %p.buy-item-content__price
+              ¥ 1,200
+              %span.buy-item-content__price__text
+                送料込み
+            .buy-item-content__point
+              .buy-item-content__point__parent
+                .buy-item-content__point__parent__toggle
+                  ポイントを使う
+                  = fa_icon "angle-down", class:"angle-down-icon"
+            %ul.buy-item-praice
+              %li.buy-item-praice__text
+                .buy-item-praice__text__number
+                  支払い金額
+                .buy-item-praice__text__cell
+                  %span.buy-item-praice__text__cell__number
+                    ¥ 1,200
+            %button.buy-item-botton
+              購入する
+      %section.buy-address
+        .buy-address__inner
+          %h3.buy-address__inner__text
+            配送先
+          %address.buy-address__inner__address
+            〒111-111
+            %br
+            名古屋市名古屋町
+            %br
+            水野 水野
+          = link_to '', class: "buy-address__link" do
+            %span.buy-address__link__span
+              変更する
+            = fa_icon "angle-right", class:"angle-right-icon-address"
+      %section.buy-user-info
+        .buy-user-info__inner
+          %h3.buy-user-info__inner__text
+            支払い方法
+          %p.buy-user-info__inner__text1 /
+          = link_to '', class: "buy-user-info__inner__link" do
+            %span.buy-user-info__inner__link__span
+              変更する
+            = fa_icon "angle-right", class:"angle-right-icon-user"
+  = render "shared/sub-footer"
