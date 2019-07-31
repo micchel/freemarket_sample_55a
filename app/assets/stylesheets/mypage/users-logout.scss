@@ -1,0 +1,16 @@
+.logout-content{
+  width: 700px;
+  height: 179px;
+  background-color: #fff;
+  padding: 64px;
+  margin: 0 auto;
+  &__in{
+    background-color: #ea352d;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 320px;
+    height: 50px;
+    line-height: 48px;
+    color: #fff;
+  }
+}
