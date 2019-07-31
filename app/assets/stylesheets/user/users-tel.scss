@@ -1,0 +1,79 @@
+.tel-body{
+  padding: 0 0 220px;
+  &__header{
+    height: 128px;
+    text-align: center;
+    &__icon{
+      margin: 40px 0 0;
+      height: 49px;
+      width: 185px;
+      display: inline-block;
+      &:hover{
+        opacity: 0.5 ;
+      }
+    }
+  }
+  &__center{
+    display: block;
+    &__upper{
+      width: 700px;
+      margin: 0 auto;
+      background-color: #fff;
+      &__check{
+        font-size: 22px;
+        padding: 32px;
+        text-align: center;
+      }
+    }
+    &__under{
+      padding: 24px 16px 40px;
+      border-top: 1px solid #ccc;
+      height: 376px;
+      &__main{
+        padding: 24px 16px 40px;
+        &__form{
+          height: 70px;
+          width: 343px;
+          margin: 0 160px 0;
+          &__label{
+            font-weight: 600;
+          }
+          &__input{
+            width: 100%;
+            margin: 8px 0 0;
+            height: 48px;
+            padding: 10px 16px 8px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            font-size: 16px;
+            border-radius: 4px;
+          }
+          &__sms{
+            margin: 24px 0 0;
+            background-color: #ea352d;
+            border: 1px solid #ea352d;
+            color: #fff;
+            width: 100%;
+            font-size: 14px;
+            text-align: center;
+            height: 50px;
+          }
+          &__in{
+            margin: 8px 0 0;
+            line-height: 1.5;
+          }
+          &__right{
+            text-align: right;
+            margin: 24px 0 0;
+            color: #0099e8;
+          }
+        }
+      }
+    }
+  }
+  @include sub-footer();
+}
+
+.right-t{
+  color: #0099e8;
+}
