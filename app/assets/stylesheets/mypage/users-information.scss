@@ -1,0 +1,55 @@
+.infomation{
+  .infomation-font{
+    margin: 8px 0 0;
+    line-height: 1.5;
+  }
+  .info-right{
+    text-align: right;
+    .infomation-link{
+      color: #0099e8;
+      text-decoration: none;
+      &:hover{
+        text-decoration: underline;
+        text-decoration-color:  #0099e8;
+        opacity: 0.8;
+      }
+    }
+  }
+}
+.from-group{
+  margin: 40px 0 0;
+  .infomation-name{
+    font-weight: 600;
+    display: inline-block;
+  }
+  .infomation-text{
+    margin: 8px 0 0;
+    line-height: 1.5;
+  }
+  .infomation-good{
+    background: #ccc;
+    margin: 0 0 0 8px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 12px;
+    vertical-align: top;
+  }
+  .input-default{
+    width: 100%;
+    margin: 8px 0 0;
+    height: 48px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+  }
+  .btn-red{
+    margin: 40px 0 0 0;
+    background: #ea352d;
+    border: 1px solid #ea352d;
+    color: #fff;
+    cursor: pointer;
+  }
+}
