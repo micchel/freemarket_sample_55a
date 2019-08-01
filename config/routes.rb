@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   
   resources :mypage, only: :index do
     collection do
-      # get "/", to: "mypage#top"
       get "profile", to: "mypage#profile"
       get "card", to: "mypage#card"
       get "information", to: "mypage#information"
