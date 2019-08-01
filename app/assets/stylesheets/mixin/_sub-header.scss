@@ -1,0 +1,22 @@
+@mixin sub-header() {
+  .single-header {
+    height: 128px;
+    text-align: center;
+    &__mercari-icon{
+      display: inline-block;
+      margin: 40px 0 0;
+      &__link {
+        width: 185px;
+        height: 49px;
+        line-height: 49px;
+        display: inline-block;
+        margin: 0 8px 0 0;
+        &__image {
+          width: 185px;
+          height: 49px;
+          vertical-align: middle
+        }
+      }
+    }
+  }
+}
