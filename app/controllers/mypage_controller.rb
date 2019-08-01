@@ -1,6 +1,6 @@
 class MypageController < ApplicationController
 
-  def top
+  def index
   end
 
   def profile
