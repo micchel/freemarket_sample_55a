@@ -2,12 +2,35 @@
 
   .main-top{
     display: block;
-    .carousel-top{
+    .carousel-top {
       height :390px;
       overflow: hidden;
-      background-image: url("banner-camp.jpg");
       background-position: center;
       background-size: cover;
+      .arrow-left {
+        float: left;
+        color: #fff;
+        display: block;
+        height: 46px;
+        width: 31px;
+        position: absolute;
+        top: 40%;
+        font-size: 70px;
+        z-index: 1000;
+        padding: 0 0 0 50px;
+      }
+      .arrow-right {
+        float: right;
+        color: #fff;
+        display: block;
+        font-size: 70px;
+        z-index: 1000;
+        height: 46px;
+        width: 31px;
+        position: relative;
+        top: -60%;
+        padding: 0 50px 0 0;
+      }
      }
     .main-pick{
       padding: 40px 0;
