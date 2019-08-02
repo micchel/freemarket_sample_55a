@@ -75,7 +75,7 @@
 - has_many :comments, dependent: :destroy
 - has_many :item_images, dependent: :destroy
 - belongs_to :category
-- belongs_to :bland
+- belongs_to :brand
 
 # item_imagesテーブル
 |Column|Type|Options|
