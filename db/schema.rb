@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_02_095939) do
+ActiveRecord::Schema.define(version: 2019_08_02_103501) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -46,6 +46,18 @@ ActiveRecord::Schema.define(version: 2019_08_02_095939) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "residences", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "zip_code", null: false
+    t.integer "prefecture_id"
+    t.string "city", null: false
+    t.string "address"
+    t.string "detail"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_residences_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "nickname", null: false
@@ -67,4 +79,5 @@ ActiveRecord::Schema.define(version: 2019_08_02_095939) do
   end
 
   add_foreign_key "item_images", "items"
+  add_foreign_key "residences", "users"
 end
