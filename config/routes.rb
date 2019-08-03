@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   root to: "items#index"
-  
+
   resources :mypage, only: :index do
     collection do
       get "profile", to: "mypage#profile"
@@ -19,4 +19,13 @@ Rails.application.routes.draw do
       get "transaction/buy/:id", to: "items#buy_confirm"
     end
   end
-end
+  resources :signup do
+    collection do
+      get 'index'
+      get 'new'
+      get 'tel'
+      get 'address'
+      get 'done'
+      end
+    end
+  end
