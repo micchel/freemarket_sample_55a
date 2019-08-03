@@ -10,7 +10,7 @@
           .sell-inner
             %h2.sell-inner__description
               商品の情報を入力
-            .sell-form
+            = form_with model: @item, class:"sell-form" do |f|
               .sell-form__upload-box
                 %h3.sell-form__upload-box__head
                   出品画像
@@ -45,16 +45,16 @@
                 %h3.sell-form__content__head
                   商品の詳細
                 .sell-form__content__box
-                  .sell-form__content__box__group--first
+                  .sell-form__content__box__group--first#categories
                     .sell-form__content__box__group__name
                       カテゴリー
                       %span.sell-form__content__box__group__name__require
                         必須
                     .sell-form__content__box__group__select
                       = fa_icon 'chevron-down', class:"arrow-bottom"
-                      .sell-form__content__box__group__select__wrap
-                        .sell-form__content__box__group__select__wrap__line ---
-                  .sell-form__content__box__group
+                      = f.collection_select :category_id, @parents, :id, :name, {prompt: "---"}, class: "sell-form__content__box__group__select__wrap", id: "parent-form", name: "item[category_id]"
+                      = f.hidden_field :category_id, id:"cate_id", value:"10000"
+                  .sell-form__content__box__group.no_display__size
                     .sell-form__content__box__group__name
                       サイズ
                       %span.sell-form__content__box__group__name__require
@@ -63,7 +63,7 @@
                       = fa_icon 'chevron-down', class:"arrow-bottom"
                       .sell-form__content__box__group__select__wrap
                         .sell-form__content__box__group__select__wrap__line ---
-                  .sell-form__content__box__group
+                  .sell-form__content__box__group.no_display__brand
                     .sell-form__content__box__group__name
                       ブランド
                       %span.sell-form__content__box__group__name__require--arbitrary
