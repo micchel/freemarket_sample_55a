@@ -17,4 +17,7 @@ class MypageController < ApplicationController
 
   def list
   end
+
+  def edit
+  end
 end
