@@ -19,7 +19,6 @@ $(function() {
     </div>`
     cate_select.append(html)
   }
-  console.log("append_select");
 
   function appendCate(cateOption, cateNum) {
     if (cateNum == 1) {
@@ -33,11 +32,9 @@ $(function() {
         .text($(cateOption).attr('name'))
     )
   }
-  console.log("append_cate");
 
   $("#parent-form").on("change",function() {
     var parentValue = $(this).val();
-    console.log("get_parent_value");
     $("#child-container, #grandchild-container").remove();
     $.ajax({
       url: "/items/select",
@@ -48,7 +45,6 @@ $(function() {
       dataType: "json"
     })
     .done(function(children) {
-      console.log(children);
       var cateNum = 1
       appendSelect(cateNum);
       children.forEach(function(child) {
@@ -59,7 +55,6 @@ $(function() {
 
   $(document).on("change", "#child-form", function() {
     var childValue = $(this).val();
-    console.log("get_child_value");
     $("#grandchild-container").remove()
     $.ajax({
       url: "/items/select",
@@ -70,7 +65,6 @@ $(function() {
       dataType: "json"
     })
     .done(function(grandChildren) {
-      console.log(grandChildren);
       if (grandChildren.length != 0) {
         var cateNum = 2
         appendSelect(cateNum);
@@ -86,7 +80,6 @@ $(function() {
 
   $(document).on("change", "#grandchild-form", function() {
     var grandValue = $(this).val();
-    console.log("get_grand_value");
     $.ajax({
       url: "/items/select_grand",
       type: "GET",
@@ -96,7 +89,6 @@ $(function() {
       dataType: "json"
     })
     .done(function(grandInfo) {
-      console.log(grandInfo);
       $("#cate_id").val(grandInfo.id);
       $(".sell-form__content__box__group").removeClass("no_display__size no_display__brand");
     })
