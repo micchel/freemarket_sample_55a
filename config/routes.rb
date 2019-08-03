@@ -11,9 +11,10 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :items, only: [:new,:show] do
+  resources :items, only: [:new,:create,:show] do
     collection do
-      get "sell", to: "items#sell"
+      get "select", to: "items#select"
+      get "select_grand", to: "items#select_grand"
       get "sell/edit/:id", to: "items#edit_item"
       get "transaction/buy/:id", to: "items#buy_confirm"
     end
