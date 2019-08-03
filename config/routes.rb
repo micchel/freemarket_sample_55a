@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       get "card", to: "mypage#card"
       get "information", to: "mypage#information"
       get "logout", to: "mypage#logout"
+      get "list", to: "mypage#list"
     end
   end
 
