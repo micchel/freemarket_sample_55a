@@ -1,0 +1,133 @@
+
+= render "shared/main-header"
+.edit-main-box
+  .edit-main
+    %section.edit-box
+      %h1.item-name
+        俺のヘルメット
+      .item-main
+        .item-main__photo
+          .item-main__photo__big
+            = image_tag "diving-helmet.png", class:"item-main__photo__big__image", size:"300x300"
+          .item-main__photo__small
+            .item-main__photo__small__inner--active
+              = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
+            .item-main__photo__small__inner
+              = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
+            .item-main__photo__small__inner
+              = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
+            .item-main__photo__small__inner
+              = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
+            .item-main__photo__small__inner
+              = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
+            .item-main__photo__small__inner
+              = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
+            .item-main__photo__small__inner
+              = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
+            .item-main__photo__small__inner
+              = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
+            .item-main__photo__small__inner
+              = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
+            .item-main__photo__small__inner
+              = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
+        .item-main__sold-out
+          .item-main__sold-out__budge
+        %table.item-main__detail
+          %tbody.item-main__detail__table
+            %tr.item-main__detail__table__point
+              %th.item-main__detail__table__point__head
+                出品者
+              %td.item-main__detail__table__point__body
+                = link_to "", class:"item-main__detail__table__point__body__link" do
+                  俺やで
+            %tr.item-main__detail__table__point
+              %th.item-main__detail__table__point__head
+                カテゴリー
+              %td.item-main__detail__table__point__body
+                = link_to "", class:"item-main__detail__table__point__body__link" do
+                  .item-main__detail__table__point__body__link__figure
+                    メンズ
+                = link_to "", class:"item-main__detail__table__point__body__link" do
+                  .item-main__detail__table__point__body__link__box
+                    = fa_icon "chevron-right", class:"bread-crumbs__list__point__body__link__box__arrow"
+                    トップス
+                = link_to "", class:"item-main__detail__table__point__body__link" do
+                  .item-main__detail__table__point__body__link__box
+                    = fa_icon "chevron-right", class:"bread-crumbs__list__point__body__link__box__arrow"
+                    ダイビングヘルメット
+            %tr.item-main__detail__table__point
+              %th.item-main__detail__table__point__head
+                ブランド
+              %td.item-main__detail__table__point__body
+                = link_to "", class:"item-main__detail__table__point__body__link" do
+                  フンババ
+            %tr.item-main__detail__table__point
+              %th.item-main__detail__table__point__head
+                商品のサイズ
+              %td.item-main__detail__table__point__body
+                XXL
+            %tr.item-main__detail__table__point
+              %th.item-main__detail__table__point__head
+                商品の状態
+              %td.item-main__detail__table__point__body
+                目立った傷や汚れなし
+            %tr.item-main__detail__table__point
+              %th.item-main__detail__table__point__head
+                配送料の負担
+              %td.item-main__detail__table__point__body
+                送料込み(出品者負担)
+            %tr.item-main__detail__table__point
+              %th.item-main__detail__table__point__head
+                配送料の方法
+              %td.item-main__detail__table__point__body
+                未定
+            %tr.item-main__detail__table__point
+              %th.item-main__detail__table__point__head
+                配送元地域
+              %td.item-main__detail__table__point__body
+                = link_to "", class:"item-main__detail__table__point__body__link" do
+                  東京都
+            %tr.item-main__detail__table__point
+              %th.item-main__detail__table__point__head
+                発送日の目安
+              %td.item-main__detail__table__point__body
+                1~2日で発送
+      .item-price
+        %span.item-price__figure
+          ¥ 80,000
+        %span.item-price__tax
+          (税込)
+        %span.item-price__shipping
+          送料込み
+      .edit-show
+        %p.edit-show__font
+          BORN FREE 花柄長袖シャツ
+          送料無料
+          サイズ:M　カラー:ライトグリーン
+          素材:綿100%
+          使用回数:3回程
+          着丈:68cm
+          肩幅:40cm
+          身幅:48cm
+          袖丈:60cm
+          サイズの多少の誤差はご理解くださいますようお願いしますm(__)m
+          若干の使用感はありますがまだまだ着られる状態です！
+    .edit-button
+      = link_to "", class: 'edit-btn' do
+        商品の編集
+      %p.edit-or
+        or
+      %form.edit-stop
+        出品を一旦停止する
+      %button.edit-stop
+        この商品削除する
+    .edit-message
+      .edit-message__box
+        .edit-content
+          %input.edit-content__in
+          %p.edit-content__stop
+            相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          %textarea.edit-content__come
+          %button.edit-content__btn
+            コメント
+= render "shared/main-footer"
