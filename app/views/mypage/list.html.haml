@@ -23,7 +23,7 @@
       .list-content
         %ul.list-item
           %li.box-my-item
-            = link_to "/mypage/:id/edit", class: 'box-my-item__link' do
+            = link_to edit_mypage_path(:id), class: 'box-my-item__link' do
               %figure.image-box
                 =image_tag "spo1711060026-p2.jpg", class:'image-box__tag'
               .font-box

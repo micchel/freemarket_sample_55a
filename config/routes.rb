@@ -14,7 +14,6 @@ Rails.application.routes.draw do
 
   resources :items, only: [:new,:show] do
     collection do
-      get "sell", to: "items#sell"
       get "sell/edit/:id", to: "items#edit_item"
       get "transaction/buy/:id", to: "items#buy_confirm"
     end
