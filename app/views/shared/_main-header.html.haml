@@ -2,7 +2,7 @@
 -#   .top-heder__inner
 -#     .top-heder__inner__box
 -#       .top-heder__inner__box__merukari
--#         = link_to "", class:"top-heder__inner__box__merukari__link" do
+-#         = link_to root_path, class:"top-heder__inner__box__merukari__link" do
 -#           = image_tag 'logo.svg' , class: '.top-heder__inner__box__merukari__link__box'
 -#       .top-heder__inner__box__form
 -#         %input{placeholder:'何かお探しですか？', type:'search', class:'top-heder__inner__box__form__input'}
@@ -28,7 +28,7 @@
   .top-heder__inner
     .top-heder__inner__box
       .top-heder__inner__box__merukari
-        = link_to "", class:"top-heder__inner__box__merukari__link" do
+        = link_to root_path, class:"top-heder__inner__box__merukari__link" do
           = image_tag 'logo.svg' , class: '.top-heder__inner__box__merukari__link__box'
       .top-heder__inner__box__form
         %input{placeholder:'何かお探しですか？', type:'search', class:'top-heder__inner__box__form__input'}
@@ -55,6 +55,6 @@
           = link_to "", class:"top-heder__inner__link__right__box__good" do
             = fa_icon 'check', class:"top-heder__inner__link__right__box__good__icon icon-heart" 
             やることリスト
-          = link_to "", class:"top-heder__inner__link__right__box__good" do
+          = link_to "mypage", class:"top-heder__inner__link__right__box__good" do
             = image_tag 'member_photo.png', class:"top-heder__inner__link__right__box__good__icon icon-heart"
             マイページ
