@@ -72,7 +72,6 @@ $(function() {
           appendCate(grandChild, cateNum)
         })
       } else {
-        $(".sell-form__content__box__group").removeClass("no_display__brand");
         $("#grandchild-container").remove();
       }
     })
@@ -90,7 +89,6 @@ $(function() {
     })
     .done(function(grandInfo) {
       $("#cate_id").val(grandInfo.id);
-      $(".sell-form__content__box__group").removeClass("no_display__size no_display__brand");
     })
   })
 })
