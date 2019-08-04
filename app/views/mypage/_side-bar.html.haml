@@ -2,7 +2,7 @@
   %nav.maypage-menu
     %ul.mypage-menu__list
       %li.mypage-menu__list__lists
-        = link_to '/mypage',class: "mypage-menu__list__lists__item" do
+        = link_to mypage_index_path,class: "mypage-menu__list__lists__item" do
           マイページ
           = fa_icon "angle-right", class: "angle-icon"
       %li.mypage-menu__list__lists
@@ -18,11 +18,11 @@
           いいね一覧リスト
           = fa_icon "angle-right", class: "angle-icon"
       %li.mypage-menu__list__lists
-        = link_to '/items/sell/edit/:id', class:"mypage-menu__list__lists__item" do
+        = link_to new_item_path, class:"mypage-menu__list__lists__item" do
           出品する
           = fa_icon "angle-right", class: "angle-icon"
       %li.mypage-menu__list__lists
-        = link_to '/mypage/list', class:"mypage-menu__list__lists__item" do
+        = link_to list_mypage_index_path, class:"mypage-menu__list__lists__item" do
           出品した商品 - 出品中
           = fa_icon "angle-right", class: "angle-icon"
       %li.mypage-menu__list__lists
@@ -74,7 +74,7 @@
       設定
     %ul.mypage-menu__list
       %li.mypage-menu__list__lists
-        = link_to '/mypage/profile', class:"mypage-menu__list__lists__item" do
+        = link_to profile_mypage_index_path, class:"mypage-menu__list__lists__item" do
           プロフィール
           = fa_icon "angle-right", class: "angle-icon"
       %li.mypage-menu__list__lists
@@ -82,7 +82,7 @@
           発送元・お届け先住所変更
           = fa_icon "angle-right", class: "angle-icon"
       %li.mypage-menu__list__lists
-        = link_to '/mypage/card', class:"mypage-menu__list__lists__item" do
+        = link_to card_mypage_index_path, class:"mypage-menu__list__lists__item" do
           支払い方法
           = fa_icon "angle-right", class: "angle-icon"
       %li.mypage-menu__list__lists
@@ -90,7 +90,7 @@
           メール/パスワード
           = fa_icon "angle-right", class: "angle-icon"
       %li.mypage-menu__list__lists
-        = link_to '/mypage/information', class:"mypage-menu__list__lists__item" do
+        = link_to information_mypage_index_path, class:"mypage-menu__list__lists__item" do
           本人情報
           = fa_icon "angle-right", class: "angle-icon"
       %li.mypage-menu__list__lists
@@ -98,6 +98,6 @@
           電話番号の確認
           = fa_icon "angle-right", class: "angle-icon"
       %li.mypage-menu__list__lists
-        = link_to '/mypage/logout', class:"mypage-menu__list__lists__item" do
+        = link_to logout_mypage_index_path, class:"mypage-menu__list__lists__item" do
           ログアウト
           = fa_icon "angle-right", class: "angle-icon"
