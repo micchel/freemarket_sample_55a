@@ -38,10 +38,10 @@ ActiveRecord::Schema.define(version: 2019_08_01_130616) do
     t.bigint "seller_id", null: false
     t.bigint "buyer_id"
     t.integer "status", null: false
-    t.string "delivery_cost", null: false
-    t.string "delivery_way", null: false
-    t.string "delivery_prefecture", null: false
-    t.string "delivery_date", null: false
+    t.integer "delivery_cost", null: false
+    t.integer "delivery_way", null: false
+    t.integer "delivery_prefecture", null: false
+    t.integer "delivery_date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
