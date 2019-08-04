@@ -1,21 +1,7 @@
 = render "shared/main-header"
+- breadcrumb :profile
+= render "shared/breadcrumbs"
 .default-mypage
-  %nav.header-next
-    %ul.header-next__next
-      %li.header-next__next__list
-        = link_to '',class:"header-next__next__list__link" do
-          %span
-          メルカリ
-          = fa_icon "angle-right", class: "angle-icon-header"
-      %li.header-next__next__list
-        = link_to '',class:"header-next__next__list__link7" do
-          %span
-          マイページ
-          = fa_icon "angle-right", class: "angle-icon-header"
-      %li.header-next__next__list
-        = link_to '',class:"header-next__next__list__link__action" do
-          %span
-          プロフィール
   %main.mypage.cleafix
     = render 'side-bar'
     .profile-content

@@ -1,15 +1,6 @@
 = render 'shared/main-header'
-%nav.header-next
-  %ul.header-next__next
-    %li.header-next__next__list
-      = link_to '',class:"header-next__next__list__link" do
-        %span
-        メルカリ
-        = fa_icon "angle-right", class: "angle-icon-header"
-    %li.header-next__next__list
-      = link_to '',class:"header-next__next__list__link__action" do
-        %span
-        マイページ
+- breadcrumb :information
+= render "shared/breadcrumbs"
 %main.card-main
   = render 'side-bar'
   .card
