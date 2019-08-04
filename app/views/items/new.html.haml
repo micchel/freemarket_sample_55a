@@ -17,7 +17,7 @@
                   %span.sell-form__upload-box__head__require
                     必須
                 %p.sell-form__upload-box__explain
-                  最大10枚までアップロードできます
+                  最大5枚までアップロードできます
                 .sell-form__upload-box__dropbox
                   .sell-form__upload-box__dropbox__container
                     .sell-form__upload-box__dropbox__container__list
@@ -32,15 +32,13 @@
                     商品名
                     %span.sell-form__content__group__name__require
                       必須
-                  .sell-form__content__group__input
-                    商品名（必須 40文字まで）
+                  = f.text_field :name, class: "sell-form__content__group__input", placeholder: "商品名（必須 40文字まで）"
                 .sell-form__content__group
                   .sell-form__content__group__name
                     商品の説明
                     %span.sell-form__content__group__name__require
                       必須
-                  .sell-form__content__group__text
-                    商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。
+                  = f.text_area :explain, class: "sell-form__content__group__text", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
               .sell-form__content--non-first
                 %h3.sell-form__content__head
                   商品の詳細
@@ -53,7 +51,7 @@
                     .sell-form__content__box__group__select
                       = fa_icon 'chevron-down', class:"arrow-bottom"
                       = f.collection_select :category_id, @parents, :id, :name, {prompt: "---"}, class: "sell-form__content__box__group__select__wrap", id: "parent-form", name: "item[category_id]"
-                      = f.hidden_field :category_id, id:"cate_id", value:"10000"
+                      = f.hidden_field :category_id, id:"cate_id", value:""
                   -# 時間があればサイズとブランドも実装します
                   -# .sell-form__content__box__group.attach_class.no_display__size
                   -#   .sell-form__content__box__group__name
@@ -79,7 +77,7 @@
                         必須
                     .sell-form__content__box__group__select
                       = fa_icon 'chevron-down', class:"arrow-bottom"
-                      = f.select :status, options_for_select(Item.statuses), {prompt: "---"}, class: "sell-form__content__box__group__select__wrap"
+                      = f.select :sex_type, Item.statuses_i18n.keys.map { |k| [Item.statuses_i18n[k], k]} , {prompt: "---"} ,class: "sell-form__content__box__group__select__wrap"
               .sell-form__content--non-first
                 %h3.sell-form__content__head
                   配送について
@@ -93,7 +91,15 @@
                         必須
                     .sell-form__content__box__group__select
                       = fa_icon 'chevron-down', class:"arrow-bottom"
-                      = f.select :delivery_cost, options_for_select(Item.delivery_costs), {prompt: "---"}, class: "sell-form__content__box__group__select__wrap"
+                      = f.select :delivery_cost, Item.delivery_costs_i18n.keys.map { |k| [Item.delivery_costs_i18n[k], k]}, {prompt: "---"}, class: "sell-form__content__box__group__select__wrap"
+                  .sell-form__content__box__group
+                    .sell-form__content__box__group__name
+                      配送の方法
+                      %span.sell-form__content__box__group__name__require
+                        必須
+                    .sell-form__content__box__group__select
+                      = fa_icon 'chevron-down', class:"arrow-bottom"
+                      = f.select :delivery_way, Item.delivery_ways_i18n.keys.map { |k| [Item.delivery_ways_i18n[k], k]}, {prompt: "---"}, class:"sell-form__content__box__group__select__wrap"
                   .sell-form__content__box__group
                     .sell-form__content__box__group__name
                       発送元の地域
@@ -101,7 +107,7 @@
                         必須
                     .sell-form__content__box__group__select
                       = fa_icon 'chevron-down', class:"arrow-bottom"
-                      = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "---"}, class:"sell-form__content__box__group__select__wrap"
+                      = f.collection_select :delivery_prefecture, Prefecture.all, :id, :name, {prompt: "---"}, class:"sell-form__content__box__group__select__wrap"
                   .sell-form__content__box__group
                     .sell-form__content__box__group__name
                       発送までの日数
@@ -109,7 +115,7 @@
                         必須
                     .sell-form__content__box__group__select
                       = fa_icon 'chevron-down', class:"arrow-bottom"
-                      = f.select :delivery_date, options_for_select(Item.delivery_dates), {prompt: "---"}, class: "sell-form__content__box__group__select__wrap"
+                      = f.select :delivery_date, Item.delivery_dates_i18n.keys.map { |k| [Item.delivery_dates_i18n[k], k]}, {prompt: "---"}, class: "sell-form__content__box__group__select__wrap"
               .sell-form__content--non-first
                 %h3.sell-form__content__head
                   販売価格(300~9,999,999)
@@ -126,8 +132,7 @@
                         .sell-form__content__box__price__group__clearfix__input-box
                           .sell-form__content__box__price__group__clearfix__input-box__yen
                             ¥
-                          .sell-form__content__box__price__group__clearfix__input-box__frame
-                            例）300
+                          = f.text_field :price, class: "sell-form__content__box__price__group__clearfix__input-box__frame", placeholder: "例）300"
                     %li.sell-form__content__box__price__clearfix
                       .sell-form__content__box__price__clearfix__name
                         販売手数料（10%）
