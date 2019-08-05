@@ -15,29 +15,18 @@
       俺のヘルメット
     .item-main
       .item-main__photo
-        .item-main__photo__big
-          = image_tag "diving-helmet.png", class:"item-main__photo__big__image", size:"300x300"
-        .item-main__photo__small
-          .item-main__photo__small__inner--active
-            = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
-          .item-main__photo__small__inner
-            = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
-          .item-main__photo__small__inner
-            = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
-          .item-main__photo__small__inner
-            = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
-          .item-main__photo__small__inner
-            = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
-          .item-main__photo__small__inner
-            = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
-          .item-main__photo__small__inner
-            = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
-          .item-main__photo__small__inner
-            = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
-          .item-main__photo__small__inner
-            = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
-          .item-main__photo__small__inner
-            = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
+        .slick
+          .slick-items= image_tag "diving-helmet.png",width:"300", height: "300"
+          .slick-items= image_tag "diving-helmet.png",width:"300", height: "300"
+          .slick-items= image_tag "diving-helmet.png",width:"300", height: "300"
+          .slick-items= image_tag "diving-helmet.png",width:"300", height: "300"
+          .slick-items= image_tag "diving-helmet.png",width:"300", height: "300"
+        .thumbnail
+          .thumbnail-items= image_tag "diving-helmet.png",width:"60", height: "60"
+          .thumbnail-items= image_tag "diving-helmet.png",width:"60", height: "60"
+          .thumbnail-items= image_tag "diving-helmet.png",width:"60", height: "60"
+          .thumbnail-items= image_tag "diving-helmet.png",width:"60", height: "60"
+          .thumbnail-items= image_tag "diving-helmet.png",width:"60", height: "60"
       -# .item-main__sold-out
       -#   .item-main__sold-out__budge
       -#     SOLD
