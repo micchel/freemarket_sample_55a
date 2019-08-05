@@ -19,5 +19,5 @@ class Item < ApplicationRecord
   validates :delivery_way, presence: true
   validates :delivery_prefecture, presence: true
   validates :delivery_date, presence: true
-  validates :price, presence: true, inclusion: { in: (300..10000)}
+  validates :price, presence: true, inclusion: { in: (300..9999999)}
 end
