@@ -1,0 +1,35 @@
+ja:
+  activerecord:
+    models:
+      item: 商品情報
+    attributes:
+      item:
+        status: 商品の状態
+        delivery_cost: 配送料の負担
+        delivery_date: 発送までの日数
+  enums:
+    item:
+      status:
+        new_thing: 新品、未使用
+        near_unused: 未使用に近い
+        no_damage: 目立った傷や汚れなし
+        little_damage: やや傷や汚れあり
+        damage: 傷や汚れあり
+        bad_thing: 全体的に状態が悪い
+      delivery_cost:
+        postage_included: 送料込み(出品者負担)
+        cash_on_delivery: 着払い(購入者負担)
+      delivery_way:
+        undecided: 未定
+        mercari_bin: らくらくメルカリ便
+        yu_mail: ゆうメール
+        letter_pack: レターパック
+        regular_mail: 普通郵便(定形、定形外)
+        kuroneko: クロネコヤマト
+        yu_pack: ゆうパック
+        click_post: クリックポスト
+        yu_packet: ゆうパケット
+      delivery_date:
+        ship_in_1to2days: 1~2日で発送
+        ship_in_2to3days: 2~3日で発送
+        ship_in_4to7days: 4~7日で発送
