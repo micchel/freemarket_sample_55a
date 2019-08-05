@@ -2,13 +2,14 @@ Rails.application.routes.draw do
 
   root to: "items#index"
   
-  resources :mypage, only: [:index,:edit]do
+  resources :mypage, only: [:index,:edit,:destroy]do
     collection do
       get "profile", to: "mypage#profile"
       get "card", to: "mypage#card"
       get "information", to: "mypage#information"
       get "logout", to: "mypage#logout"
       get "list", to: "mypage#list"
+      
     end
   end
 
