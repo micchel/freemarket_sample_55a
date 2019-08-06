@@ -2,8 +2,8 @@
   = render "shared/main-header"
   .main-top
     .carousel-top
-      = image_tag 'banner-camp.jpg'
-      = image_tag 'main_bg_pc.jpg'
+      .carousel-top-top= image_tag 'banner-camp.jpg',width:"100%", height: "400"
+      .carousel-top-top= image_tag 'main_bg_pc.jpg',width:"100%", height: "400"
     .main-pick
       %h2.main-head
         ピックアップカテゴリー
@@ -12,7 +12,7 @@
           =link_to "", class: 'main-box__font__name' do
             新着アイテム
         .items-box
-          =link_to "", class: 'items-box__link' do
+          =link_to item_path(:id), class: 'items-box__link' do
             .items-photo
               =image_tag "spo1711060026-p2.jpg", class:'items-photo__size'
             .items-body

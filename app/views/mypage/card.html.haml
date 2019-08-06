@@ -1,4 +1,6 @@
 = render 'shared/main-header'
+- breadcrumb :card
+= render "shared/breadcrumbs"
 %nav.header-next
   %ul.header-next__next
     %li.header-next__next__list
@@ -26,7 +28,7 @@
               =link_to '', class: 'card-link' do
                 =fa_icon 'credit-card', class: 'card-link__icon'
                 クレジットカードを追加する
-              // TODO クレカ登録後のビューを以下に残す
+              -#   TODO クレカ登録後のビューを以下に残す
               -# = image_tag 'visa.svg', class: "card-content__img"
               -# .card-num
               -#   ************6409
