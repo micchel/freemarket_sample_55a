@@ -62,6 +62,14 @@
             margin: 8px 0 0;
             line-height: 1.5;
           }
+          .btn-red{
+            background-color: #ea352d;
+            color: #fff;
+            text-align: center;
+            line-height: 48px;
+            margin: 30px auto;
+            width: 100%;
+          }
           &__right{
             text-align: right;
             margin: 24px 0 0;
@@ -72,6 +80,42 @@
     }
   }
   @include sub-footer();
+  .progress-bar-box{
+    height: 60px;
+    box-sizing: border-box;
+    display: inline-flex;
+    vertical-align: top;
+    padding: 40px 0 0 44px;
+    font-size: large;
+    .progress-bar{
+      color: #ccc;
+      width: 100px;
+      height:  32px;
+      box-sizing: border-box;
+      &:nth-child(2){
+        color: #ea352d;
+      }
+      &__title{
+        font-size: 12px;
+        font-weight: 600;
+        width:100px;
+        text-align: center;
+      }
+      &__dot{
+        width: 12px;
+        margin: auto;
+        font-size: x-large;
+        &__bar{
+          background-color: #ccc;
+          width: 100px;
+          height: 2px;
+          position: relative;
+          bottom: 10px;
+          left: 5px;
+        }
+      }
+    }
+  }
 }
 
 .right-t{

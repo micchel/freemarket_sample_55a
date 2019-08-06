@@ -1,0 +1,17 @@
+.done_signup_index.done-body
+  .done-body-header
+    = link_to "",class:'done-body-header-icon' do
+      = image_tag 'logo',width:"185", height: "49"
+    = render 'shared/signup-header'
+  .done-body__center
+    .done-body__center__upper
+      %h2.done-body__center__upper__end 会員登録完了
+    .done-body__center__under
+      .done-body__center__under__end ありがとうございます。
+      .done-body__center__under__end 会員登録が完了しました。
+      %button.done-body-button
+        = link_to "",class:"done-body-button" do
+          .done-body-button-go
+            メルカリをはじめる
+  .done-body__footer
+    =render "shared/sub-footer"
