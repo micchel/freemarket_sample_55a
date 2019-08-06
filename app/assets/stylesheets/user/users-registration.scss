@@ -20,10 +20,17 @@
         opacity: 0.5 ;
       }
     }
+    .sign_box-header-bar{
+      // padding: 40px 0 0 44px;
+      display: inline-block;
+      font-weight: 600;
+      color: #ea352d;
+      list-style: none;
+    }
   }
-  .sign_box-center{
+  .sign_box{
     display: block;
-    &__content{
+    .sign-center{
       width: 700px;
       margin: 0 auto;
       background-color: #fff;
@@ -37,24 +44,24 @@
         height: 1163px;
         padding: 24px 16px 40px;
         border-top: 1px solid #f5f5f5;
-        &__label{
-          font-weight: 600;
-        }
-        &__required{
-          background-color: #ea352d;
-          color: #fff;
-          margin: 0 0 0 8px;
-          padding: 2px 4px;
-          border-radius: 2px;
-          vertical-align: top;
-        }
-        &__in{
+        .sign-form{
           max-width: 343px;
           margin: 0 auto;
           height: 795px;
           &__put{
             height: 70px;
             margin: 24px 0 0 ;
+            &__label{
+              font-weight: 600;
+            }
+            &__required{
+              background-color: #ea352d;
+              color: #fff;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              vertical-align: top;
+            }
             &__nick{
               width: 343px;
               height: 48px;
@@ -86,42 +93,32 @@
               width: 343px;
               height: 48px;
               display: flex;
-              .select-wrap{
                 width: 76px;
                 height: 48px;
                 margin: 8px 10px 0 0;
-                border: 1px solid #ccc;
+                // border: 1px solid #ccc;
                 background: #fff;
                 line-height: 3;
                 font-size: 16px;
                 border-radius: 4px;
-                padding-left: 5px;
-                &__a{
-                  margin: 20px;
-                }
-              }
-              .select-wrap-b{
-                width: 14px;
-                height: 18px;
-                line-height: 70px;
-              }
+                padding-left: 5px
             }
             .selsct{
               margin: 20px 0 0;
             }
           }
         }
-        &__robo{
+        .sign-robo{
           max-width: 343px;
           margin: 0 auto;
           height: 263px;
-          .button{
+          .btn-red{
             background-color: #ea352d;
             color: #fff;
-            height: 50px;
             text-align: center;
-            padding: 10px 0 0 0 ;
-            line-height: 25px;
+            line-height: 48px;
+            margin: 0 auto;
+            width: 100%;
           }
           .right{
             text-align: right;
@@ -132,7 +129,6 @@
             opacity: 0.5 ;
             text-decoration: underline;
           }
-        }
       }
     }
   }
@@ -165,7 +161,7 @@
         }
       }
     }
-    &__link {
+    .single-list__link {
       display: block;
       color: #333;
       width: 80px;
@@ -174,7 +170,7 @@
       text-decoration: none;
       touch-action: manipulation;
       }
-    &__text {
+    .single-list__text {
       margin: 8px 0 0;
       &__year {
         font-size: 13px;
@@ -183,7 +179,7 @@
   }
 }
 
-.sign_box-center__content__form__in__put__link{
+.sign-form__link{
   color: #0099e8;
 }
 
@@ -191,34 +187,6 @@
   color: #fff;
 }
 
-.progress-bar{
-  color: #ccc;
-  width: 100px;
-  height:  32px;
-  box-sizing: border-box;
-  &:first-child{
-    color: #ea352d;
-  }
-  &__title{
-    font-size: 12px;
-    font-weight: 600;
-    width:100px;
-    text-align: center;
-  }
-  &__dot{
-    width: 12px;
-    margin: auto;
-    font-size: x-large;
-    &__bar{
-      background-color: #ccc;
-      width: 100px;
-      height: 2px;
-      position: relative;
-      bottom: 10px;
-      left: 5px;
-    }
-  }
-}
 .progress-bar-box{
   height: 60px;
   box-sizing: border-box;
@@ -226,4 +194,33 @@
   vertical-align: top;
   padding: 40px 0 0 44px;
   font-size: large;
+  .progress-bar{
+    color: #ccc;
+    width: 100px;
+    height:  32px;
+    box-sizing: border-box;
+    &:first-child{
+      color: #ea352d;
+    }
+    &__title{
+      font-size: 12px;
+      font-weight: 600;
+      width:100px;
+      text-align: center;
+    }
+    &__dot{
+      width: 12px;
+      margin: auto;
+      font-size: x-large;
+      &__bar{
+        background-color: #ccc;
+        width: 100px;
+        height: 2px;
+        position: relative;
+        bottom: 10px;
+        left: 5px;
+        }
+      }
+    }
+  }
 }
