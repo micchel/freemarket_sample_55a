@@ -1,0 +1,75 @@
+.sign_body
+  .sign_box-header
+    = link_to "",class:'sign_box-header-icon' do
+      = image_tag 'logo',width:"185", height: "49"
+    = render 'shared/signup-header'
+  .sign_box
+    .sign-center
+      %h2.sign-center__title
+        会員情報入力
+      .sign-center__form
+        = form_with model: @user,   url:  tel_signup_index_path, local: true, method: :get do |f|
+          .sign-form
+            .sign-form__put
+              = f.label :ニックネーム, class: 'sign-form__put__label'
+              %span.sign-form__put__required
+                必須
+              = f.text_field :nickname, class: 'sign-form__put__nick', placeholder: "例）ニックネーム"
+            .sign-form__put
+              = f.label :メールアドレス, class: 'sign-form__put__label'
+              %span.sign-form__put__required
+                必須
+              = f.email_field :email, class: 'sign-form__put__nick', placeholder: "PC・携帯どちらでも可"
+            .sign-form__put
+              = f.label :パスワード, class: 'sign-form__put__label'
+              %span.sign-form__put__required
+                必須
+              = f.password_field :password, class: 'sign-form__put__nick', placeholder: "6文字以上"
+            .sign-form__put
+              = f.label :"パスワード(確認)", class: 'sign-form__put__label'
+              %span.sign-form__put__required
+                必須
+              = f.password_field :password_confimation, class: 'sign-form__put__nick', placeholder: "6文字以上"
+            .sign-form__put
+              %h3.Identification 本人確認
+              .sign-form__put__text
+              安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+            .sign-form__put
+              = f.label :"お名前(全角)", class: 'sign-form__put__label'
+              %span.sign-form__put__required
+                必須
+              .sign-form__put__first-name
+                = f.text_field :first_name, class: 'last-name', placeholder: "例）山田"
+                = f.text_field :last_name, class: 'last-name', placeholder: "例）彩"
+            .sign-form__put
+              =f.label :"お名前カナ(全角)", class: 'sign-form__put__label'
+              %span.sign-form__put__required
+                必須
+              .sign-form__put__first-name
+                =f.text_field :first_name_kana, class: 'last-name', placeholder: "例）ヤマダ"
+                =f.text_field :last_name_kana, class: 'last-name', placeholder: "例）アヤ"
+            .sign-form__put
+              = f.label :生年月日, class: 'sign-form__put__label'
+              %span.sign-form__put__required
+                必須
+              .sign-form__put__birthday-select-wrap
+                = raw sprintf(f.date_select(:birthday, use_month_numbers: true, start_year: Time.now.year - 120, end_year: Time.now.year, default: Time.now(), class: "select--wrap-box" ,date_separator: '%s'), '年 ', '月 ') + '日'
+              .selsct
+              ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+          .sign-robo
+            .sign-form__put
+              = image_tag 'スクリーンショット 2019-07-25 10.35.52.png'
+            .sign-form__put
+              「次へ進む」のボタンを押すことにより、
+              = link_to "",class:"sign-form__link" do
+                利用規約
+              %br に同意したものとみなします
+            .input-content__form
+              = f.submit '次へ進む', class: "btn-red"
+            .right
+              = link_to "",class:"right" do
+                .right-r
+                  本人情報の登録について
+                  %i.right-icon
+                    = fa_icon 'chevron-right'
+  = render "shared/sub-footer"

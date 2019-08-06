@@ -21,8 +21,8 @@ Rails.application.routes.draw do
   end
   resources :signup do
     collection do
-      get 'index'
-      get 'new'
+      get 'signup'
+      get 'menber'
       get 'tel'
       get 'address'
       get 'done'
