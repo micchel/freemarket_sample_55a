@@ -6,7 +6,7 @@
         新規会員登録
       .signup-container__inner
         .signup-container__inner__content
-          = link_to '/signup/menber',class:'signup-mail-links' do
+          = link_to menber_signup_index_path,class:'signup-mail-links' do
             = fa_icon 'envelope', class: "signup-icon"
             メールアドレスを登録する
           = link_to 'https://ja-jp.facebook.com/',class:'signup-facebook-links' do
