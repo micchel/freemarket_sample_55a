@@ -41,7 +41,7 @@ class SignupController < ApplicationController
     )
     @user.build_residence(user_params[:residences])
     if @user.save
-      session[:id] = @user.id
+      # session[:id] = @user.id
       redirect_to  done_signup_index_path
     else
       render '/signup/signup'
@@ -49,7 +49,7 @@ class SignupController < ApplicationController
   end
 
   def done
-    sign_in User.find(session[:id]) unless user_signed_in?
+    # sign_in User.find(session[:id]) unless user_signed_in?
   end
 
   private
