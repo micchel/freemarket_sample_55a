@@ -6,7 +6,6 @@
   .card
     .logout-content
       .logout-content__in
-        = link_to 'logout-button', class: 'logout-content__in' do
-          ログアウト
+        = link_to "ログアウト",destroy_user_session_path, method: :delete, class: 'logout-content__in'
 = render 'shared/main-footer'
 = render "shared/red-camer"

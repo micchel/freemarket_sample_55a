@@ -1,0 +1,28 @@
+.login-body
+  = render "shared/sub-header"
+  .login-body-center
+    .login-body-center__main
+      .login-body-center__main__accunt
+        %p.login-body-center__main__accunt__text アカウントをお持ちでない方はこちら
+        = link_to signup_signup_index_path,class:"login-body-center__main__accunt__link" do
+          新規会員登録
+      .login-body-center__main__f-g
+        = link_to 'https://ja-jp.facebook.com/',class:'center-face-links' do
+          = fa_icon "facebook-official", class: "facebook-icon"
+          Facebookでログイン
+        = link_to '',class:'center-google-links' do
+          Googleでログイン
+      .login-body-center__main__form
+        = form_with model: @user, url: user_session_path, method: :post, id: 'new_user', class: 'new_user', local: true, mehtod: :post do |f|
+          .form-text
+            = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス"
+          .form-text
+            = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード"
+          .robo
+            = image_tag 'スクリーンショット 2019-07-25 10.35.52'
+          .log-in
+            = f.submit "ログイン"
+          .pass-forget
+            = link_to root_path do
+              パスワードお忘れの方
+  = render "shared/sub-footer"
