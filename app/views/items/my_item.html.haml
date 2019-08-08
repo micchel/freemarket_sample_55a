@@ -5,7 +5,7 @@
   .edit-main
     %section.edit-box
       %h1.item-name
-        = @items.name
+        = @item.name
       .item-main
         .item-main__photo
           .item-main__photo__big
@@ -102,7 +102,7 @@
           送料込み
       .edit-show
         %p.edit-show__font
-          = @items.explain
+          = @item.explain
     .edit-button
       = link_to "", class: 'edit-btn' do
         商品の編集
@@ -137,6 +137,6 @@
         .delete-buttom
           .delete-buttom__text
             キャンセル
-          = link_to item_path(@items.id), method: :delete, class:'delete-btn' do
+          = link_to item_path(@item.id), method: :delete, class:'delete-btn' do
             削除する
 = render "shared/main-footer"
