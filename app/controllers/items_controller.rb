@@ -14,4 +14,15 @@ class ItemsController < ApplicationController
 
   def buy_confirm
   end
+
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+    redirect_to controller: 'mypage', action: 'list'
+  end
+
+  def my_item
+    @items = Item.find(params[:id])
+  end
+
 end
