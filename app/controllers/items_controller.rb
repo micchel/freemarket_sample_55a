@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:destroy, :my_item]
 
   def index
   end
@@ -14,4 +15,17 @@ class ItemsController < ApplicationController
 
   def buy_confirm
   end
+
+  def destroy
+    @item.destroy
+    redirect_to controller: 'mypage', action: 'list'
+  end
+
+  def my_item
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
 end
