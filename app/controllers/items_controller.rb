@@ -1,9 +1,13 @@
 class ItemsController < ApplicationController
 
   def index
+    
   end
 
   def show
+    @items = Item.where(id: params[:id])
+    @item = Item.find(params[:id])
+    # @item_images = ItemImage.all
   end
 
   def sell
