@@ -12,16 +12,21 @@
           俺のヘルメット
   %section.item-container
     %h1.item-name
-      俺のヘルメット
+      - @items.each do |item|
+        =item.name
     .item-main
       .item-main__photo
         .slick
+          -# - @item.item_images.each do |item_image|
+          -#   = image_tag "#{item_image.image}"
           .slick-items= image_tag "diving-helmet.png",width:"300", height: "300"
           .slick-items= image_tag "diving-helmet.png",width:"300", height: "300"
           .slick-items= image_tag "diving-helmet.png",width:"300", height: "300"
           .slick-items= image_tag "diving-helmet.png",width:"300", height: "300"
           .slick-items= image_tag "diving-helmet.png",width:"300", height: "300"
         .thumbnail
+          -# - @item_images.each do |item_image|
+          -#   = image_tag "#{item_image.image}"
           .thumbnail-items= image_tag "diving-helmet.png",width:"60", height: "60"
           .thumbnail-items= image_tag "diving-helmet.png",width:"60", height: "60"
           .thumbnail-items= image_tag "diving-helmet.png",width:"60", height: "60"
@@ -102,7 +107,8 @@
               1~2日で発送
     .item-price
       %span.item-price__figure
-        ¥ 80,000
+        - @items.each do |item|
+          = number_to_currency(item.price, :locale => 'jp')
       %span.item-price__tax
         (税込)
       %span.item-price__shipping
@@ -111,31 +117,8 @@
       購入画面に進む
     .item-description
       %p.item-description__inner
-        フンババ
-        フンババ
-        フンババ
-        フンババ？
-        フンババ！
-        フンババ
-        フンババ
-        フンババ
-        フンババ？
-        フンババ！
-        フンババ
-        フンババ
-        フンババ
-        フンババ？
-        フンババ！
-        フンババ
-        フンババ
-        フンババ
-        フンババ？
-        フンババ！
-        フンババ
-        フンババ
-        フンババ
-        フンババ？
-        フンババ！
+        - @items.each do |item|
+          =item.explain
     .item-button
       .item-button__left
         %button.item-button__left__like
@@ -163,13 +146,15 @@
           コメントする
   %ul.item-link
     %li.item-link__prev
-      = link_to "", class:"item-link__prev__link" do
-        = fa_icon "chevron-left", class:"item-link__prev__link__arrow"
-        %span.item-link__prev__link__chara 俺のフィン
+      - if @item.previous.present?
+        = link_to item_path(@item.previous) do
+          = fa_icon "chevron-left", class:"item-link__prev__link"
+          = @item.previous.name
     %li.item-link__next
-      = link_to "", class:"item-link__next__link" do
-        %span.item-link__next__link__chara 俺のスーツ
-        = fa_icon "chevron-right", class:"item-link__next__link__arrow"
+      - if @item.next.present?
+        = link_to item_path(@item.next) do
+          = @item.next.name
+          = fa_icon "chevron-right", class:"item-link__next__link"
   .sns-box
     .sns-box__text
     %ul.sns-box__list
