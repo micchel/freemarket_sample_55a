@@ -5,7 +5,7 @@
   .edit-main
     %section.edit-box
       %h1.item-name
-        俺のヘルメット
+        = @item.name
       .item-main
         .item-main__photo
           .item-main__photo__big
@@ -102,17 +102,7 @@
           送料込み
       .edit-show
         %p.edit-show__font
-          BORN FREE 花柄長袖シャツ
-          送料無料
-          サイズ:M　カラー:ライトグリーン
-          素材:綿100%
-          使用回数:3回程
-          着丈:68cm
-          肩幅:40cm
-          身幅:48cm
-          袖丈:60cm
-          サイズの多少の誤差はご理解くださいますようお願いしますm(__)m
-          若干の使用感はありますがまだまだ着られる状態です！
+          = @item.explain
     .edit-button
       = link_to "", class: 'edit-btn' do
         商品の編集
@@ -147,6 +137,6 @@
         .delete-buttom
           .delete-buttom__text
             キャンセル
-          %button.delete-btn
+          = link_to item_path(@item.id), method: :delete, class:'delete-btn' do
             削除する
 = render "shared/main-footer"
