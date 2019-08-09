@@ -7,14 +7,14 @@ class SignupController < ApplicationController
   end
 
   def tel
-    session[:nickname] = user_params[:nickname],
-    session[:email] = user_params[:email],
-    session[:password] = user_params[:password],
-    session[:password_confimation] = user_params[:password_confimation],
-    session[:last_name] = user_params[:last_name],
-    session[:first_name] = user_params[:first_name],
-    session[:last_name_kana] = user_params[:last_name_kana],
-    session[:first_name_kana] = user_params[:first_name_kana],
+    session[:nickname] = user_params[:nickname]
+    session[:email] = user_params[:email]
+    session[:password] = user_params[:password]
+    session[:password_confimation] = user_params[:password_confimation]
+    session[:last_name] = user_params[:last_name]
+    session[:first_name] = user_params[:first_name]
+    session[:last_name_kana] = user_params[:last_name_kana]
+    session[:first_name_kana] = user_params[:first_name_kana]
     session[:birthday] = user_params["birthday(1i)"] + "-" +  user_params["birthday(2i)"] + "-" + user_params["birthday(3i)"]
     @user = User.new
   end
@@ -41,6 +41,7 @@ class SignupController < ApplicationController
     )
     @user.build_residence(user_params[:residences])
     if @user.save
+      sign_in(@user)
       session[:id] = @user.id
       redirect_to  done_signup_index_path
     else
@@ -49,7 +50,9 @@ class SignupController < ApplicationController
   end
 
   def done
-    sign_in User.find(session[:id]) unless user_signed_in?
+  end
+
+  def log_in
   end
 
   private
