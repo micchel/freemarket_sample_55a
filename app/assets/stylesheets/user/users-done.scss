@@ -1,3 +1,4 @@
+
 .done-body{
   padding: 0 0 220px;
   .done-body-header{
@@ -47,6 +48,42 @@
         text-align: center;
         line-height: 25px;
         margin-top: 50px;
+      }
+    }
+  }
+  .progress-bar-box{
+    height: 60px;
+    box-sizing: border-box;
+    display: inline-flex;
+    vertical-align: top;
+    padding: 40px 0 0 44px;
+    font-size: large;
+    .progress-bar{
+      color: #ccc;
+      width: 100px;
+      height:  32px;
+      box-sizing: border-box;
+      &:nth-child(5){
+        color: #ea352d;
+      }
+      &__title{
+        font-size: 12px;
+        font-weight: 600;
+        width:100px;
+        text-align: center;
+      }
+      &__dot{
+        width: 12px;
+        margin: auto;
+        font-size: x-large;
+        &__bar{
+          background-color: #ccc;
+          width: 100px;
+          height: 2px;
+          position: relative;
+          bottom: 10px;
+          left: 5px;
+        }
       }
     }
   }
