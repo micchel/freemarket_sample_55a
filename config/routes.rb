@@ -14,8 +14,10 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :items, only: [:new,:show,:destroy] do
+  resources :items, only: [:new,:create,:show,:destroy] do
     collection do
+      get "select", to: "items#select"
+      get "select_grand", to: "items#select_grand"
       get "my_item/:id",to: "items#my_item"
       get "sell/edit/:id", to: "items#edit_item"
       get "transaction/buy/:id", to: "items#buy_confirm"
