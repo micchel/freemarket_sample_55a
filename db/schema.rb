@@ -29,9 +29,8 @@ ActiveRecord::Schema.define(version: 2019_08_01_130616) do
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "item_image_id", null: false
     t.integer "category_id", null: false
-    t.integer "brand_id", null: false
+    t.integer "brand_id"
     t.string "name", null: false
     t.text "explain", null: false
     t.integer "price", null: false
@@ -42,19 +41,6 @@ ActiveRecord::Schema.define(version: 2019_08_01_130616) do
     t.integer "delivery_way", null: false
     t.integer "delivery_prefecture", null: false
     t.integer "delivery_date", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "nickname", null: false
-    t.string "first_name", null: false
-    t.string "last_name", null: false
-    t.string "first_name_kana", null: false
-    t.string "last_name_kana", null: false
-    t.string "birthday", null: false
-    t.string "phone_number", null: false
-    t.text "intorduction"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
