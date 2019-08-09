@@ -2,7 +2,7 @@
   .sell-page-container
     .sell-header
       %h1.sell-header__box
-        = link_to "", class:"sell-header__box__link" do
+        = link_to root_path, class:"sell-header__box__link" do
           = image_tag "logo.svg", class:"sell-header__box__link__image", alt:"mercari", width:"120", height:"33"
     .sell-main
       .item-container
@@ -10,7 +10,7 @@
           .sell-inner
             %h2.sell-inner__description
               商品の情報を入力
-            = form_with model: @item, class:"sell-form" do |f|
+            = form_with model: @item, class:"sell-form", id:"new_item" do |f|
               .sell-form__upload-box
                 %h3.sell-form__upload-box__head
                   出品画像
@@ -18,14 +18,17 @@
                     必須
                 %p.sell-form__upload-box__explain
                   最大5枚までアップロードできます
-                .sell-form__upload-box__dropbox
-                  .sell-form__upload-box__dropbox__container
-                    .sell-form__upload-box__dropbox__container__list
-                      %ul.sell-form__upload-box__dropbox__container__list__items
-                  .sell-form__upload-box__dropbox__frame
-                    %pre.sell-form__upload-box__dropbox__frame__explain
-                      ドラッグアンドドロップ
-                      またはクリックしてファイルをアップロード
+                  = f.fields_for :item_images, @item.item_images do |image|
+                    .sell-form__upload-box__dropbox
+                      #preview
+                      .sell-form__upload-box__dropbox__container
+                        = image.label :image, for: "upload-image" do
+                          .sell-form__upload-box__dropbox__container__list
+                            = image.file_field :image,multiple: "multiple", id:"upload-image", 'data-image': 0
+                          .sell-form__upload-box__dropbox__container__frame
+                            %pre.sell-form__upload-box__dropbox__container__frame__explain
+                              ドラッグアンドドロップ
+                              またはクリックしてファイルをアップロード
               .sell-form__content
                 .sell-form__content__group--first
                   .sell-form__content__group__name
@@ -77,7 +80,7 @@
                         必須
                     .sell-form__content__box__group__select
                       = fa_icon 'chevron-down', class:"arrow-bottom"
-                      = f.select :sex_type, Item.statuses_i18n.keys.map { |k| [Item.statuses_i18n[k], k]} , {prompt: "---"} ,class: "sell-form__content__box__group__select__wrap"
+                      = f.select :status, Item.statuses_i18n.keys.map { |k| [Item.statuses_i18n[k], k]} , {prompt: "---"} ,class: "sell-form__content__box__group__select__wrap"
               .sell-form__content--non-first
                 %h3.sell-form__content__head
                   配送について
@@ -160,8 +163,7 @@
                     = link_to "",class:"sell-form__content__container__attention__link" do
                       加盟店規約
                     に同意したことになります。
-                .sell-form__content__button
-                  出品する
+                = f.submit "出品する", class:'sell-form__content__button'
                 = link_to "",class:"sell-form__content__back-button" do
                   もどる
     = render "shared/sub-footer"
