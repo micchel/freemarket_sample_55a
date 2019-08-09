@@ -1,9 +1,14 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:destroy, :my_item]
 
   def index
+    
   end
 
   def show
+    @items = Item.where(id: params[:id])
+    @item = Item.find(params[:id])
+    # @item_images = ItemImage.all
   end
 
   def new
@@ -60,5 +65,17 @@ class ItemsController < ApplicationController
 
   def new_image_params
     params.require(:new_images).permit({images: []})
+  end
+  
+  def destroy
+    @item.destroy
+    redirect_to controller: 'mypage', action: 'list'
+  end
+
+  def my_item
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 end

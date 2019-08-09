@@ -1,0 +1,35 @@
+.address-body
+  .address-body__header
+    = link_to "",class:'adress-body__header__icon' do
+      = image_tag 'logo',width:"185", height: "49"
+    = render 'shared/signup-header'
+  .address-center
+    .address-center__upper
+      = form_with model: @user, url: signup_index_path, local: true, method: :post do |f|
+        = f.fields_for :residences do |r|
+          %h2.address-center__upper__title 発送元・お届け先住所入力
+          .address-under
+            .address-under__form
+              .address-under__form__in
+                = r.label :郵便番号, class: 'address-under__form__in__label'
+                %span.address-under__form__in__required 必須
+                = r.text_field :zip_code, placeholder: "例)", class: 'address-under__form__in__put'
+              .address-under__form__in
+                = r.label :都道府県, class: 'address-under__form__in__label'
+                %span.address-under__form__in__required 必須
+                = r.collection_select :prefecture_id, Prefecture.all, :id, :name, class: 'address-under__form__in__put'
+              .address-under__form__in
+                = r.label :市町村, class: 'address-under__form__in__label'
+                %span.address-under__form__in__required 必須
+                = r.text_field :city, placeholder: "例)", class: 'address-under__form__in__put'
+              .address-under__form__in
+                = r.label :番地, class: 'address-under__form__in__label'
+                %span.address-under__form__in__required 必須
+                = r.text_field :address,  placeholder: "例)",  class: 'address-under__form__in__put'
+              .address-under__form__in
+                = r.label :建物名, class: 'address-under__form__in__label'
+                %span.address-under__form__in__any 任意
+                = r.text_field :detail, placeholder: "例)", class: 'address-under__form__in__put'
+              = f.submit "次へ進む", class:  'address-under__form__next'
+  .address_body__footer
+    = render "shared/sub-footer"

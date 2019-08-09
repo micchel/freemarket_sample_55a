@@ -10,14 +10,18 @@
 @import "item/exhibition";
 @import "slick-theme";
 @import "slick";
+@import "item/slick-theme-2";
+@import "item/slick-2";
 @import "item/item-detail";
 @import "item/item-buybuyconfirmation";
+@import "item/edit";
 @import "mypage/mypage-top.scss";
 @import "mypage/mypage-profile.scss";
 @import "mypage/side-bar.scss";
 @import "mypage/users-card";
 @import "mypage/users-logout";
 @import "mypage/users-information";
+@import "mypage/list";
 @import "user/users-new";
 @import "user/users-registration";
 @import "user/users-tel";
@@ -25,3 +29,4 @@
 @import "user/users-pay";
 @import "user/users-done";
 @import "user/users-login";
+@import "breadcrumbs"
