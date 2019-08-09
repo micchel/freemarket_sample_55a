@@ -2,9 +2,13 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:destroy, :my_item]
 
   def index
+    
   end
 
   def show
+    @items = Item.where(id: params[:id])
+    @item = Item.find(params[:id])
+    # @item_images = ItemImage.all
   end
 
   def sell
