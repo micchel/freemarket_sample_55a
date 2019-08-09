@@ -1,0 +1,54 @@
+= render 'shared/main-header'
+- breadcrumb :list
+= render "shared/breadcrumbs"
+%main.card-main
+  = render 'side-bar'
+  .card
+    %section.chapter-list
+      %h2.list-chapter
+        出品した商品
+      %ul.list-tabs
+        %li.list-active.active-list
+          %h3.list-box.line-red
+            = link_to "", class: 'list-box__font' do
+              出品中
+        %li.list-active
+          %h3.list-box
+            = link_to "", class: 'list-box__font' do
+              取引中
+        %li.list-active
+          %h3.list-box
+            = link_to "", class: 'list-box__font' do
+              売却済み
+      .list-content
+        %ul.list-item
+          %li.box-my-item
+            = link_to "/items/my_item/#{@item.id}",method: :get, class: 'box-my-item__link' do
+              %figure.image-box
+                =image_tag "spo1711060026-p2.jpg", class:'image-box__tag'
+              .font-box
+                .font-box__text
+                  日本代表ユニフォーム
+                .list-show
+                  .list-show-box
+                    = fa_icon 'heart-o', class: 'list-show-box__icon'
+                    14
+                  .list-show-box
+                    = fa_icon 'comment-o', class: 'list-show-box__icon'
+                    10
+                  .list-blue
+                    出品中
+              = fa_icon 'chevron-right', class: 'arrow-icon'
+          -# %li.list-item__font
+          -#   出品中の商品がありません
+    %ul.mypage-list
+      %li.mypage-list__box.list-pager
+        = link_to "", class: 'mypage-link' do
+          = fa_icon 'chevron-left', class: 'list-icon'
+      %li.mypage-list__box2.list-pager
+        = link_to "", class: 'mypage-link' do
+          = fa_icon 'chevron-right', class: 'list-icon'
+
+
+= render 'shared/main-footer'
+= render "shared/red-camer"

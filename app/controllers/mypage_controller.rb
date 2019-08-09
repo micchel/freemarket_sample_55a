@@ -14,4 +14,11 @@ class MypageController < ApplicationController
 
   def logout
   end
+
+  def list
+    
+  end
+
+  def edit
+  end
 end

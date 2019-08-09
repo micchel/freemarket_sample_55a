@@ -1,0 +1,157 @@
+.chapter-list{
+  background-color: #fff;
+  .list-chapter{
+    background: #fafafa;
+    padding: 0 16px;
+    font-size: 16px;
+    line-height: 72px;
+  }
+  .list-tabs{
+    border: 0;
+    background: #eee;
+    font-size: 0;
+    list-style: none;
+    .list-active{
+      width: 33.3%;
+      display: inline-block;
+      text-align: center;
+      vertical-align: top;
+      .list-box{
+        font-size: 22px;
+        &__font{
+          position: relative;
+          display: block;
+          color: #333;
+          font-size: 16px;
+          line-height: 72px;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+.list-content{
+  .list-item{
+    list-style: none;
+    display: block;
+    background-color: #fff;
+    .box-my-item{
+      border-bottom: 1px solid #eee;
+      position: relative;
+      &__link{
+        display: block;
+        min-height: 80px;
+        padding: 16px;
+        color: #333;
+        .image-box{
+          position: relative;
+          overflow: hidden;
+          float: left;
+          width: 48px;
+          height: 48px;
+          &__tag{
+            width: 48px;
+            height: 48px;
+            top: 50%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+          }
+        }
+        .font-box{
+          margin-right: 100px;
+          margin: 0 40px 0 68px;
+            &__text{
+              overflow: hidden;
+              display: block;
+              display: -webkit-box;
+              max-height: 4.4em;
+              -webkit-line-clamp: 3;
+              -webkit-box-orient: vertical;
+              text-overflow: ellipsis;
+              line-height: 1.5;
+             }
+             .list-show{
+               display: flex;
+               vertical-align: 2px;
+               margin: 0px 6px 0 0;
+               .list-show-box{
+                color: #ccc;
+                vertical-align: 2px;
+                margin: 15px 6px 0 0;
+            }
+          }
+             .list-blue{
+              margin: 11px 6px 0 0;
+              background: #0099e8;
+              display: inline-block;
+              padding: 5px 6px;
+              border-radius: 2px;
+              font-size: 12px;
+              color: #fff;
+            }
+          }
+          .arrow-icon{
+            position: absolute;
+            top: 50%;
+            right: 16px;
+          }
+        }
+
+    }
+    &__font{
+      border: 0;
+      font-weight: 600;
+      padding: 160px 0 60px;
+      background: url(logo-gray.svg);
+      background-repeat: no-repeat;
+      background-position: center 40px;
+      background-size: 100px 100px;
+      text-align: center;
+      font-size: 16px;
+      color: #ccc;
+      }
+    }
+  }
+}
+.list-pager{
+  top: 0;
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  border-radius: 4px;
+  background: #fff;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  line-height: 42px;
+}
+.mypage-list{
+  margin: 40px 0 0;
+  position: relative;
+  font-size: 0;
+  text-align: center;
+  &__box{
+    left: 0;
+    position: absolute;
+  }
+  &__box2{
+    right: 0;
+    position: absolute;
+  }
+}
+.mypage-link{
+  display: block;
+  color: #333;
+  text-decoration: none;
+}
+
+.active-list{
+  background-color: #fff;
+}
+
+.line-red{
+  border-top: 2px solid #ea352d;
+}
