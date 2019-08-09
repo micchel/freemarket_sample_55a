@@ -1,28 +1,3 @@
--# .top-heder
--#   .top-heder__inner
--#     .top-heder__inner__box
--#       .top-heder__inner__box__merukari
--#         = link_to root_path, class:"top-heder__inner__box__merukari__link" do
--#           = image_tag 'logo.svg' , class: '.top-heder__inner__box__merukari__link__box'
--#       .top-heder__inner__box__form
--#         %input{placeholder:'何かお探しですか？', type:'search', class:'top-heder__inner__box__form__input'}
--#         =link_to do
--#           = fa_icon 'search', class:'top-heder__inner__box__form__search'  
--#     .top-heder__inner__link
--#       %ul.top-heder__inner__link__left
--#         %li.top-heder__inner__link__left__list
--#           = link_to "", class:"top-heder__inner__link__left__list__kate" do
--#             = fa_icon 'list-ul', class:"top-heder__inner__link__left__list__kate__icon"
--#             カテゴリーから探す
--#         %li.top-heder__inner__link__left__list
--#           = link_to "", class:"top-heder__inner__link__left__list__kate" do
--#             = fa_icon 'tags', class:"top-heder__inner__link__left__list__kate__icon"
--#             ブランドから探す
--#       %ul.top-heder__inner__link__right
--#         = link_to "", class:"top-heder__inner__link__right__new" do
--#           新規会員登録
--#         = link_to "", class:"top-heder__inner__link__right__rog" do
--#           ログイン 
 
 .top-heder
   .top-heder__inner
@@ -44,17 +19,24 @@
           = link_to "", class:"top-heder__inner__link__left__list__kate" do
             = fa_icon 'tags', class:"top-heder__inner__link__left__list__kate__icon"
             ブランドから探す
-      .top-heder__inner__link__right
-        %li.top-heder__inner__link__right__box
-          = link_to "", class:"top-heder__inner__link__right__box__good" do
-            = fa_icon 'heart-o', class:"top-heder__inner__link__right__box__good__icon icon-heart"
-            いいね！一覧
-          = link_to "", class:"top-heder__inner__link__right__box__good" do
-            = fa_icon 'bell-o', class:"top-heder__inner__link__right__box__good__icon icon-heart" 
-            おしらせ
-          = link_to "", class:"top-heder__inner__link__right__box__good" do
-            = fa_icon 'check', class:"top-heder__inner__link__right__box__good__icon icon-heart" 
-            やることリスト
-          = link_to "/mypage", class:"top-heder__inner__link__right__box__good" do
-            = image_tag 'member_photo.png', class:"top-heder__inner__link__right__box__good__icon icon-heart"
-            マイページ
+      - if user_signed_in?
+        .top-heder__inner__link__right
+          %li.top-heder__inner__link__right__box
+            = link_to "", class:"top-heder__inner__link__right__box__good" do
+              = fa_icon 'heart-o', class:"top-heder__inner__link__right__box__good__icon icon-heart"
+              いいね！一覧
+            = link_to "", class:"top-heder__inner__link__right__box__good" do
+              = fa_icon 'bell-o', class:"top-heder__inner__link__right__box__good__icon icon-heart"
+              おしらせ
+            = link_to "", class:"top-heder__inner__link__right__box__good" do
+              = fa_icon 'check', class:"top-heder__inner__link__right__box__good__icon icon-heart"
+              やることリスト
+            = link_to "/mypage", class:"top-heder__inner__link__right__box__good" do
+              = image_tag 'member_photo.png', class:"top-heder__inner__link__right__box__good__icon icon-heart"
+              マイページ
+      -else
+        %ul.top-heder__inner__link__right
+          = link_to signup_signup_index_path, class:"top-heder__inner__link__right__new" do
+            新規会員登録
+          = link_to new_user_session_path, class:"top-heder__inner__link__right__rog" do
+            ログイン
