@@ -67,46 +67,85 @@
                   line-height: 1.5;
                 }
                 &__dropbox {
-                  display: block;
-                  width: 620px;
-                  margin: 16px auto 0;
                   @include clearfix();
-                  &__container {
-                    display: inline;
-                    &__list {
-                      display: block;
-                      float: left;
-                      &__items {
-                        display: block;
-                        width: 100%;
+                  width: 620px;
+                  #preview {
+                    float: left;
+                    margin: 16px 0 0;
+                    .add_img {
+                      width: 116px;
+                      display: inline-block;
+                      border: 1px solid #eee;
+                      .img_area {
+                        width: auto;
+                        height: 116px;
+                        overflow: hidden;
+                        background-color: #f5f5f5;
+                        line-height: 116px;
+                        position: relative;
+                        img {
+                          height: 100%;
+                          width: 100%;
+                          object-fit: contain;
+                          position: absolute;
+                          top: 0;
+                          right: 0;
+                          bottom: 0;
+                          left: 0;
+                          margin: auto;
+                        }
+                      }
+                      .btn_wrapper {
+                        font-size:14px;
+                        cursor: pointer;
+                        .btn_delete {
+                          display: inline-block;
+                          width: 100%;
+                          background: #f5f5f5;
+                          line-height: 44px;
+                          text-align: center;
+                          color: #0099e8;
+                        }
                       }
                     }
                   }
-                  &__frame {
-                    width: 100%;
-                    margin-left: 0;
-                    float: right;
-                    padding: 40px;
-                    position: relative;
-                    min-height: 162px;
-                    background: #f5f5f5;
-                    border: 1px dashed #ccc;
-                    font-size: 0;
-                    text-align: center;
-                    cursor: pointer;
-                    &__explain {
-                      position: absolute;
-                      top: 50%;
-                      left: 16px;
-                      right: 16px;
-                      text-align: center;
-                      font-size: 14px;
-                      line-height: 1.5;
-                      transform: translate(0,-50%);
-                      pointer-events: none;
-                      white-space: pre-wrap;
-                      word-wrap: break-word;
+                  &__container {
+                    display: block;
+                    width: 620px;
+                    margin: 16px 0 0;
+                    float: left;
+                    &__list {
                       display: block;
+                      #upload-image {
+                        display: none;
+                      }
+                    }
+                    &__frame {
+                      width: 100%;
+                      margin-left: 0;
+                      float: right;
+                      padding: 40px;
+                      position: relative;
+                      min-height: 162px;
+                      background: #f5f5f5;
+                      border: 1px dashed #ccc;
+                      font-size: 0;
+                      text-align: center;
+                      cursor: pointer;
+                      &__explain {
+                        position: absolute;
+                        top: 50%;
+                        left: 16px;
+                        right: 16px;
+                        text-align: center;
+                        font-size: 14px;
+                        line-height: 1.5;
+                        transform: translate(0,-50%);
+                        pointer-events: none;
+                        white-space: pre-wrap;
+                        word-wrap: break-word;
+                        display: block;
+                      }
                     }
                   }
                 }
@@ -143,7 +182,7 @@
                     padding: 10px 16px 8px;
                     margin: 8px 0 0;
                     border-radius: 4px;
-                    color: #ccc;
+                    color: #333;
                     font-weight: lighter;
                     border: 1px solid #ccc;
                     background-color: #fff;
@@ -160,7 +199,7 @@
                     border: 1px solid #ccc;
                     background-color: #fff;
                     font-size: 16px;
-                    color: #ccc;
+                    color: #333;
                     line-height: 1.5;
                   }
                 }
@@ -221,7 +260,7 @@
                         position: absolute;
                         right: 16px;
                         top: 30%;
-                        z-index: 2;
+                        z-index: 3;
                         color: #888;
                         font-size: 16px;
                       }
@@ -235,6 +274,9 @@
                         border-radius: 4px;
                         font-size: 16px;
                         line-height: 1.5;
+                        background-color: #fff;
+                        -webkit-appearance: none;
+                        appearance: none;
                         cursor: pointer;
                         &--brand {
                           position: relative;
@@ -254,6 +296,14 @@
                           line-height: 48px;
                         }
                       }
+                    }
+                  }
+                  .no_display {
+                    &__size {
+                      display: none;
+                    }
+                    &__brand {
+                      display: none;
                     }
                   }
                   &__price {
