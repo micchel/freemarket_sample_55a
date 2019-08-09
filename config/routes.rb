@@ -9,11 +9,13 @@ Rails.application.routes.draw do
       get "information", to: "mypage#information"
       get "logout", to: "mypage#logout"
       get "list", to: "mypage#list"
+      
     end
   end
 
-  resources :items, only: [:new,:show] do
+  resources :items, only: [:new,:show,:destroy] do
     collection do
+      get "my_item/:id",to: "items#my_item"
       get "sell/edit/:id", to: "items#edit_item"
       get "transaction/buy/:id", to: "items#buy_confirm"
     end
