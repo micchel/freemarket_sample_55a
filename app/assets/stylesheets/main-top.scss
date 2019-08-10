@@ -49,21 +49,23 @@
           font-size: 22px;
           line-height: 22px;
           margin: 26px 11px;
-          &:hover{
-            text-decoration: underline;
-            text-decoration-color:  #0099e8;
-            opacity: 0.8;
-          }
           &__name{
             color: #0099e8;
+            display: block;
+            margin-bottom: 30px;
+            &:hover{
+              text-decoration: underline;
+              text-decoration-color:  #0099e8;
+              opacity: 0.8;
+            }
           }
         }
         .items-box{
-          margin: 0 0 0 20px;
           display: inline-block;
-          width: 213px;
+          display: flex;
           &__link{
             color: #333;
+            margin: 0 0 0 20px;
             .items-photo{
               height: 220px;
               &__size{
@@ -104,11 +106,12 @@
       }
       .main-show{
         padding: 20px 0 30px;
-        width: 99.5%;
+        width: 90.5%;
         text-align: right;
         line-height: 16px;
         &__link{
           color: #0099e8;
+          font-size: 14px;
           &:hover{
             text-decoration: underline;
             text-decoration-color:  #0099e8;

@@ -2,7 +2,12 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:destroy, :my_item]
 
   def index
-    
+    @items = Item.order("id DESC").limit(4)
+    # @ladies_items = set_category_items('レディース')
+    # @mens_items = set_category_items('メンズ')
+    # @kids_items = set_category_items('ベビー・キッズ')
+    # @cosme_items = set_category_items('コスメ・香水・美容')
+
   end
 
   def show
