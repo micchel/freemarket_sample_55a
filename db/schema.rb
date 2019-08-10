@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_02_103501) do
+ActiveRecord::Schema.define(version: 2019_08_09_122045) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -34,15 +34,16 @@ ActiveRecord::Schema.define(version: 2019_08_02_103501) do
     t.string "name", null: false
     t.text "explain", null: false
     t.integer "price", null: false
-    t.bigint "seller_id", null: false
     t.bigint "buyer_id"
     t.integer "status", null: false
-    t.string "delivery_cost", null: false
-    t.string "delivery_way", null: false
-    t.string "delivery_prefecture", null: false
-    t.string "delivery_date", null: false
+    t.integer "delivery_cost", null: false
+    t.integer "delivery_way", null: false
+    t.integer "delivery_prefecture", null: false
+    t.integer "delivery_date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "seller_id"
+    t.index ["seller_id"], name: "index_items_on_seller_id"
   end
 
   create_table "residences", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -78,5 +79,6 @@ ActiveRecord::Schema.define(version: 2019_08_02_103501) do
   end
 
   add_foreign_key "item_images", "items"
+  add_foreign_key "items", "users", column: "seller_id"
   add_foreign_key "residences", "users"
 end
