@@ -1,13 +1,11 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:destroy, :my_item]
+  before_action :set_item, only: [:show, :destroy, :my_item]
 
   def index
-    
   end
 
   def show
     @items = Item.where(id: params[:id])
-    @item = Item.find(params[:id])
     # @item_images = ItemImage.all
   end
 
@@ -57,16 +55,6 @@ class ItemsController < ApplicationController
   def buy_confirm
   end
 
-  private
-
-  def item_params
-    params.require(:item).permit(:name, :explain, :category_id, :status, :delivery_cost, :delivery_way, :delivery_prefecture, :delivery_date, :price).merge(seller_id: 1)
-  end
-
-  def new_image_params
-    params.require(:new_images).permit({images: []})
-  end
-  
   def destroy
     @item.destroy
     redirect_to controller: 'mypage', action: 'list'
@@ -77,5 +65,15 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  private
+
+  def item_params
+    params[:item].permit(:name, :explain, :category_id, :status, :delivery_cost, :delivery_way, :delivery_prefecture, :delivery_date, :price).merge(seller_id: current_user.id)
+  end
+
+  def new_image_params
+    params[:new_images].permit({images: []})
   end
 end
