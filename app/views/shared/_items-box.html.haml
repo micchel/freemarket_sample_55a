@@ -1,15 +1,2 @@
 .items-box
-  - @items.each do |item|
-    =link_to item_path(:id), class: 'items-box__link' do
-      .items-photo
-        -# = image_tag item.images[0].image.to_s, class: 'items-photo__size'
-        =image_tag "spo1711060026-p2.jpg", class:'items-photo__size'
-      .items-body
-        %h3.items-body__font
-          = item.name
-        .items-price
-          .items-price__num
-            = number_to_currency(item.price, :locale => 'jp')
-            .items-good
-              = fa_icon "heart-o", class:"items-good__heart" do
-                14
+  = render "shared/items-render"
