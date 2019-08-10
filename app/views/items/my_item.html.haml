@@ -95,7 +95,7 @@
                 1~2日で発送
       .item-price
         %span.item-price__figure
-          ¥ 80,000
+          = number_to_currency(@item.price, :locale => 'jp')
         %span.item-price__tax
           (税込)
         %span.item-price__shipping
