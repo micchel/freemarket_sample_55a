@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.order("id DESC").limit(4)
+    # トップページ、アイテムをカテゴリー別に最新投稿順番に表示させる
     # @ladies_items = set_category_items('レディース')
     # @mens_items = set_category_items('メンズ')
     # @kids_items = set_category_items('ベビー・キッズ')
