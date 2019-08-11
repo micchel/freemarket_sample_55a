@@ -110,7 +110,7 @@
                         必須
                     .sell-form__content__box__group__select
                       = fa_icon 'chevron-down', class:"arrow-bottom"
-                      = f.collection_select :delivery_prefecture, Prefecture.all, :id, :name, {prompt: "---"}, class:"sell-form__content__box__group__select__wrap"
+                      = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "---"}, class:"sell-form__content__box__group__select__wrap"
                   .sell-form__content__box__group
                     .sell-form__content__box__group__name
                       発送までの日数
