@@ -8,29 +8,12 @@
         = @item.name
       .item-main
         .item-main__photo
-          .item-main__photo__big
-            = image_tag "diving-helmet.png", class:"item-main__photo__big__image", size:"300x300"
-          .item-main__photo__small
-            .item-main__photo__small__inner--active
-              = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
-            .item-main__photo__small__inner
-              = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
-            .item-main__photo__small__inner
-              = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
-            .item-main__photo__small__inner
-              = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
-            .item-main__photo__small__inner
-              = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
-            .item-main__photo__small__inner
-              = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
-            .item-main__photo__small__inner
-              = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
-            .item-main__photo__small__inner
-              = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
-            .item-main__photo__small__inner
-              = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
-            .item-main__photo__small__inner
-              = image_tag "diving-helmet.png", class:"item-main__photo__small__inner__image", size:"60x60"
+          .slick
+            - @item.item_images.each do |item_image|
+              .slick-items= image_tag "#{item_image.image.url}", width: "300", height: "300"
+          .thumbnail
+            - @item.item_images.each do |item_image|
+              .thumbnail-items= image_tag "#{item_image.image.url}", width: "60", height: "60"
         .item-main__sold-out
           .item-main__sold-out__budge
         %table.item-main__detail
@@ -40,59 +23,59 @@
                 出品者
               %td.item-main__detail__table__point__body
                 = link_to "", class:"item-main__detail__table__point__body__link" do
-                  俺やで
+                  = @item.seller.nickname
             %tr.item-main__detail__table__point
               %th.item-main__detail__table__point__head
                 カテゴリー
               %td.item-main__detail__table__point__body
                 = link_to "", class:"item-main__detail__table__point__body__link" do
                   .item-main__detail__table__point__body__link__figure
-                    メンズ
+                    = @item.category.root.name
                 = link_to "", class:"item-main__detail__table__point__body__link" do
                   .item-main__detail__table__point__body__link__box
                     = fa_icon "chevron-right", class:"bread-crumbs__list__point__body__link__box__arrow"
-                    トップス
+                    = @item.category.parent.name
                 = link_to "", class:"item-main__detail__table__point__body__link" do
                   .item-main__detail__table__point__body__link__box
                     = fa_icon "chevron-right", class:"bread-crumbs__list__point__body__link__box__arrow"
-                    ダイビングヘルメット
+                    = @item.category.name
             %tr.item-main__detail__table__point
               %th.item-main__detail__table__point__head
                 ブランド
               %td.item-main__detail__table__point__body
                 = link_to "", class:"item-main__detail__table__point__body__link" do
-                  フンババ
+                  メルカリ
             %tr.item-main__detail__table__point
               %th.item-main__detail__table__point__head
                 商品のサイズ
               %td.item-main__detail__table__point__body
-                XXL
+                FREE
             %tr.item-main__detail__table__point
               %th.item-main__detail__table__point__head
                 商品の状態
               %td.item-main__detail__table__point__body
-                目立った傷や汚れなし
+                = @item.status_i18n
             %tr.item-main__detail__table__point
               %th.item-main__detail__table__point__head
                 配送料の負担
               %td.item-main__detail__table__point__body
-                送料込み(出品者負担)
+                = @item.delivery_cost_i18n
             %tr.item-main__detail__table__point
               %th.item-main__detail__table__point__head
                 配送料の方法
               %td.item-main__detail__table__point__body
-                未定
+                = @item.delivery_way_i18n
             %tr.item-main__detail__table__point
               %th.item-main__detail__table__point__head
                 配送元地域
               %td.item-main__detail__table__point__body
                 = link_to "", class:"item-main__detail__table__point__body__link" do
-                  東京都
+                  = @item.prefecture.name
             %tr.item-main__detail__table__point
               %th.item-main__detail__table__point__head
                 発送日の目安
               %td.item-main__detail__table__point__body
-                1~2日で発送
+                = @item.delivery_date_i18n
       .item-price
         %span.item-price__figure
           = number_to_currency(@item.price, :locale => 'jp')
@@ -104,7 +87,7 @@
         %p.edit-show__font
           = @item.explain
     .edit-button
-      = link_to "", class: 'edit-btn' do
+      = link_to edit_item_path(@item), class: 'edit-btn' do
         商品の編集
       %p.edit-or
         or
