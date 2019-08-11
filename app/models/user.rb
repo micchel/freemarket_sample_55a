@@ -6,5 +6,4 @@ class User < ApplicationRecord
   has_one :residence
   accepts_nested_attributes_for :residence
   has_many :items, dependent: :destroy, foreign_key: "seller_id"
-  # has_secure_password validations: false
 end
