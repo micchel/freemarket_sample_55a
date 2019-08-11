@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2019_08_09_122045) do
     t.integer "status", null: false
     t.integer "delivery_cost", null: false
     t.integer "delivery_way", null: false
-    t.integer "delivery_prefecture", null: false
+    t.integer "prefecture_id", null: false
     t.integer "delivery_date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
