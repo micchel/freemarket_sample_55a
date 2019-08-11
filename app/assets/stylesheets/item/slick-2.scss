@@ -111,8 +111,14 @@
 
 .thumbnail .slick-current{
   opacity: 1;
- }
+}
 .thumbnail-items{
   opacity: 0.3;
+  img {object-fit: contain;
+  }
 }
 
+.slick-items {
+  img {object-fit: contain;
+  }
+}
