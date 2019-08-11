@@ -114,11 +114,17 @@
 }
 .thumbnail-items{
   opacity: 0.3;
-  img {object-fit: contain;
+  img {
+    object-fit: contain;
+    width: 60px;
+    height: 60px;
   }
 }
 
 .slick-items {
-  img {object-fit: contain;
+  img {
+    object-fit: contain;
+    width: 300px;
+    height: 300px;
   }
 }

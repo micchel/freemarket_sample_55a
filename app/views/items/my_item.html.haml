@@ -10,10 +10,10 @@
         .item-main__photo
           .slick
             - @item.item_images.each do |item_image|
-              .slick-items= image_tag "#{item_image.image.url}", width: "300", height: "300"
+              .slick-items= image_tag "#{item_image.image.url}"
           .thumbnail
             - @item.item_images.each do |item_image|
-              .thumbnail-items= image_tag "#{item_image.image.url}", width: "60", height: "60"
+              .thumbnail-items= image_tag "#{item_image.image.url}"
         .item-main__sold-out
           .item-main__sold-out__budge
         %table.item-main__detail
