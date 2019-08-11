@@ -5,6 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_one :residence
   accepts_nested_attributes_for :residence
-  has_many :items, dependent: :destroy
-  # has_secure_password validations: false
+  has_many :items, dependent: :destroy, foreign_key: "seller_id"
 end

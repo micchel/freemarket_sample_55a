@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :destroy, :my_item]
+  before_action :set_item, only: [:show, :edit, :destroy, :my_item]
 
   def index
   end
@@ -29,6 +29,16 @@ class ItemsController < ApplicationController
     end
   end
 
+  def edit
+    @parents = Category.where(ancestry: nil) #Category.where(ancestry = ?, "nil")
+    @item.item_images.build
+  end
+
+  def destroy
+    @item.destroy
+    redirect_to controller: 'mypage', action: 'list'
+  end
+
   def select
     respond_to do |format|
       format.html
@@ -49,18 +59,10 @@ class ItemsController < ApplicationController
     end
   end
 
-  def edit_item
+  def my_item
   end
 
   def buy_confirm
-  end
-
-  def destroy
-    @item.destroy
-    redirect_to controller: 'mypage', action: 'list'
-  end
-
-  def my_item
   end
 
   def set_item
@@ -70,7 +72,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params[:item].permit(:name, :explain, :category_id, :status, :delivery_cost, :delivery_way, :delivery_prefecture, :delivery_date, :price).merge(seller_id: current_user.id)
+    params[:item].permit(:name, :explain, :category_id, :status, :delivery_cost, :delivery_way, :prefecture_id, :delivery_date, :price).merge(seller_id: current_user.id)
   end
 
   def new_image_params

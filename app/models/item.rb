@@ -1,5 +1,6 @@
 class Item < ApplicationRecord
-  belongs_to :seller ,class_name: "User"
+
+  belongs_to :seller ,class_name: "User", foreign_key: "seller_id"
   has_many :item_images, dependent: :destroy
   accepts_nested_attributes_for :item_images
   belongs_to :category
@@ -12,14 +13,14 @@ class Item < ApplicationRecord
   enum delivery_date: { ship_in_1to2days: 0, ship_in_2to3days: 1, ship_in_4to7days:2 }
 
   validates :name, presence: true, length: { maximum: 40 }
-  validates :explain, presence: true, length: { maximum: 1000}
+  validates :explain, presence: true, length: { maximum: 1000 }
   validates :category_id, presence: true
   validates :status, presence: true
   validates :delivery_cost, presence: true
   validates :delivery_way, presence: true
-  validates :delivery_prefecture, presence: true
+  validates :prefecture_id, presence: true
   validates :delivery_date, presence: true
-  validates :price, presence: true, inclusion: { in: (300..9999999)}
+  validates :price, presence: true, inclusion: { in: (300..9999999) }
   
   def previous
     Item.order('created_at desc, id desc').where('created_at <= ? and id < ?', created_at, id).first
