@@ -1,0 +1,18 @@
+%li.box-my-item
+  -if item.item_images.present?
+    = link_to "/items/my_item/#{item.id}",method: :get, class: 'box-my-item__link' do
+      %figure.image-box
+        =image_tag "#{item.item_images[0].image.url}", class:'image-box__tag'
+      .font-box
+        .font-box__text
+          = item.name
+        .list-show
+          .list-show-box
+            = fa_icon 'heart-o', class: 'list-show-box__icon'
+            14
+          .list-show-box
+            = fa_icon 'comment-o', class: 'list-show-box__icon'
+            10
+          .list-blue
+            出品中
+      = fa_icon 'chevron-right', class: 'arrow-icon'
