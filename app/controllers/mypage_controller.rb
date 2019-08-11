@@ -16,7 +16,7 @@ class MypageController < ApplicationController
   end
 
   def list
-    
+    @items = current_user.items.where(buyer_id: nil)
   end
 
   def edit
