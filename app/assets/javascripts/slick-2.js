@@ -1,5 +1,4 @@
 $(function(){
-    $(".element.style").empty();
     $('.slick').slick({
     asNavFor:'.thumbnail',
     arrows: false,
