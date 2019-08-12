@@ -18,10 +18,10 @@
       .item-main__photo
         .slick
           - @item.item_images.each do |item_image|
-            .slick-items= image_tag "#{item_image.image.url}"
+            .slick-items= image_tag item_image.image.url
         .thumbnail
           - @item.item_images.each do |item_image|
-            .thumbnail-items= image_tag "#{item_image.image.url}"
+            .thumbnail-items= image_tag item_image.image.url
       %table.item-main__detail
         %tbody.item-main__detail__table
           %tr.item-main__detail__table__point
