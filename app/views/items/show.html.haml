@@ -17,29 +17,19 @@
     .item-main
       .item-main__photo
         .slick
-          -# - @item.item_images.each do |item_image|
-          -#   = image_tag "#{item_image.image}"
-          .slick-items= image_tag "diving-helmet.png",width:"300", height: "300"
-          .slick-items= image_tag "diving-helmet.png",width:"300", height: "300"
-          .slick-items= image_tag "diving-helmet.png",width:"300", height: "300"
-          .slick-items= image_tag "diving-helmet.png",width:"300", height: "300"
-          .slick-items= image_tag "diving-helmet.png",width:"300", height: "300"
+          - @item.item_images.each do |item_image|
+            .slick-items= image_tag item_image.image.url
         .thumbnail
-          -# - @item_images.each do |item_image|
-          -#   = image_tag "#{item_image.image}"
-          .thumbnail-items= image_tag "diving-helmet.png",width:"60", height: "60"
-          .thumbnail-items= image_tag "diving-helmet.png",width:"60", height: "60"
-          .thumbnail-items= image_tag "diving-helmet.png",width:"60", height: "60"
-          .thumbnail-items= image_tag "diving-helmet.png",width:"60", height: "60"
-          .thumbnail-items= image_tag "diving-helmet.png",width:"60", height: "60"
+          - @item.item_images.each do |item_image|
+            .thumbnail-items= image_tag item_image.image.url
       %table.item-main__detail
         %tbody.item-main__detail__table
           %tr.item-main__detail__table__point
             %th.item-main__detail__table__point__head
               出品者
             %td.item-main__detail__table__point__body
-              = link_to "", class:"item-main__detail__table__point__body__link" do
-                俺やで
+              = link_to root_path do
+                = @item.seller.nickname
               .item-main__detail__table__point__body__rate
                 .item-main__detail__table__point__body__rate__count--first
                   = fa_icon "smile-o", class:"item-main__detail__table__point__body__rate__count__laugh"
@@ -57,23 +47,24 @@
             %th.item-main__detail__table__point__head
               カテゴリー
             %td.item-main__detail__table__point__body
-              = link_to "", class:"item-main__detail__table__point__body__link" do
-                .item-main__detail__table__point__body__link__figure
-                  メンズ
-              = link_to "", class:"item-main__detail__table__point__body__link" do
-                .item-main__detail__table__point__body__link__box
-                  = fa_icon "chevron-right", class:"bread-crumbs__list__point__body__link__box__arrow"
-                  トップス
+              = link_to root_path do
+                = @item.category.root.name
               = link_to "", class:"item-main__detail__table__point__body__link" do
                 .item-main__detail__table__point__body__link__box
                   = fa_icon "chevron-right", class:"bread-crumbs__list__point__body__link__box__arrow"
-                  ダイビングヘルメット
+                  #{@item.category.parent.name}
+              = link_to "", class:"item-main__detail__table__point__body__link" do
+                .item-main__detail__table__point__body__link__box
+                  = fa_icon "chevron-right", class:"bread-crumbs__list__point__body__link__box__arrow"
+                  #{@item.category.name}
           %tr.item-main__detail__table__point
             %th.item-main__detail__table__point__head
               ブランド
             %td.item-main__detail__table__point__body
-              = link_to "", class:"item-main__detail__table__point__body__link" do
-                フンババ
+              = link_to root_path do
+                = @item.brand_id
+              -# = link_to "", class:"item-main__detail__table__point__body__link" do
+                
           %tr.item-main__detail__table__point
             %th.item-main__detail__table__point__head
               商品のサイズ
@@ -83,32 +74,32 @@
             %th.item-main__detail__table__point__head
               商品の状態
             %td.item-main__detail__table__point__body
-              目立った傷や汚れなし
+              = @item.status_i18n
           %tr.item-main__detail__table__point
             %th.item-main__detail__table__point__head
               配送料の負担
             %td.item-main__detail__table__point__body
-              送料込み(出品者負担)
+              = @item.delivery_cost_i18n
           %tr.item-main__detail__table__point
             %th.item-main__detail__table__point__head
               配送料の方法
             %td.item-main__detail__table__point__body
-              未定
+              = @item.delivery_way_i18n
           %tr.item-main__detail__table__point
             %th.item-main__detail__table__point__head
               配送元地域
             %td.item-main__detail__table__point__body
               = link_to "", class:"item-main__detail__table__point__body__link" do
-                東京都
+                = @item.prefecture.name
           %tr.item-main__detail__table__point
             %th.item-main__detail__table__point__head
               発送日の目安
             %td.item-main__detail__table__point__body
-              1~2日で発送
+              = @item.delivery_date_i18n
     .item-price
       %span.item-price__figure
         - @items.each do |item|
-          = number_to_currency(item.price, :locale => 'jp')
+          = number_to_currency(item.price, locale: 'jp')
       %span.item-price__tax
         (税込)
       %span.item-price__shipping
@@ -171,7 +162,7 @@
     %section.items-user__list
       %h2.items-user__list__head
         = link_to "", class:"items-user__list__head__link" do
-          俺やでさんのその他の作品
+          = link_to "#{@item.seller.nickname}さんのその他の出品", root_path
       .items-user__list__content
         %section.items-user__list__content__box
           = link_to "", class:"items-user__list__content__box__link" do
