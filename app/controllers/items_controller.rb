@@ -6,7 +6,6 @@ class ItemsController < ApplicationController
 
   def show
     @items = Item.where(id: params[:id])
-    # @item_images = ItemImage.all
   end
 
   def new
