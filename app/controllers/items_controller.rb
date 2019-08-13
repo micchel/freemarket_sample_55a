@@ -2,6 +2,8 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :destroy, :my_item]
 
   def index
+    @items = Item.order("id DESC").limit(4)
+    
   end
 
   def show
