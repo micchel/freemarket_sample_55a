@@ -1,3 +1,5 @@
+//= require turbolinks
+
 $(function() {
   var dropzone = $(".sell-form__upload-box__dropbox__container");
   var input_area = $(".sell-form__upload-box__dropbox__container__list");
