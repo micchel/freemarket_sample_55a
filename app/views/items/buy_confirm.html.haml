@@ -7,12 +7,12 @@
       %section.buy-container__info
         .buy-container__info__inner
           .buy-container__info__inner__text
-            = image_tag 'mercari-item.jpg', class: "buy-container__info__inner__text__image"
+            = image_tag @item.item_images[0].image.url, class:"buy-item"
           %p.buy-container__info__inner__name
-            入門React : コンポーネントベースのWebフロントエンド開発
+            = @item.name
           %form.buy-item-content
             %p.buy-item-content__price
-              ¥ 1,200
+              = number_to_currency(@item.price, locale: 'jp')
               %span.buy-item-content__price__text
                 送料込み
             .buy-item-content__point
@@ -34,11 +34,11 @@
           %h3.buy-address__inner__text
             配送先
           %address.buy-address__inner__address
-            〒111-111
+            = @item.seller.residence.zip_code
             %br
-            名古屋市名古屋町
+            = @item.seller.residence.city
             %br
-            水野 水野
+            = @item.seller.residence.address
           = link_to '', class: "buy-address__link" do
             %span.buy-address__link__span
               変更する

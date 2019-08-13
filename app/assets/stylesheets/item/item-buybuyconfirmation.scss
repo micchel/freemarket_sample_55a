@@ -28,6 +28,7 @@
               flex-wrap: wrap;
               max-width: 320px;
               margin: 0 auto;
+              height: 64px;
               &__image {
                 font-size: 22px;
                 width: 64px;
@@ -211,4 +212,10 @@
       }
     }
   @include sub-footer();
+}
+
+.buy-item{
+  height: 64px;
+  width: 64px;
+  object-fit: contain;
 }
