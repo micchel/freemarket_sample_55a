@@ -76,6 +76,8 @@ gem 'fog-aws'
 gem 'jquery-rails'
 gem 'ancestry'
 gem 'active_hash'
+gem 'payjp'
+gem 'dotenv-rails', require: 'dotenv/rails-now'
 
 gem 'enum_help'
 gem 'rails-i18n'
