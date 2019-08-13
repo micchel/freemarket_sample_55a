@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :destroy, :my_item]
+  before_action :set_item, only: [:show, :edit, :destroy, :my_item, :buy_confirm]
 
   def index
     @items = Item.order("id DESC").limit(4)
@@ -7,7 +7,9 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @items = Item.where(id: params[:id])
+  end
+
+  def buy_confirm
   end
 
   def new
