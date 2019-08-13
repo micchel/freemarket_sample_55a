@@ -3,13 +3,9 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.order("id DESC").limit(4)
-    
   end
 
   def show
-  end
-
-  def buy_confirm
   end
 
   def new

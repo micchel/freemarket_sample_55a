@@ -21,7 +21,6 @@ Rails.application.routes.draw do
       get "select", to: "items#select"
       get "select_grand", to: "items#select_grand"
       get "my_item/:id",to: "items#my_item"
-      get "transaction/buy/:id", to: "items#buy_confirm"
     end
   end
 
@@ -40,6 +39,13 @@ Rails.application.routes.draw do
       post 'show', to: 'card#show'
       post 'pay', to: 'card#pay'
       post 'delete', to: 'card#delete'
+    end
+  end
+
+  resources :purchase, only: [:index,:show] do
+    collection do
+      post 'pay', to: 'purchase#pay'
+      get 'done', to: 'purchase#done'
     end
   end
 end
