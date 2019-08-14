@@ -1,9 +1,8 @@
 class PurchaseController < ApplicationController
-
+  before_action :set_item, only: [:show]
     require 'payjp'
 
   def show
-    @item = Item.find(params[:id])
     card = Card.where(user_id: current_user.id).first
     if card.blank?
       redirect_to controller: "card", action: "new"
@@ -24,10 +23,14 @@ class PurchaseController < ApplicationController
     :customer => card.customer_id,
     :currency => 'jpy',
   )
-  item.update(buyer_id:"current_user.id")
+  item.update(buyer_id:"1")
   redirect_to action: 'done'
   end
 
   def done
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 end
