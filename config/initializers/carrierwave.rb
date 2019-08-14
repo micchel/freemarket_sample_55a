@@ -6,7 +6,7 @@ CarrierWave.configure do |config|
   if Rails.env.production?
     config.storage :fog
     config.fog_provider = 'fog/aws'
-    config.fog_directory  = 'upload_mercari55a'
+    config.fog_directory  = 'upload-mercari55a'
     config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/upload-mercari55a'
     config.fog_credentials = {
       provider: 'AWS',
