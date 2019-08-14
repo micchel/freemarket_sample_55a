@@ -1,5 +1,5 @@
 .items-box
-  =link_to item_path(:id), class: 'items-box__link' do
+  =link_to item_path(item.id), class: 'items-box__link' do
     .items-photo
       = image_tag item.item_images[0].image.url, class: 'items-photo__size'
     .items-body
