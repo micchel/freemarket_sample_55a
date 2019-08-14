@@ -5,13 +5,13 @@
       %section.buy-container
         %h2.buy-container__text
           購入内容の確認
-        %section.buy-container__info
-          .buy-container__info__inner
-            .buy-container__info__inner__text
-              = image_tag @item.item_images[0].image.url, class:"buy-item"
-            %p.buy-container__info__inner__name
+        %section.buy-info
+          .buy-info__inner
+            .buy-info__inner__text
+              = image_tag @item.item_images[0].image.url, class:"buy-info__inner__text__image"
+            %p.buy-info__inner__name
               = @item.name
-            %form.buy-item-content
+            .buy-item-content
               %p.buy-item-content__price
                 = number_to_currency(@item.price, locale: 'jp')
                 %span.buy-item-content__price__text
@@ -21,15 +21,15 @@
                   .buy-item-content__point__parent__toggle
                     ポイントを使う
                     = fa_icon "angle-down", class:"angle-down-icon"
-              %ul.buy-item-praice
-                %li.buy-item-praice__text
-                  .buy-item-praice__text__number
+              .buy-item-price
+                .buy-item-price__text
+                  .buy-item-price__text__number
                     支払い金額
-                  .buy-item-praice__text__cell
-                    %span.buy-item-praice__text__cell__number
-                      ¥ 1,200
-              %input{name: "item_id", type: "hidden", value: @item.id}
-              = f.submit "購入する", class: "buy-item-botton"
+                  .buy-item-price__text__cell
+                    %span.buy-item-price__text__cell__number
+                      = number_to_currency(@item.price, locale: 'jp')
+                %input{name: "item_id", type: "hidden", value: @item.id}
+                = f.submit "購入する", class: "buy-item-botton"
         %section.buy-address
           .buy-address__inner
             %h3.buy-address__inner__text

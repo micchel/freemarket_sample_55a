@@ -13,7 +13,7 @@
           text-align: center;
           font-weight: bold;
         }
-        &__info {
+        .buy-info {
           margin: 0;
           text-align: center;
           padding: 24px 12.5% 0;
@@ -80,7 +80,8 @@
                     }
                   }
                 }
-              .buy-item-praice {
+              }
+              .buy-item-price {
                 display: table;
                 border-collapse: collapse;
                 width: 100%;
@@ -90,6 +91,7 @@
                   font-size: 18px;
                   display: table-row;
                   font-weight: 600;
+                  width: 320px;
                   &__number {
                     text-align: left;
                     display: table-cell;
@@ -99,6 +101,8 @@
                     display: table-cell;
                     padding: 16px 0;
                     text-align: right;
+                    position: relative;
+                    right: 110px;
                     &__number {
                       font-size: 28px;
                       }
@@ -112,7 +116,7 @@
                 color: #fff;
                 cursor: not-allowed;
                 display: block;
-                width: 100%;
+                width: 320px;
                 line-height: 48px;
                 font-size: 14px;
                 transition: all ease-out .3s;
@@ -121,7 +125,6 @@
               }
             }
           }
-        }
           .buy-address {
             transition: all ease-out .3s;
             margin: 40px 0 0;
@@ -212,10 +215,4 @@
       }
     }
   @include sub-footer();
-}
-
-.buy-item{
-  height: 64px;
-  width: 64px;
-  object-fit: contain;
 }
