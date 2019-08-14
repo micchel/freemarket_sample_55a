@@ -28,7 +28,7 @@
                   .buy-item-price__text__cell
                     %span.buy-item-price__text__cell__number
                       = number_to_currency(@item.price, locale: 'jp')
-                %input{name: "item_id", type: "hidden", value: @item.id}
+                %input{name: "id", type: "hidden", value: @item.id}
                 = f.submit "購入する", class: "buy-item-botton"
         %section.buy-address
           .buy-address__inner

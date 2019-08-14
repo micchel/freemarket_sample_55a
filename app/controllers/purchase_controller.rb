@@ -1,5 +1,5 @@
 class PurchaseController < ApplicationController
-  before_action :set_item, only: [:show]
+  before_action :set_item, only: [:show, :pay]
     require 'payjp'
 
   def show
@@ -14,8 +14,7 @@ class PurchaseController < ApplicationController
   end
 
   def pay
-    item = Item.find(params[:item_id])
-    price = item.price
+    price = @item.price
     card = Card.where(user_id: current_user.id).first
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
@@ -23,7 +22,7 @@ class PurchaseController < ApplicationController
     :customer => card.customer_id,
     :currency => 'jpy',
   )
-  item.update(buyer_id:"1")
+  @item.update(buyer_id:"1")
   redirect_to action: 'done'
   end
 
