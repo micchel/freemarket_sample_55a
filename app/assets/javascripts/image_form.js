@@ -50,47 +50,42 @@ $(function() {
         display: "none"
       });
     }
+  })
 
-    var new_image = $(
-      `<input multiple= "multiple" name="item_images[image][]" class="upload-image" data-image= ${images.length} type="file" id="upload-image">`
-    );
-    input_area.append(new_image);
+  $(".sell-form__upload-box__dropbox").on("click", ".btn_delete", function() {
 
-    $(".sell-form__upload-box__dropbox").on("click", ".btn_delete", function() {
+    var target_image = $(this).parent().parent();
+    var target_image_num = target_image.data("image");
 
-      var target_image = $(this).parent().parent();
-      var target_image_num = target_image.data("image");
+    target_image.remove();
+    images.splice(target_image_num, 1);
+    new_image_files.splice(target_image_num, 1);
 
-      target_image.remove();
-      images.splice(target_image_num, 1);
-      new_image_files.splice(target_image_num, 1);
-
-      if(images.length == 0) {
-        $('input[type= "file"]#upload-image').attr({
-          "data-image": 0
-        })
-      }
-      if (images.length <= 4) {
-        $("#preview").empty();
-        $.each(images, function(index, image) {
-          image.data("image", index);
-          preview.append(image);
-        })
-        dropzone.css({
-          "width": `calc(100% - (20% * ${images.length}))`,
-          "display": "block"
-        })
-      } else if (images.length == 5) {
-        $("#preview").empty();
-        $.each(images, function(index, image) {
-          image.data("image", index);
-          preview.append(image);
-        })
-        dropzone.css({
-          "display": "none"
-        })
-      }
-    })
+    if(images.length == 0) {
+      $('input[type= "file"]#upload-image').attr({
+        "data-image": 0
+      })
+    }
+    if (images.length <= 4) {
+      $("#preview").empty();
+      $.each(images, function(index, image) {
+        image.data("image", index);
+        preview.append(image);
+      })
+      dropzone.css({
+        "width": `calc(100% - (20% * ${images.length}))`,
+        "display": "block"
+      })
+    } else if (images.length == 5) {
+      $("#preview").empty();
+      $.each(images, function(index, image) {
+        image.data("image", index);
+        preview.append(image);
+      })
+      dropzone.css({
+        "display": "none"
+      })
+    }
   })
 
   $("#new_item").on("submit", function(e){
