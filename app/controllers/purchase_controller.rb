@@ -1,5 +1,6 @@
 class PurchaseController < ApplicationController
   before_action :set_item, only: [:show, :pay]
+  before_action :authenticate_user!, only: [:show]
     require 'payjp'
 
   def show
