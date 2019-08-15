@@ -12,7 +12,7 @@
           .profile-icon
             %figure.profile-icon__image
               = image_tag "member_photo.png", width: "60", height: "60"
-            %input.profile-icon__text{ value: "mizuno", placeholder: "例)AYA☆セール中", type: "text"}
+            %input.profile-icon__text{ value: current_user.nickname, placeholder: "例)AYA☆セール中", type: "text"}
           .profile-content
             %textarea.profile-content__text{ placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪", }
             %button.profile-content__button
