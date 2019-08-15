@@ -364,6 +364,7 @@
   .items-user {
     width: 700px;
     margin: 0 auto;
+    margin-bottom: 20px;
     &__list {
       &__head {
         font-size: 18px;
@@ -373,65 +374,55 @@
           color: #0099e8;
         }
       }
-      &__content {
-        width: auto;
-        margin: 0 auto;
-        @include clearfix();
-        &__box {
-          width: 220px;
-          margin: 0 10px 20px 0;
-          position: relative;
-          float: left;
-          &__link {
-            display: block;
-            color: #333;
-            &__photo {
-              width: 220px;
-              height: 220px;
-              &__image {
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                z-index: 1;
-                width: 100%;
-                vertical-align: middle;
-              }
-            }
-            &__body {
-              padding: 16px;
-              height: 110px;
-              &__name {
-                overflow: hidden;
-                position: relative;
-                font-weight: 400;
-                height: 3em;
-                line-height: 1.5;
-                word-break: break-word;
-                white-space: normal;
-                font-size: 16px;
-                color: #333;
-              }
-              &__num {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                margin: 8px 0 0;
-                &__price {
-                  font-size: 17px;
-                  font-weight: 600;
-                }
-                &__like {
-                  font-weight: 400;
-                  &__heart {
-                    color: #ccc;
-                  }
-                }
-              }
-            }
-          }
-        }
+    }
+  }
+}
+
+
+.items-box{
+  margin: 0 0 0 20px;
+  display: inline-block;
+  &__link{
+    color: black;
+  }
+}
+
+.items-photo{
+  height: 220px;
+  width: 210px;
+}
+
+.items-photo__size{
+  width: 100%;
+  height: 100%;
+}
+
+.items-body{
+  background-color: #fff;
+  padding: 16px;
+}
+
+.items-body__font{
+  font-size: 16px;
+  overflow: hidden;
+  position: relative;
+  font-weight: 400;
+  height: 3em;
+  line-height: 1.5;
+}
+
+.items-price{
+  margin: 8px 0 0;
+  &__num{
+    font-size: 17px;
+    line-height: 17px;
+    display: flex;
+    justify-content: space-between;
+    .items-good{
+      font-size: 16px;
+      line-height: 16px;
+      &__heart{
+      color: #ccc;
       }
     }
   }

@@ -4,12 +4,6 @@
   .bread-crumbs
     %ul.bread-crumbs__list
       %li.bread-crumbs__list__point
-        = link_to "", class:"bread-crumbs__list__point__link" do
-          %span メルカリ
-        = fa_icon "chevron-right", class:"bread-crumbs__list__point__arrow-right"
-      %li.bread-crumbs__list__point--last
-        %span
-          俺のヘルメット
   %section.item-container
     %h1.item-name
       = @item.name
@@ -68,7 +62,7 @@
             %th.item-main__detail__table__point__head
               商品のサイズ
             %td.item-main__detail__table__point__body
-              XXL
+              FREE
           %tr.item-main__detail__table__point
             %th.item-main__detail__table__point__head
               商品の状態
@@ -163,88 +157,5 @@
         = link_to "", class:"items-user__list__head__link" do
           = link_to "#{@item.seller.nickname}さんのその他の出品", root_path
       .items-user__list__content
-        %section.items-user__list__content__box
-          = link_to "", class:"items-user__list__content__box__link" do
-            %figure.items-user__list__content__box__link__photo
-              = image_tag "diving-helmet.png", class:"items-user__list__content__box__link__photo__image", size:"200x200"
-            .items-user__list__content__box__link__body
-              %h3.items-user__list__content__box__link__body__name
-                フンババ
-              .items-user__list__content__box__link__body__num
-                .items-user__list__content__box__link__body__num__price
-                  ¥ 80,000
-                .items-user__list__content__box__link__body__num__like
-                  = fa_icon "heart-o", class:"items-user__list__content__box__link__body__num__like__heart"
-                  %span.items-user__list__content__box__link__body__num__like__count
-                    800
-        %section.items-user__list__content__box
-          = link_to "", class:"items-user__list__content__box__link" do
-            %figure.items-user__list__content__box__link__photo
-              = image_tag "diving-helmet.png", class:"items-user__list__content__box__link__photo__image", size:"200x200"
-            .items-user__list__content__box__link__body
-              %h3.items-user__list__content__box__link__body__name
-                フンババ
-              .items-user__list__content__box__link__body__num
-                .items-user__list__content__box__link__body__num__price
-                  ¥ 80,000
-                .items-user__list__content__box__link__body__num__like
-                  = fa_icon "heart-o", class:"items-user__list__content__box__link__body__num__like__heart"
-                  %span.items-user__list__content__box__link__body__num__like__count
-                    800
-        %section.items-user__list__content__box
-          = link_to "", class:"items-user__list__content__box__link" do
-            %figure.items-user__list__content__box__link__photo
-              = image_tag "diving-helmet.png", class:"items-user__list__content__box__link__photo__image", size:"200x200"
-            .items-user__list__content__box__link__body
-              %h3.items-user__list__content__box__link__body__name
-                フンババ
-              .items-user__list__content__box__link__body__num
-                .items-user__list__content__box__link__body__num__price
-                  ¥ 80,000
-                .items-user__list__content__box__link__body__num__like
-                  = fa_icon "heart-o", class:"items-user__list__content__box__link__body__num__like__heart"
-                  %span.items-user__list__content__box__link__body__num__like__count
-                    800
-        %section.items-user__list__content__box
-          = link_to "", class:"items-user__list__content__box__link" do
-            %figure.items-user__list__content__box__link__photo
-              = image_tag "diving-helmet.png", class:"items-user__list__content__box__link__photo__image", size:"200x200"
-            .items-user__list__content__box__link__body
-              %h3.items-user__list__content__box__link__body__name
-                フンババ
-              .items-user__list__content__box__link__body__num
-                .items-user__list__content__box__link__body__num__price
-                  ¥ 80,000
-                .items-user__list__content__box__link__body__num__like
-                  = fa_icon "heart-o", class:"items-user__list__content__box__link__body__num__like__heart"
-                  %span.items-user__list__content__box__link__body__num__like__count
-                    800
-        %section.items-user__list__content__box
-          = link_to "", class:"items-user__list__content__box__link" do
-            %figure.items-user__list__content__box__link__photo
-              = image_tag "diving-helmet.png", class:"items-user__list__content__box__link__photo__image", size:"200x200"
-            .items-user__list__content__box__link__body
-              %h3.items-user__list__content__box__link__body__name
-                フンババ
-              .items-user__list__content__box__link__body__num
-                .items-user__list__content__box__link__body__num__price
-                  ¥ 80,000
-                .items-user__list__content__box__link__body__num__like
-                  = fa_icon "heart-o", class:"items-user__list__content__box__link__body__num__like__heart"
-                  %span.items-user__list__content__box__link__body__num__like__count
-                    800
-        %section.items-user__list__content__box
-          = link_to "", class:"items-user__list__content__box__link" do
-            %figure.items-user__list__content__box__link__photo
-              = image_tag "diving-helmet.png", class:"items-user__list__content__box__link__photo__image" , size:"200x200"
-            .items-user__list__content__box__link__body
-              %h3.items-user__list__content__box__link__body__name
-                フンババ
-              .items-user__list__content__box__link__body__num
-                .items-user__list__content__box__link__body__num__price
-                  ¥ 80,000
-                .items-user__list__content__box__link__body__num__like
-                  = fa_icon "heart-o", class:"items-user__list__content__box__link__body__num__like__heart" 
-                  %span.items-user__list__content__box__link__body__num__like__count
-                    800
+        = render partial: "shared/item-box", collection: @items, as: "item"  
 = render "shared/main-footer"

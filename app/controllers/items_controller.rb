@@ -2,10 +2,14 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :destroy, :my_item, :buy_confirm]
 
   def index
-      @parents = Category.where(ancestry: nil).order("id ASC").limit(4)
+    @parents = Category.where(ancestry: nil).order("id ASC").limit(4)
   end
 
   def show
+    @items = @item.seller.items.order("id DESC").limit(3)
+    # if @item.seller.items != @item.seller.items
+    #   @items = @item.seller.items.order("id DESC").limit(3)
+    # end
   end
 
   def buy_confirm
