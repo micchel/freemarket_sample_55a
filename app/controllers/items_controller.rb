@@ -7,6 +7,10 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @items = @item.seller.items.order("id DESC").limit(3)
+    # if @item.seller.items != @item.seller.items
+    #   @items = @item.seller.items.order("id DESC").limit(3)
+    # end
   end
 
   def new
