@@ -23,7 +23,7 @@ crumb :edit do
 end
 
 crumb :card do
-  link "支払い方法", card_mypage_path
+  link "支払い方法", card_mypage_index_path
   parent :mypage
 end
 
