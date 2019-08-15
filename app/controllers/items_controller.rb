@@ -39,8 +39,10 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item.destroy
-    redirect_to controller: 'mypage', action: 'list'
+    if @item.seller == current_user
+      @item.destroy
+      redirect_to controller: 'mypage', action: 'list'
+    end
   end
 
   def select
