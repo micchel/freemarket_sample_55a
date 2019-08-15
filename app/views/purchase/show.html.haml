@@ -1,0 +1,66 @@
+.single-page
+  = render "shared/sub-header"
+  %mail.buy-content
+    = form_with url: pay_purchase_index_path, action: :pay, method: :post, local: true do |f|
+      %section.buy-container
+        %h2.buy-container__text
+          購入内容の確認
+        %section.buy-info
+          .buy-info__inner
+            .buy-info__inner__text
+              = image_tag @item.item_images[0].image.url, class:"buy-info__inner__text__image"
+            %p.buy-info__inner__name
+              = @item.name
+            .buy-item-content
+              %p.buy-item-content__price
+                = number_to_currency(@item.price, locale: 'jp')
+                %span.buy-item-content__price__text
+                  送料込み
+              .buy-item-content__point
+                .buy-item-content__point__parent
+                  .buy-item-content__point__parent__toggle
+                    ポイントを使う
+                    = fa_icon "angle-down", class:"angle-down-icon"
+              .buy-item-price
+                .buy-item-price__text
+                  .buy-item-price__text__number
+                    支払い金額
+                  .buy-item-price__text__cell
+                    %span.buy-item-price__text__cell__number
+                      = number_to_currency(@item.price, locale: 'jp')
+                %input{name: "id", type: "hidden", value: @item.id}
+                = f.submit "購入する", class: "buy-item-botton"
+        %section.buy-address
+          .buy-address__inner
+            %h3.buy-address__inner__text
+              配送先
+            %address.buy-address__inner__address
+              = @item.seller.residence.zip_code
+              %br
+              = @item.seller.residence.city
+              %br
+              = @item.seller.residence.address
+            = link_to '', class: "buy-address__link" do
+              %span.buy-address__link__span
+                変更する
+              = fa_icon "angle-right", class:"angle-right-icon-address"
+        %section.buy-user-info
+          .buy-user-info__inner
+            %h3.buy-user-info__inner__text
+              支払い方法
+            - if @default_card_information.blank?
+              %br /
+            - else
+              = "**** **** **** " + @default_card_information.last4
+              - exp_month = @default_card_information.exp_month.to_s
+              - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+              = exp_month + " / " + exp_year
+              %br
+              .jcb-icon
+                = image_tag "visa.svg",size: "25x25"
+            %p.buy-user-info__inner__text1
+            = link_to '', class: "buy-user-info__inner__link" do
+              %span.buy-user-info__inner__link__span
+                変更する
+              = fa_icon "angle-right", class:"angle-right-icon-user"
+  = render "shared/sub-footer"

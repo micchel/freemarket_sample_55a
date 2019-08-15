@@ -8,9 +8,6 @@ class ItemsController < ApplicationController
   def show
   end
 
-  def buy_confirm
-  end
-
   def new
     @item = Item.new
     @parents = Category.where(ancestry: nil) #Category.where(ancestry = ?, "nil")

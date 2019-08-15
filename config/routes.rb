@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'card/new'
+  get 'card/show'
   devise_for :users
 
   root to: "items#index"
@@ -19,7 +21,6 @@ Rails.application.routes.draw do
       get "select", to: "items#select"
       get "select_grand", to: "items#select_grand"
       get "my_item/:id",to: "items#my_item"
-      get "transaction/buy/:id", to: "items#buy_confirm"
     end
   end
 
@@ -30,6 +31,21 @@ Rails.application.routes.draw do
       get 'tel'
       get 'address'
       get 'done'
+    end
+  end
+
+  resources :card, only: [:new, :show] do
+    collection do
+      post 'show', to: 'card#show'
+      post 'pay', to: 'card#pay'
+      post 'delete', to: 'card#delete'
+    end
+  end
+
+  resources :purchase, only: [:index,:show] do
+    collection do
+      post 'pay', to: 'purchase#pay'
+      get 'done', to: 'purchase#done'
     end
   end
 end
