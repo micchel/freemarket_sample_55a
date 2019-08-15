@@ -21,23 +21,23 @@
           %label.infomation-name
             お名前
           .infomation-text
-            ホームラン王
+            #{current_user.nickname}
         .from-group
           %label.infomation-name
             お名前カナ
           .infomation-text
-            ホームランオウ
+            #{current_user.first_name_kana}#{current_user.last_name_kana}
         .from-group
           %label.infomation-name
             生年月日
           .infomation-text
-            7777/07/07
+            #{current_user.birthday}
         .from-group
           %label.infomation-name
             郵便番号
           %span.infomation-good
             任意
-          %input{placeholder:'例））1234567', type:'text', class:'input-default'}
+          %input{placeholder:'例））1234567', type:'text', value: current_user.residence.zip_code, class:'input-default'}
         .from-group
           %label.infomation-name
             都道府県
@@ -49,13 +49,13 @@
             市区町村
           %span.infomation-good
             任意
-          %input{placeholder:'例））横浜市緑区', type:'text', class:'input-default'}
+          %input{placeholder:'例））横浜市緑区', type:'text', value: current_user.residence.city, class:'input-default'}
         .from-group
           %label.infomation-name
             番地
           %span.infomation-good
             任意
-          %input{placeholder:'例））青山1-1', type:'text', class:'input-default'}
+          %input{placeholder:'例））青山1-1', type:'text', value: current_user.residence.address,class:'input-default'}
         .from-group
           %label.infomation-name
             建物名

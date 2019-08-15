@@ -1,8 +1,9 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :destroy, :my_item, :buy_confirm]
+  before_action :authenticate_user!, only: [:new]
 
   def index
-      @parents = Category.where(ancestry: nil).order("id ASC").limit(4)
+    @parents = Category.where(ancestry: nil).order("id ASC").limit(4)
   end
 
   def show
@@ -59,9 +60,6 @@ class ItemsController < ApplicationController
   end
 
   def my_item
-  end
-
-  def buy_confirm
   end
 
   def set_item
