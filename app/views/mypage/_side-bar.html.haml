@@ -1,5 +1,5 @@
 .mypage-side
-  %nav.maypage-menu
+  .mypage-menu
     %ul.mypage-menu__list
       %li.mypage-menu__list__lists
         = link_to mypage_index_path,class: "mypage-menu__list__lists__item" do
@@ -82,7 +82,7 @@
           発送元・お届け先住所変更
           = fa_icon "angle-right", class: "angle-icon"
       %li.mypage-menu__list__lists
-        = link_to card_mypage_index_path, class:"mypage-menu__list__lists__item" do
+        = link_to card_card_index_path, class:"mypage-menu__list__lists__item" do
           支払い方法
           = fa_icon "angle-right", class: "angle-icon"
       %li.mypage-menu__list__lists

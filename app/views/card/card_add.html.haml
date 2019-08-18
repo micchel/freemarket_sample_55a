@@ -1,9 +1,20 @@
 .pay-body
-  .pay-body__header
-    = link_to "",class:'pay-body__header__icon' do
-      = image_tag 'logo.svg',width:"185", height: "49"
-    = render 'shared/signup-header'
-  .pay-center
+  = render 'shared/main-header'
+  - breadcrumb :card
+  = render "shared/breadcrumbs"
+  %nav.header-next
+    %ul.header-next__next
+      %li.header-next__next__list
+        = link_to '',class:"header-next__next__list__link" do
+          %span
+          メルカリ
+          = fa_icon "angle-right", class: "angle-icon-header"
+      %li.header-next__next__list
+        = link_to '',class:"header-next__next__list__link__action" do
+          %span
+          マイページ
+  %main.pay-center
+    = render 'mypage/side-bar'
     .pay-center__upper
       %h2.pay-center__upper__way 支払い方法
       .pay-under
@@ -48,4 +59,5 @@
               = f.text_field :cvc, class: "pay-main__form__text", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
               #card_token
               = f.submit "次へ進む", id: "token_submit", class: "pay-main__form__next"
-  = render "shared/sub-footer"
+  = render 'shared/main-footer'
+  = render "shared/red-camer"

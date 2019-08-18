@@ -1,5 +1,4 @@
 .pay-body{
-  padding: 0 0 220px;
   &__header{
     height: 128px;
     text-align: center;
@@ -14,10 +13,15 @@
     }
   }
 
-  &__center{
+  .pay-center{
+    margin: 40px auto 0;
+    width: 1020px;
+    padding: 0 0 40px;
     display: block;
+    height: 1292px;
     &__upper{
       width: 700px;
+      float: right;
       margin: 0 auto;
       background-color: #fff;
       &__way{
@@ -26,11 +30,11 @@
         text-align: center;
       }
     }
-    &__under{
+    .pay-under{
       padding: 24px 16px 40px;
       border-top: 1px solid #ccc;
       height: 480px;
-      &__main{
+      .pay-main{
         padding: 24px 16px 40px;
         &__form{
           width: 343px;
@@ -47,7 +51,7 @@
               margin: 0 0 0 8px;
               &__f{
                 margin: 0;
-              }  
+              }
             }
           }
           &__label{
@@ -88,7 +92,6 @@
             padding: 10px 0 0 0;
 
             .card_date{
-              width: calc(100% - 38px);
               height: 48px;
               border: 1px solid #ccc;
               background: #fff;
@@ -96,8 +99,45 @@
               font-size: 16px;
               border-radius: 4px;
               padding: 0 15px 0;
+              -webkit-appearance: button;
             }
           }
+        }
+      }
+    }
+  }
+  .progress-bar-box{
+    height: 60px;
+    box-sizing: border-box;
+    display: inline-flex;
+    vertical-align: top;
+    padding: 40px 0 0 44px;
+    font-size: large;
+    .progress-bar{
+      color: #ccc;
+      width: 100px;
+      height:  32px;
+      box-sizing: border-box;
+      &:nth-child(4){
+        color: #ea352d;
+      }
+      &__title{
+        font-size: 12px;
+        font-weight: 600;
+        width:100px;
+        text-align: center;
+      }
+      &__dot{
+        width: 12px;
+        margin: auto;
+        font-size: x-large;
+        &__bar{
+          background-color: #ccc;
+          width: 100px;
+          height: 2px;
+          position: relative;
+          bottom: 10px;
+          left: 5px;
         }
       }
     }
@@ -106,7 +146,7 @@
 
 
 
-
+@include side-bar();
 @include sub-footer();
 
 .card-back-side{

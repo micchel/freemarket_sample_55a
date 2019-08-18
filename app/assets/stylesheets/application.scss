@@ -2,6 +2,7 @@
 @import "mixin/clearfix";
 @import "mixin/sub-header";
 @import "mixin/sub-footer";
+@import "mixin/side-bar";
 @import "font-awesome";
 @import "mercari/share";
 @import "main-footer";
@@ -15,6 +16,7 @@
 @import "item/item-detail";
 @import "item/item-buybuyconfirmation";
 @import "item/edit";
+@import "mypage/mypage-card-add";
 @import "mypage/mypage-top.scss";
 @import "mypage/mypage-profile.scss";
 @import "mypage/side-bar.scss";
@@ -29,4 +31,5 @@
 @import "user/users-pay";
 @import "user/users-done";
 @import "user/users-login";
-@import "breadcrumbs"
+@import "breadcrumbs";
+@import "pay-done";

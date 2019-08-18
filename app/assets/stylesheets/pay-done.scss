@@ -1,0 +1,56 @@
+.purchase{
+  width: 100%;
+  &__image{
+    display: block;
+    width:200px;
+    margin: auto;
+  }
+
+  &__container{
+    color: black;
+    width: 700px;
+    height: 500px;
+    background-color: #fff;
+    box-sizing: border-box;
+    margin: 20px auto;
+    padding-bottom: 20px;
+    &__title{
+      height: 50px;
+      font-size: 24px;
+      padding: 15px 24px;
+      font-weight: bold;
+      text-align: center;
+      box-sizing: border-box;
+      border-bottom: 1px solid gray;
+    }
+    &__description{
+      display: block;
+      margin-top: 100px;
+      text-align: center;
+      margin-bottom: 100px;
+      font-size: 20px;
+      line-height: 70px;
+    }
+    &__link{
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      top:20px;
+      display: block;
+      font-size: 14px;
+      height:50px;
+      width:200px;
+      color:#fff;
+      background-color:red;
+      text-align: center;
+      padding: 15px;
+      box-sizing: border-box;
+      margin:auto;
+    }
+    &__footer{
+      display: block;
+      height: 300px;
+    }
+  }
+}

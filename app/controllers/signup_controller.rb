@@ -43,7 +43,7 @@ class SignupController < ApplicationController
     if @user.save
       sign_in(@user)
       session[:id] = @user.id
-      redirect_to  done_signup_index_path
+      redirect_to  new_card_path
     else
       render '/signup/signup'
     end
