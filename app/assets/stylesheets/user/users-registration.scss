@@ -187,40 +187,11 @@
   color: #fff;
 }
 
-.progress-bar-box{
-  height: 60px;
-  box-sizing: border-box;
-  display: inline-flex;
-  vertical-align: top;
-  padding: 40px 0 0 44px;
-  font-size: large;
-  .progress-bar{
-    color: #ccc;
-    width: 100px;
-    height:  32px;
-    box-sizing: border-box;
-    &:first-child{
-      color: #ea352d;
-    }
-    &__title{
-      font-size: 12px;
-      font-weight: 600;
-      width:100px;
-      text-align: center;
-    }
-    &__dot{
-      width: 12px;
-      margin: auto;
-      font-size: x-large;
-      &__bar{
-        background-color: #ccc;
-        width: 100px;
-        height: 2px;
-        position: relative;
-        bottom: 10px;
-        left: 5px;
-        }
-      }
-    }
+@include signup-header();
+#through{
+  color: #ea352d;
+  .progress-status{
+    background: #ea352d;
   }
+}
 }
