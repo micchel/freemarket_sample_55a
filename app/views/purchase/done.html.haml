@@ -1,3 +1,13 @@
-%h2 購入が完了しました！
-%p Apple MacBook Pro 13インチ
-%p ¥135,000(送料込み)
+.purchase
+  .purchase__image
+    = image_tag "logo.svg" , width: 240, height:70
+  .purchase__container
+    .purchase__container__title
+      購入が完了しました！
+    .purchase__container__description
+      購入完了しました。出品者の連絡をお待ちください！
+      %br
+      またのご利用お待ちしております。
+    = link_to "トップページへ戻る", root_path, class: "purchase__container__link"
+  .purchase__container__footer
+    = render "shared/sub-footer"

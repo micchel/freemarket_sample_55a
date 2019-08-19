@@ -3,10 +3,15 @@ class CardController < ApplicationController
   require "payjp"
 
   def new
-    redirect_to action: "show" if Card.exists?(user_id: current_user.id)
+  end
+
+  def card_add
   end
 
   def pay
+    before_uri = URI.parse(request.referer)
+    request_path = before_uri.path
+    request_path = before_uri.path
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     if params['payjp-token'].blank?
       redirect_to action: "new"
@@ -19,7 +24,11 @@ class CardController < ApplicationController
       )
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
-        redirect_to action: "show"
+        if request_path == "/card/new"
+          redirect_to done_signup_index_path
+        else request_path == "card_add_card_index"
+          redirect_to card_card_index_path
+        end
       else
         redirect_to action: "pay"
       end
@@ -35,17 +44,17 @@ class CardController < ApplicationController
       customer.delete
       card.delete
     end
-      redirect_to action: "new"
+      redirect_to card_card_index_path
   end
 
-  def show
+  def card
     card = Card.where(user_id: current_user.id).first
     if card.blank?
-      redirect_to action: "new"
     else
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       customer = Payjp::Customer.retrieve(card.customer_id)
       @default_card_information = customer.cards.retrieve(card.card_id)
     end
   end
+
 end

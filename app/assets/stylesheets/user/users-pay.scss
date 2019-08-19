@@ -1,5 +1,4 @@
 .pay-body{
-  padding: 0 0 220px;
   &__header{
     height: 128px;
     text-align: center;
@@ -14,10 +13,15 @@
     }
   }
 
-  &__center{
+  .pay-center{
+    margin: 40px auto 0;
+    width: 1020px;
+    padding: 0 0 40px;
     display: block;
+    height: 1292px;
     &__upper{
       width: 700px;
+      float: right;
       margin: 0 auto;
       background-color: #fff;
       &__way{
@@ -26,11 +30,11 @@
         text-align: center;
       }
     }
-    &__under{
+    .pay-under{
       padding: 24px 16px 40px;
       border-top: 1px solid #ccc;
       height: 480px;
-      &__main{
+      .pay-main{
         padding: 24px 16px 40px;
         &__form{
           width: 343px;
@@ -47,7 +51,7 @@
               margin: 0 0 0 8px;
               &__f{
                 margin: 0;
-              }  
+              }
             }
           }
           &__label{
@@ -88,7 +92,6 @@
             padding: 10px 0 0 0;
 
             .card_date{
-              width: calc(100% - 38px);
               height: 48px;
               border: 1px solid #ccc;
               background: #fff;
@@ -96,18 +99,56 @@
               font-size: 16px;
               border-radius: 4px;
               padding: 0 15px 0;
+              -webkit-appearance: button;
             }
           }
         }
       }
     }
   }
-}
+  #through{
+    color: #ea352d;
+    .progress-status{
+      background: #ea352d;
+    }
+  }
+
+  #through .progress-status_bar{
+      background: #ea352d;
+    }
+    #active{
+      color: #ea352d;
+      .progress-status{
+        background: #ea352d;
+      }
+    }
+
+    #active .progress-status_bar{
+      background: #ea352d;
+    }
+    #address{
+      color: #ea352d;
+      .progress-status{
+        background: #ea352d;
+      }
+    }
+
+    #address .progress-status_bar{
+      background: #ea352d;
+    }
+    #payment{
+      color: #ea352d;
+      .progress-status{
+        background: #ea352d;
+      }
+    }
+  }
 
 
 
-
+@include side-bar();
 @include sub-footer();
+@include signup-header();
 
 .card-back-side{
   margin: 8px 0 0;

@@ -1,0 +1,48 @@
+
+  .card-add{
+    margin: 0;
+    background: #fff;
+    &__text{
+      font-size: 24px;
+      padding: 8px 24px;
+      border-bottom: 1px solid #f5f5f5;
+      text-align: center;
+    }
+    .card-add-content{
+      padding: 64px;
+      &__box{
+        max-width: 320px;
+        margin: 0 auto;
+        &__font{
+          font-size: 20px;
+          margin: 0 0 20px 0;
+        }
+      }
+      .card-add-settings{
+        list-style: none;
+        &__box{
+          padding: 24px 0;
+          border-bottom: 1px solid #eee;
+        }
+        &__content{
+          position: relative;
+          max-width: 320px;
+          margin: 0 auto;
+          &__link{
+            margin: 0;
+            background: #ea352d;
+            border: 1px solid #ea352d;
+            color: #fff;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            display: block;
+            text-align: center;
+          &:hover{
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+  }
+}

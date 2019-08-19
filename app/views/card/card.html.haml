@@ -1,0 +1,58 @@
+= render 'shared/main-header'
+- breadcrumb :card
+= render "shared/breadcrumbs"
+%nav.header-next
+  %ul.header-next__next
+    %li.header-next__next__list
+      = link_to '',class:"header-next__next__list__link" do
+        %span
+        メルカリ
+        = fa_icon "angle-right", class: "angle-icon-header"
+    %li.header-next__next__list
+      = link_to '',class:"header-next__next__list__link__action" do
+        %span
+        マイページ
+%main.card-main
+  = render 'mypage/side-bar'
+  .card
+    - if current_user.card.present?
+      = form_with url: delete_card_index_path, metohd: :post, id: 'charge-form', html: {name: "inputForm"} do |f|
+        %section.card-add
+          %h2.card-add__text
+            支払い方法
+          .card-add-content
+            .card-add-content__box
+              %h3.card-add-content__box__font
+                登録クレジットカード
+              %ul.card-add-settings
+                %li.card-add-settings__number
+                  = "**** **** **** " + @default_card_information.last4
+                  = image_tag "visa.svg", size:"25x25"
+                %li.card-add-settings__box
+                  - exp_month = @default_card_information.exp_month.to_s
+                  - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+                  = exp_month + " / " + exp_year
+                .card-add-settings__content
+                  %input{ type: "hidden", name: "card_id", value: "" }
+                  =f.submit "削除する", class: 'card-add-settings__content__link'
+    - else
+      %section.card-chapter
+        %h2.card-chapter__font
+          支払い方法
+        .card-signle
+          .card-signle__box
+            %h3.card-signle__box__font
+              クレジットカード一覧
+            %ul.card-settings
+              %li.card-settings__box
+                %form.card-content
+                  =link_to card_add_card_index_path, class: 'card-link' do
+                    =fa_icon 'credit-card', class: 'card-link__icon'
+                    クレジットカードを追加する
+          .card-pay
+            = link_to root_path, class: "card-pay__link" do
+              %span.card-pay__link__font
+                支払い方法について
+                = fa_icon 'chevron-right', class: "card-icon"
+= render 'shared/main-footer'
+= render "shared/red-camer"
