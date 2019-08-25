@@ -2,7 +2,6 @@
 
 $(function() {
   var dropzone = $(".sell-form__upload-box__dropbox__container");
-  var input_area = $(".sell-form__upload-box__dropbox__container__list");
   var preview = $("#preview");
 
   var images = [];
@@ -23,6 +22,7 @@ $(function() {
                         </div>`);
     img.append(btn_wrapper);
 
+    
     reader.onload = function(e) {
       img.find("img").attr({
         src: e.target.result
